@@ -21,6 +21,14 @@ class MyTranslation extends Translations {
           LocalizationKeys.onBoardingTitleFour: 'توصيل سريع',
           LocalizationKeys.onBoardingBodyFour: 'توصيل المنتجات بأسرع وقت.',
           LocalizationKeys.continueBtn: 'التالى',
+
+          //? Sing In Screen
+          LocalizationKeys.signIn: 'تسجيل دخول',
+          LocalizationKeys.welcom: 'أهلا بعودتك',
+          LocalizationKeys.bodyMessage:
+              'يمكنك تسجيل دخول بالإميل والباسورد\nأو يمكنك الإستمرار بإستخدام\nوسائل التواصل الإجتماعية.',
+          LocalizationKeys.emailLable: 'الإميل',
+          LocalizationKeys.emailHint: 'أدخل الإميل الخاص بك',
         },
         'en': {
           //? choose language screen
@@ -40,6 +48,14 @@ class MyTranslation extends Translations {
           LocalizationKeys.onBoardingBodyFour:
               'Reliable And Fast Delivery. We\nDeliver Your product the fastest\nway possible.',
           LocalizationKeys.continueBtn: 'Continue',
+
+          //? Sing In Screen
+          LocalizationKeys.signIn: 'Sing In',
+          LocalizationKeys.welcom: 'Welcom Back',
+          LocalizationKeys.bodyMessage:
+              'Sign In With Your Email & Password\nOr Continue With Social Media.',
+          LocalizationKeys.emailLable: 'Email',
+          LocalizationKeys.emailHint: 'Enter Your Email',
         },
       };
 }

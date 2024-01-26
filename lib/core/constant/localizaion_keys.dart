@@ -15,4 +15,11 @@ class LocalizationKeys {
 
   static const String onBoardingTitleFour = 'onBoardingTitleFour';
   static const String onBoardingBodyFour = 'onBoardingBodyFour';
+
+  //! keys for On Sign In Screen
+  static const String signIn = 'signIn';
+  static const String welcom = 'welcom';
+  static const String bodyMessage = 'bodyMessage';
+  static const String emailLable = 'emailLable';
+  static const String emailHint = 'emailHint';
 }
