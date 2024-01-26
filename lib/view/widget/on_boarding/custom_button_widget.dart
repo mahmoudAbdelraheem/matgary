@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/core/constant/localizaion_keys.dart';
 
 import '../../../controller/on_boarding_controller.dart';
 import '../../../core/constant/app_colors.dart';
@@ -23,7 +24,7 @@ class OnBoardingCustomButtonWidget extends GetView<OnBoardingControllerImp> {
         },
         textColor: Colors.white,
         child: Text(
-          '2'.tr,
+          LocalizationKeys.continueBtn.tr,
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),

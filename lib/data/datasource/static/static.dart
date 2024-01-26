@@ -1,25 +1,26 @@
 import 'package:matgary/core/constant/app_image_assets.dart';
+import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/data/models/on_boarding_model.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-    title: '2.1.1',
-    body: '2.2.1',
+    title: LocalizationKeys.onBoardingTitleOne,
+    body: LocalizationKeys.onBoardingBodyOne,
     image: AppImageAssets.onBoardingImageOne,
   ),
   OnBoardingModel(
-    title: '2.1.2',
-    body: '2.2.2',
+    title: LocalizationKeys.onBoardingTitleTwo,
+    body: LocalizationKeys.onBoardingBodyTwo,
     image: AppImageAssets.onBoardingImageTwo,
   ),
   OnBoardingModel(
-    title: '2.1.3',
-    body: "2.2.3",
+    title: LocalizationKeys.onBoardingTitleThree,
+    body: LocalizationKeys.onBoardingBodythree,
     image: AppImageAssets.onBoardingImageThree,
   ),
   OnBoardingModel(
-    title: '2.1.4',
-    body: '2.2.4',
+    title: LocalizationKeys.onBoardingTitleFour,
+    body: LocalizationKeys.onBoardingBodyFour,
     image: AppImageAssets.onBoardingImageFour,
   ),
   // OnBoardingModel(

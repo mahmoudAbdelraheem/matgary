@@ -34,7 +34,7 @@ class LanguageCustomButtonWidget extends GetView<LocaleController> {
         },
         textColor: Colors.white,
         child: Text(
-          buttonText,
+          buttonText.tr,
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
