@@ -39,7 +39,7 @@ class OnBoardingModelWidget extends GetView<OnBoardingControllerImp> {
     return Container(
       alignment: Alignment.center,
       child: Text(
-        body,
+        body.tr,
         style: Theme.of(context).textTheme.bodyLarge,
         textAlign: TextAlign.center,
       ),
@@ -62,7 +62,7 @@ class OnBoardingModelWidget extends GetView<OnBoardingControllerImp> {
 
   Text _buildTitle(String title, BuildContext context) {
     return Text(
-      title,
+      title.tr,
       style: Theme.of(context).textTheme.titleLarge,
     );
   }
