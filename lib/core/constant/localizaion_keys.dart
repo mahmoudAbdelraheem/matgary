@@ -18,8 +18,19 @@ class LocalizationKeys {
 
   //! keys for On Sign In Screen
   static const String signIn = 'signIn';
+  static const String signUp = 'signUp';
   static const String welcom = 'welcom';
-  static const String bodyMessage = 'bodyMessage';
+  static const String singInBody = 'singInBody';
+  static const String singUpBody = 'singUpBody';
   static const String emailLable = 'emailLable';
   static const String emailHint = 'emailHint';
+  static const String passLable = 'passLable';
+  static const String passHint = 'passHint';
+  static const String userLable = 'userLable';
+  static const String userHint = 'userHint';
+  static const String phoneLable = 'phoneLable';
+  static const String phoneHint = 'phoneHint';
+  static const String forgetPassword = 'forgetPassword';
+  static const String dontHaveAccount = 'dontHaveAccount';
+  static const String haveAccount = 'haveAccount';
 }

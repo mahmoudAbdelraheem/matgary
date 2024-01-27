@@ -25,10 +25,24 @@ class MyTranslation extends Translations {
           //? Sing In Screen
           LocalizationKeys.signIn: 'تسجيل دخول',
           LocalizationKeys.welcom: 'أهلا بعودتك',
-          LocalizationKeys.bodyMessage:
-              'يمكنك تسجيل دخول بالإميل والباسورد\nأو يمكنك الإستمرار بإستخدام\nوسائل التواصل الإجتماعية.',
+          LocalizationKeys.singInBody:
+              'يمكنك تسجيل دخول بالإميل وكلمة المرور\nأو يمكنك الإستمرار بإستخدام\nوسائل التواصل الإجتماعية.',
           LocalizationKeys.emailLable: 'الإميل',
           LocalizationKeys.emailHint: 'أدخل الإميل الخاص بك',
+          LocalizationKeys.passLable: 'كلمة المرور',
+          LocalizationKeys.passHint: 'أدخل كلمة المرور الخاصه بك',
+          LocalizationKeys.forgetPassword: 'نسيت كلمة المرور ؟',
+          LocalizationKeys.dontHaveAccount: 'ليس لديك حساب ؟ ',
+
+          //? sign Up Screen
+          LocalizationKeys.signUp: 'تسجيل حساب',
+          LocalizationKeys.singUpBody:
+              'يمكنك تسجيل حساب جديد بالإميل وكلمة المرور\nأو يمكنك الإستمرار بإستخدام\nوسائل التواصل الإجتماعية.',
+          LocalizationKeys.userLable: 'إسم الحساب',
+          LocalizationKeys.userHint: 'أدخل إسم الحساب',
+          LocalizationKeys.phoneLable: 'رقم الهاتف',
+          LocalizationKeys.phoneHint: 'أدخل رقم الهاتف',
+          LocalizationKeys.haveAccount: 'لديك حساب ؟ ',
         },
         'en': {
           //? choose language screen
@@ -50,12 +64,27 @@ class MyTranslation extends Translations {
           LocalizationKeys.continueBtn: 'Continue',
 
           //? Sing In Screen
-          LocalizationKeys.signIn: 'Sing In',
+          LocalizationKeys.signIn: 'Sign In',
+
           LocalizationKeys.welcom: 'Welcom Back',
-          LocalizationKeys.bodyMessage:
+          LocalizationKeys.singInBody:
               'Sign In With Your Email & Password\nOr Continue With Social Media.',
           LocalizationKeys.emailLable: 'Email',
           LocalizationKeys.emailHint: 'Enter Your Email',
+          LocalizationKeys.passLable: 'Password',
+          LocalizationKeys.passHint: 'Enter Your Password',
+          LocalizationKeys.forgetPassword: 'Forget Password ?',
+          LocalizationKeys.dontHaveAccount: "Don't Have An Account ? ",
+
+          //? Sign Up Screen
+          LocalizationKeys.signUp: 'Sign Up',
+          LocalizationKeys.singUpBody:
+              'Sign Up With Your Email & Password\nOr Continue With Social Media.',
+          LocalizationKeys.userLable: 'User Name',
+          LocalizationKeys.userHint: 'Enter User Name',
+          LocalizationKeys.phoneLable: 'Phone Number',
+          LocalizationKeys.phoneHint: 'Enter Phone Number',
+          LocalizationKeys.haveAccount: 'Have An Account ? ',
         },
       };
 }

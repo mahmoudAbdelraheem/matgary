@@ -4,7 +4,7 @@ import 'package:matgary/core/constant/app_colors.dart';
 ThemeData appTheme = ThemeData(
   fontFamily: 'SignikaNegative',
   textTheme: TextTheme(
-    titleLarge: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    titleLarge: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     bodyLarge: TextStyle(
       fontSize: 18,
       height: 1.5,
