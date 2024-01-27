@@ -1,6 +1,6 @@
 # matgary
 
-A new Flutter project.
+A complete Ecommerce app using GetX and HTTP with PHP and MYSQL backend.
 
 ## Getting Started
 
