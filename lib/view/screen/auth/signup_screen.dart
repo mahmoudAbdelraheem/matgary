@@ -65,11 +65,14 @@ class SignUpScreen extends StatelessWidget {
               isPassword: true,
             ),
 
-            //? sign in button
+            //? go to check email address screen button
             CustomAuthBtnWidget(
               btnText: LocalizationKeys.signUp,
               btnColor: AppColors.myBlue,
               textColor: AppColors.myWhite,
+              myPressed: () {
+                controller.goToCheckEmail();
+              },
             ),
             //? don't have an account text widget
             HaveOrNotHaveAccountText(

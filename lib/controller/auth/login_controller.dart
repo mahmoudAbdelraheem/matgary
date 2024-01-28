@@ -7,6 +7,8 @@ abstract class LoginController extends GetxController {
   login();
   //? go to sign up screen
   goToSignUp();
+  //? go to forget password screen
+  goToforgetPassword();
 }
 
 class LoginControllerImp extends LoginController {
@@ -23,7 +25,12 @@ class LoginControllerImp extends LoginController {
 
   @override
   goToSignUp() {
-    Get.toNamed(AppRoutes.signUpScreen);
+    Get.offNamed(AppRoutes.signUpScreen);
+  }
+
+  @override
+  goToforgetPassword() {
+    Get.toNamed(AppRoutes.forgetPasswordScreen);
   }
 
   @override

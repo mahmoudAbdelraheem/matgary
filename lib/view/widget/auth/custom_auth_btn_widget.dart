@@ -5,11 +5,13 @@ class CustomAuthBtnWidget extends StatelessWidget {
   final String btnText;
   final Color textColor;
   final Color btnColor;
+  final void Function() myPressed;
   const CustomAuthBtnWidget({
     super.key,
     required this.btnText,
     required this.btnColor,
     required this.textColor,
+    required this.myPressed,
   });
 
   @override
@@ -17,8 +19,7 @@ class CustomAuthBtnWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 25, bottom: 25),
       child: MaterialButton(
-        //TODO: navigate to Home Screen
-        onPressed: () {},
+        onPressed: myPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

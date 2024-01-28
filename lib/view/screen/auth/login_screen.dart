@@ -51,12 +51,17 @@ class LoginScreen extends StatelessWidget {
               isPassword: true,
             ),
             //? forget password
-            const ForgetPasswordTextWidget(),
+            ForgetPasswordTextWidget(
+              myTap: () {
+                controller.goToforgetPassword();
+              },
+            ),
             //? sign in button
             CustomAuthBtnWidget(
               btnText: LocalizationKeys.signIn,
               btnColor: AppColors.myBlue,
               textColor: AppColors.myWhite,
+              myPressed: () {},
             ),
             //? don't have an account text widget
             HaveOrNotHaveAccountText(

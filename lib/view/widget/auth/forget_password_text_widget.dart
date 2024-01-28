@@ -5,14 +5,16 @@ import 'package:matgary/core/constant/localizaion_keys.dart';
 import '../../../core/constant/app_colors.dart';
 
 class ForgetPasswordTextWidget extends StatelessWidget {
+  final void Function() myTap;
   const ForgetPasswordTextWidget({
     super.key,
+    required this.myTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: myTap,
       child: Text(
         LocalizationKeys.forgetPassword.tr,
         textAlign: TextAlign.end,

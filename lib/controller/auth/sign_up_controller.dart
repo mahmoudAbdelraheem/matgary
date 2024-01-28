@@ -7,6 +7,9 @@ abstract class SignUpController extends GetxController {
   signUp();
   //? go to login screen
   goToLogin();
+  //? check email
+
+  goToCheckEmail();
 }
 
 class SignUpControllerImp extends SignUpController {
@@ -26,6 +29,11 @@ class SignUpControllerImp extends SignUpController {
   @override
   goToLogin() {
     Get.offNamed(AppRoutes.loginScreen);
+  }
+
+  @override
+  goToCheckEmail() {
+    Get.offNamed(AppRoutes.checkEmailScreen);
   }
 
   @override

@@ -38,11 +38,20 @@ class MyTranslation extends Translations {
           LocalizationKeys.signUp: 'تسجيل حساب',
           LocalizationKeys.singUpBody:
               'يمكنك تسجيل حساب جديد بالإميل وكلمة المرور\nأو يمكنك الإستمرار بإستخدام\nوسائل التواصل الإجتماعية.',
+
           LocalizationKeys.userLable: 'إسم الحساب',
           LocalizationKeys.userHint: 'أدخل إسم الحساب',
           LocalizationKeys.phoneLable: 'رقم الهاتف',
           LocalizationKeys.phoneHint: 'أدخل رقم الهاتف',
           LocalizationKeys.haveAccount: 'لديك حساب ؟ ',
+          LocalizationKeys.check: 'تحقق',
+
+          //? forget password
+          LocalizationKeys.forgetPasswordBody:
+              'أدخل الإميل الإلكترونى لإستقبال\nكود التحقيق! ',
+
+          LocalizationKeys.vrefiyCodeTitle: 'التحقق من الرقم',
+          LocalizationKeys.vrefiyCodeBody: 'برجاء إدخال الرقم المرسل إلى\n',
         },
         'en': {
           //? choose language screen
@@ -85,6 +94,14 @@ class MyTranslation extends Translations {
           LocalizationKeys.phoneLable: 'Phone Number',
           LocalizationKeys.phoneHint: 'Enter Phone Number',
           LocalizationKeys.haveAccount: 'Have An Account ? ',
+
+          //? forget password
+          LocalizationKeys.forgetPasswordBody:
+              'Enter Your Email to Recive a\nVerification Code ! ',
+          LocalizationKeys.check: 'Check',
+          LocalizationKeys.vrefiyCodeTitle: 'Vreification Code',
+          LocalizationKeys.vrefiyCodeBody:
+              'Please Enter The Digit Code Sent To\n',
         },
       };
 }

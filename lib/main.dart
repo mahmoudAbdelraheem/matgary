@@ -4,6 +4,7 @@ import 'package:matgary/app_routes.dart';
 import 'package:matgary/core/constant/app_theme.dart';
 import 'package:matgary/core/localization/change_local.dart';
 import 'package:matgary/core/localization/translation.dart';
+
 //import 'package:matgary/view/screen/auth/login_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
 
@@ -31,7 +32,20 @@ class MatgaryApp extends StatelessWidget {
       theme: appTheme,
       //home: const LoginScreen(),
       home: const ChooseLanguageScreen(),
+      //home: const PackageText(),
       routes: routes,
     );
   }
 }
+// routes management
+//1. using Navigator.of(context) without named
+// Get.to(PageName());        => push();
+// Get.off(PageName())        => pushReplacment();
+// Get.offAll(PageName())     => pushAndRemoveUntil();
+// Get.back()                 => pop();
+
+//2. using Named
+//Get.toNamed("pageName");              =>      pushNamed();
+// routes:[                             =>      GetPages:[
+// "pageName" : (context)=> PageName(); =>       GetPage(name:"pageName" ,page:()=> PageName()),   
+// ]                                    =>      ]  
