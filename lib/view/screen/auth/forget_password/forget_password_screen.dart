@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
+import 'package:matgary/core/functions/form_valid_input.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
 import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
 import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
@@ -15,42 +16,48 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPassworControllerImp controller =
-        Get.put(ForgetPassworControllerImp());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: const CustomAppBarWidget(title: LocalizationKeys.forgetPassword),
-      body: Form(
-        //key: controller.formState,
-        child: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
-          children: <Widget>[
-            //? app logo image
-            const SizedBox(height: 50),
-            const CustomAuthLogoWidget(),
-            const SizedBox(height: 50),
-            //? body message
-            const CustomBodyTextWidget(
-              body: LocalizationKeys.forgetPasswordBody,
-            ),
-            //? email text form
-            CustomTextFomAuthWidget(
-              labelText: LocalizationKeys.emailLable,
-              hintText: LocalizationKeys.emailHint,
-              sufixIcon: Icons.email_outlined,
-              myController: controller.email,
-            ),
+      //?
+      body: GetBuilder<ForgetPassworControllerImp>(
+        builder: (controller) => Form(
+          key: controller.forgetPassFormState,
+          child: ListView(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+            children: <Widget>[
+              //? app logo image
+              const SizedBox(height: 50),
+              const CustomAuthLogoWidget(),
+              const SizedBox(height: 50),
+              //? body message
+              const CustomBodyTextWidget(
+                body: LocalizationKeys.forgetPasswordBody,
+              ),
+              //? email text form
+              CustomTextFomAuthWidget(
+                myValidator: (val) {
+                  return formVaildInput(
+                      value: val!, type: 'email', min: 6, max: 50);
+                },
+                myKeyboardType: TextInputType.emailAddress,
+                labelText: LocalizationKeys.emailLable,
+                hintText: LocalizationKeys.emailHint,
+                sufixIcon: Icons.email_outlined,
+                myController: controller.email,
+              ),
 
-            //? check button and go to vrefiy code screen
-            CustomAuthBtnWidget(
-              btnText: LocalizationKeys.check,
-              btnColor: AppColors.myBlue,
-              textColor: AppColors.myWhite,
-              myPressed: () {
-                controller.goToVrefiyCode();
-              },
-            ),
-          ],
+              //? check button and go to vrefiy code screen
+              CustomAuthBtnWidget(
+                btnText: LocalizationKeys.check,
+                btnColor: AppColors.myBlue,
+                textColor: AppColors.myWhite,
+                myPressed: () {
+                  controller.checkEmail();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

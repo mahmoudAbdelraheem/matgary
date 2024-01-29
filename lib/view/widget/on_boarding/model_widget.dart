@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/on_boarding_controller.dart';
+import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/data/models/on_boarding_model.dart';
 
 import '../../../data/datasource/static/static.dart';
@@ -40,7 +41,12 @@ class OnBoardingModelWidget extends GetView<OnBoardingControllerImp> {
       alignment: Alignment.center,
       child: Text(
         body.tr,
-        style: Theme.of(context).textTheme.bodyLarge,
+        style: TextStyle(
+          fontSize: 18,
+          height: 1.5,
+          fontWeight: FontWeight.w400,
+          color: AppColors.myGrey,
+        ),
         textAlign: TextAlign.center,
       ),
     );
@@ -63,7 +69,7 @@ class OnBoardingModelWidget extends GetView<OnBoardingControllerImp> {
   Text _buildTitle(String title, BuildContext context) {
     return Text(
       title.tr,
-      style: Theme.of(context).textTheme.titleLarge,
+      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     );
   }
 }

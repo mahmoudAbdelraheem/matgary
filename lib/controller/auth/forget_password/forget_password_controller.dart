@@ -3,24 +3,22 @@ import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 
 abstract class ForgetPassworController extends GetxController {
-  //? login and go to the home screen
+  //? login and go to the vrefiy code screen
   checkEmail();
-  //? go to sign up screen
-  goToVrefiyCode();
 }
 
 class ForgetPassworControllerImp extends ForgetPassworController {
   late TextEditingController email;
+  GlobalKey<FormState> forgetPassFormState = GlobalKey<FormState>();
 
   @override
   checkEmail() {
-    // TODO: implement login
-    throw UnimplementedError();
-  }
-
-  @override
-  goToVrefiyCode() {
-    Get.toNamed(AppRoutes.vrefiyCodeScreen);
+    if (forgetPassFormState.currentState!.validate()) {
+      Get.toNamed(AppRoutes.vrefiyCodeScreen);
+      //Get.delete<ForgetPassworControllerImp>();
+    } else {
+      print('not valid');
+    }
   }
 
   @override

@@ -9,19 +9,36 @@ abstract class ResetPassworController extends GetxController {
 }
 
 class ResetPassworControllerImp extends ResetPassworController {
+  GlobalKey<FormState> resetPassFormState = GlobalKey<FormState>();
   late TextEditingController password;
   late TextEditingController rePassword;
 
-  @override
-  checkPassword() {
-    // TODO: implement login
-    throw UnimplementedError();
+  bool isPasswordShow = true;
+  bool isRePasswordShow = true;
+
+//? for show password and change icon
+  showPassword() {
+    isPasswordShow = !isPasswordShow;
+    update();
+  }
+
+  showRePassword() {
+    isRePasswordShow = !isRePasswordShow;
+    update();
   }
 
   @override
-  goToSuccessResetPassword() {
-    Get.toNamed(AppRoutes.successResetPasswordScreen);
+  checkPassword() {
+    if (resetPassFormState.currentState!.validate()) {
+      Get.offAllNamed(AppRoutes.successResetPasswordScreen);
+      // Get.delete<ResetPassworControllerImp>();
+    } else {
+      print('not valid');
+    }
   }
+
+  @override
+  goToSuccessResetPassword() {}
 
   @override
   void onInit() {

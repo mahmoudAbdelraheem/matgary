@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -5,14 +6,20 @@ class CustomTextFomAuthWidget extends StatelessWidget {
   final String labelText;
   final String hintText;
   final IconData sufixIcon;
+  final String? Function(String?) myValidator;
   final TextEditingController myController;
+  final TextInputType myKeyboardType;
+  final void Function()? showPassword;
   final bool? isPassword;
   const CustomTextFomAuthWidget({
     super.key,
     required this.labelText,
     required this.hintText,
     required this.sufixIcon,
+    required this.myValidator,
     required this.myController,
+    required this.myKeyboardType,
+    this.showPassword,
     this.isPassword = false,
   });
 
@@ -21,6 +28,8 @@ class CustomTextFomAuthWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       child: TextFormField(
+        validator: myValidator,
+        keyboardType: myKeyboardType,
         controller: myController,
         obscureText: isPassword!,
         decoration: InputDecoration(
@@ -32,9 +41,7 @@ class CustomTextFomAuthWidget extends StatelessWidget {
             child: Text(labelText.tr),
           ),
           hintText: hintText.tr,
-          suffixIcon: isPassword!
-              ? IconButton(onPressed: () {}, icon: Icon(sufixIcon))
-              : Icon(sufixIcon),
+          suffixIcon: InkWell(onTap: showPassword, child: Icon(sufixIcon)),
           hintStyle: const TextStyle(fontSize: 12),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),

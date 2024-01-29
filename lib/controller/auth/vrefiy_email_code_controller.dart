@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 
-abstract class CheckEmailController extends GetxController {
+abstract class VrefiyEmailCodeController extends GetxController {
   //? login and go to the home screen
-  checkEmail();
-  //? go to sign up screen
+  checkEmailVerificationCode(String vrefiyCode);
+
   goToSuccessSignUp();
 }
 
-class CheckEmailControllerImp extends CheckEmailController {
+class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
   late TextEditingController email;
 
   @override
-  checkEmail() {
+  checkEmailVerificationCode(String vrefiyCode) {
     // TODO: implement login
     throw UnimplementedError();
   }
@@ -25,6 +25,7 @@ class CheckEmailControllerImp extends CheckEmailController {
 
   @override
   void onInit() {
+    //formState = GlobalKey<FormState>();
     email = TextEditingController();
 
     super.onInit();

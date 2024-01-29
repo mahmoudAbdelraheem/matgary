@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/app_routes.dart';
-import 'package:matgary/core/constant/app_theme.dart';
 import 'package:matgary/core/localization/change_local.dart';
 import 'package:matgary/core/localization/translation.dart';
+import 'package:matgary/my_binding.dart';
 
 //import 'package:matgary/view/screen/auth/login_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
@@ -29,7 +29,8 @@ class MatgaryApp extends StatelessWidget {
       locale: langController.language,
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
-      theme: appTheme,
+      theme: langController.appTheme,
+      initialBinding: MyBindings(),
       //home: const LoginScreen(),
       home: const ChooseLanguageScreen(),
       //home: const PackageText(),

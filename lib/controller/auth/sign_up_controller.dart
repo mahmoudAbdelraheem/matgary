@@ -3,37 +3,42 @@ import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 
 abstract class SignUpController extends GetxController {
-  //? sign up and go to the home screen
+  //? sign up and go to the verfiy email code screen
   signUp();
   //? go to login screen
   goToLogin();
-  //? check email
-
-  goToCheckEmail();
 }
 
 class SignUpControllerImp extends SignUpController {
-  //late GlobalKey<FormState> formState;
+  GlobalKey<FormState> signUpFormState = GlobalKey<FormState>();
 
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController phone;
   late TextEditingController name;
 
+  bool isPasswordShow = true;
+
+//? for show password and change icon
+  showPassword() {
+    isPasswordShow = !isPasswordShow;
+    update();
+  }
+
   @override
   signUp() {
-    // TODO: implement login
-    throw UnimplementedError();
+    if (signUpFormState.currentState!.validate()) {
+      Get.offNamed(AppRoutes.vrefiyEmailCodeScreen);
+      //! Get.delete<SignUpControllerImp>(); //? to ensure that the all datated form memory
+      //? we can just use Get.delete() or Get.lazyPut
+    } else {
+      print('not vaild');
+    }
   }
 
   @override
   goToLogin() {
     Get.offNamed(AppRoutes.loginScreen);
-  }
-
-  @override
-  goToCheckEmail() {
-    Get.offNamed(AppRoutes.checkEmailScreen);
   }
 
   @override

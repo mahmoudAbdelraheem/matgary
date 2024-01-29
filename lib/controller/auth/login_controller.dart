@@ -12,15 +12,25 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  //late GlobalKey<FormState> formState;
+  GlobalKey<FormState> loginFormState = GlobalKey<FormState>();
 
   late TextEditingController email;
   late TextEditingController password;
+  bool isPasswordShow = true;
+
+//? for show password and change icon
+  showPassword() {
+    isPasswordShow = isPasswordShow == true ? false : true;
+    update();
+  }
 
   @override
   login() {
-    // TODO: implement login
-    throw UnimplementedError();
+    if (loginFormState.currentState!.validate()) {
+      print('valid input');
+    } else {
+      print('not valid input');
+    }
   }
 
   @override
