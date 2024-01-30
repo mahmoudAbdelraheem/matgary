@@ -4,7 +4,7 @@ class AppRoutes {
   //? auth
   static const String loginScreen = '/login';
   static const String signUpScreen = '/singUp';
-  static const String successSingUpScreen = '/successSingUp';
+  static const String successSignUpScreen = '/successSingUp';
 
   static const String forgetPasswordScreen = '/forgetPassword';
   static const String vrefiyCodeScreen = '/vrefiyCode';

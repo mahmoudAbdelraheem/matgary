@@ -50,7 +50,7 @@ class SignUpScreen extends StatelessWidget {
                     CustomTextFomAuthWidget(
                       myValidator: (val) {
                         return formVaildInput(
-                            value: val!, type: 'username', min: 5, max: 20);
+                            value: val!, type: 'username', min: 5, max: 30);
                       },
                       myKeyboardType: TextInputType.name,
                       labelText: LocalizationKeys.userLable,

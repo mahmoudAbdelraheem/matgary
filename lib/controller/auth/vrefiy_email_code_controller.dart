@@ -20,7 +20,7 @@ class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
 
   @override
   goToSuccessSignUp() {
-    Get.offNamed(AppRoutes.successSingUpScreen);
+    Get.offNamed(AppRoutes.successSignUpScreen);
   }
 
   @override

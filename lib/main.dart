@@ -4,10 +4,6 @@ import 'package:matgary/app_routes.dart';
 import 'package:matgary/core/localization/change_local.dart';
 import 'package:matgary/core/localization/translation.dart';
 import 'package:matgary/my_binding.dart';
-
-//import 'package:matgary/view/screen/auth/login_screen.dart';
-import 'package:matgary/view/screen/choose_language_screen.dart';
-
 import 'core/services/my_services.dart';
 
 void main() async {
@@ -31,10 +27,9 @@ class MatgaryApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: langController.appTheme,
       initialBinding: MyBindings(),
-      //home: const LoginScreen(),
-      home: const ChooseLanguageScreen(),
+
       //home: const PackageText(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }
