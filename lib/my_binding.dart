@@ -3,6 +3,7 @@ import 'package:matgary/controller/auth/forget_password/forget_password_controll
 import 'package:matgary/controller/auth/forget_password/reset_password_controller.dart';
 import 'package:matgary/controller/auth/login_controller.dart';
 import 'package:matgary/controller/auth/sign_up_controller.dart';
+import 'package:matgary/core/class/crud.dart';
 
 class MyBindings extends Bindings {
   @override
@@ -14,5 +15,7 @@ class MyBindings extends Bindings {
     Get.lazyPut(() => ForgetPassworControllerImp(), fenix: true);
 
     Get.lazyPut(() => ResetPassworControllerImp(), fenix: true);
+
+    Get.put(CrudImp());
   }
 }

@@ -4,6 +4,8 @@ import 'package:matgary/app_routes.dart';
 import 'package:matgary/core/localization/change_local.dart';
 import 'package:matgary/core/localization/translation.dart';
 import 'package:matgary/my_binding.dart';
+// import 'package:matgary/package_test.dart';
+// import 'package:matgary/test_view.dart';
 import 'core/services/my_services.dart';
 
 void main() async {
@@ -27,8 +29,8 @@ class MatgaryApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: langController.appTheme,
       initialBinding: MyBindings(),
-
       //home: const PackageText(),
+      //home: const TestBackEndView(),
       getPages: routes,
     );
   }

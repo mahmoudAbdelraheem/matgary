@@ -1,6 +1,8 @@
 class AppImageAssets {
-  //? assets root path
+  //? assets images root path
   static const String rootImage = 'assets/images';
+  //? assets lottie root path
+  static const String rootLottie = 'assets/lottie';
 
   //? app logo image
   static const String logo = '$rootImage/logo.png';
@@ -9,4 +11,9 @@ class AppImageAssets {
   static const String onBoardingImageTwo = '$rootImage/onboardingtwo.PNG';
   static const String onBoardingImageThree = '$rootImage/onboardingthree.PNG';
   static const String onBoardingImageFour = '$rootImage/onboardingfour.PNG';
+  //? lottie file
+  static const String loading = '$rootLottie/loading.json';
+  static const String noData = '$rootLottie/nodata.json';
+  static const String offline = '$rootLottie/offline.json';
+  static const String serverFailuer = '$rootLottie/server.json';
 }

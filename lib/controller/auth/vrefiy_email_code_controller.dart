@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
+import 'package:matgary/core/functions/defualt_alert_dialog.dart';
+import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/data/datasource/remote/auth/vrefiy_email_code.dart';
 
 abstract class VrefiyEmailCodeController extends GetxController {
   //? login and go to the home screen
@@ -10,12 +13,41 @@ abstract class VrefiyEmailCodeController extends GetxController {
 }
 
 class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
-  late TextEditingController email;
-
+  String? email;
+  //? post user vrefiy code data
+  VrefiyEmailCodeData vrefiyData = VrefiyEmailCodeData(crudImp: Get.find());
+  //? check response of posting user data
+  StatuseRequest? statuseRequest;
   @override
-  checkEmailVerificationCode(String vrefiyCode) {
-    // TODO: implement login
-    throw UnimplementedError();
+  checkEmailVerificationCode(String vrefiyCode) async {
+    //? loading
+    statuseRequest = StatuseRequest.loading;
+    update(); //? update to refresh loading ui
+    //? post user data
+    var response = await vrefiyData.postvrefiyCodeData(
+      email: email!,
+      vrefiyCode: vrefiyCode,
+    );
+    //? check response
+    statuseRequest = handlingData(response);
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        //? go to success singn up page
+        Get.offNamed(AppRoutes.successSignUpScreen);
+        defualtAlertDialog(
+          'Congratolations',
+          'Your Vreification Code Correct.',
+        );
+      } else {
+        //! thow alert dialog for user
+        //?  vrefiy code dose not match
+        defualtAlertDialog(
+          'Warring',
+          'Your Vreification Code Dose not Match\nPlease Enter Correct Code.',
+        );
+      }
+    }
+    update();
   }
 
   @override
@@ -25,16 +57,8 @@ class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
 
   @override
   void onInit() {
-    //formState = GlobalKey<FormState>();
-    email = TextEditingController();
+    email = Get.arguments['email'];
 
     super.onInit();
-  }
-
-  @override
-  void dispose() {
-    email.dispose();
-
-    super.dispose();
   }
 }

@@ -46,8 +46,8 @@ class VrefiyEmailCodeScreen extends StatelessWidget {
               },
               //runs when every textfield is filled
               onSubmit: (String verificationCode) {
-                //controller.checkVerificationCode(verificationCode);
-                controller.goToSuccessSignUp();
+                controller.checkEmailVerificationCode(verificationCode);
+                //controller.goToSuccessSignUp();
               }, // end onSubmit
             ),
           ],
