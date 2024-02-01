@@ -15,9 +15,14 @@ abstract class VrefiyCodeController extends GetxController {
 class VrefiyCodeControllerImp extends VrefiyCodeController {
   String? email;
 
-  StatuseRequest? statuseRequest;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
   VrefiyPassCodeData vrefiyPassCodeData =
       VrefiyPassCodeData(crudImp: Get.find());
+
+  tryAgain() {
+    statuseRequest = StatuseRequest.defualt;
+    update();
+  }
 
   @override
   checkVerificationCode(String vrefiyCode) async {

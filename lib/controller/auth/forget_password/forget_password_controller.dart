@@ -16,7 +16,12 @@ class ForgetPassworControllerImp extends ForgetPassworController {
   GlobalKey<FormState> forgetPassFormState = GlobalKey<FormState>();
 
   CheckEmailData checkEmailData = CheckEmailData(crudImp: Get.find());
-  StatuseRequest? statuseRequest;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
+
+  tryAgain() {
+    statuseRequest = StatuseRequest.defualt;
+    update();
+  }
 
   @override
   checkEmail() async {

@@ -26,8 +26,13 @@ class SignUpControllerImp extends SignUpController {
   //? post user data
   SignUpData signUpData = SignUpData(crudImp: Get.find());
   //? check response of posting user data
-  StatuseRequest? statuseRequest;
-  //StatuseRequest statuseRequest = StatuseRequest.loading;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
+
+//?
+  tryAgain() {
+    statuseRequest = StatuseRequest.defualt;
+    update();
+  }
 
 //? for show password and change icon
   showPassword() {

@@ -24,7 +24,12 @@ class ResetPassworControllerImp extends ResetPassworController {
   bool isRePasswordShow = true;
 
   ResetPasswordData resetPassData = ResetPasswordData(crudImp: Get.find());
-  StatuseRequest? statuseRequest;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
+
+  tryAgain() {
+    statuseRequest = StatuseRequest.defualt;
+    update();
+  }
 
 //? for show password and change icon
   showPassword() {
@@ -45,22 +50,26 @@ class ResetPassworControllerImp extends ResetPassworController {
   @override
   goToSuccessResetPassword() async {
     if (resetPassFormState.currentState!.validate()) {
-      statuseRequest = StatuseRequest.loading;
-      update();
-      var response = await resetPassData.resetData(
-        email: email!,
-        newPass: password.text,
-      );
-      statuseRequest = handlingData(response);
-      if (statuseRequest == StatuseRequest.success) {
-        if (response['status'] == 'success') {
-          defualtAlertDialog('success', 'password updated successfuly.');
-          Get.offAllNamed(AppRoutes.successResetPasswordScreen);
+      if (password.text != rePassword.text) {
+        return defualtAlertDialog('Warring', 'Password Dose Not Match');
+      } else {
+        statuseRequest = StatuseRequest.loading;
+        update();
+        var response = await resetPassData.resetData(
+          email: email!,
+          newPass: password.text,
+        );
+        statuseRequest = handlingData(response);
+        if (statuseRequest == StatuseRequest.success) {
+          if (response['status'] == 'success') {
+            defualtAlertDialog('success', 'password updated successfuly.');
+            Get.offAllNamed(AppRoutes.successResetPasswordScreen);
+          } else {
+            defualtAlertDialog('warring', 'some thing went wrrong.');
+          }
         } else {
           defualtAlertDialog('warring', 'some thing went wrrong.');
         }
-      } else {
-        defualtAlertDialog('warring', 'some thing went wrrong.');
       }
     }
     update();

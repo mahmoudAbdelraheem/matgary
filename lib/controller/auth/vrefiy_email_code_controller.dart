@@ -17,7 +17,7 @@ class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
   //? post user vrefiy code data
   VrefiyEmailCodeData vrefiyData = VrefiyEmailCodeData(crudImp: Get.find());
   //? check response of posting user data
-  StatuseRequest? statuseRequest;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
   @override
   checkEmailVerificationCode(String vrefiyCode) async {
     //? loading

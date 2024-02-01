@@ -22,8 +22,13 @@ class LoginControllerImp extends LoginController {
   late TextEditingController password;
   bool isPasswordShow = true;
 
-  StatuseRequest? statuseRequest;
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
   LoginData loginData = LoginData(crudImp: Get.find());
+
+  tryAgain() {
+    statuseRequest = StatuseRequest.defualt;
+    update();
+  }
 
 //? for show password and change icon
   showPassword() {
