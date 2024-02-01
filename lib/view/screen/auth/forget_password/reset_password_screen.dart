@@ -86,7 +86,8 @@ class ResetPasswordScreen extends StatelessWidget {
                 btnColor: AppColors.myBlue,
                 textColor: AppColors.myWhite,
                 myPressed: () {
-                  controller.checkPassword();
+                  //controller.checkPassword();
+                  controller.goToSuccessResetPassword();
                 },
               ),
             ],

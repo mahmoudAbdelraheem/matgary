@@ -10,9 +10,11 @@ import 'package:matgary/view/screen/auth/signup_screen.dart';
 import 'package:matgary/view/screen/auth/success_sign_up_screen.dart';
 import 'package:matgary/view/screen/auth/vrefiy_email_code_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
+import 'package:matgary/view/screen/home_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 
 List<GetPage<dynamic>> routes = [
+  //! on boarding , choose language , auth screens
   GetPage(
     name: '/',
     page: () => const ChooseLanguageScreen(),
@@ -54,24 +56,9 @@ List<GetPage<dynamic>> routes = [
     name: AppRoutes.successResetPasswordScreen,
     page: () => const SuccessResetPasswordScreen(),
   ),
+  //! home page
+  GetPage(
+    name: AppRoutes.homeScreen,
+    page: () => const HomeScreen(),
+  ),
 ];
-
-// Map<String, Widget Function(BuildContext)> routess = {
-//   //? on boarding
-//   //AppRoutes.onBoardingScreen: (context) => const OnBoardingScreen(),
-
-//   //? auth
-//   //AppRoutes.loginScreen: (context) => const LoginScreen(),
-//  // AppRoutes.signUpScreen: (context) => const SignUpScreen(),
-
-//   //AppRoutes.vrefiyEmailCodeScreen: (context) => const VrefiyEmailCodeScreen(),
-
-//   //AppRoutes.successSingUpScreen: (context) => const SuccessSignUpScreen(),
-
-//   //AppRoutes.forgetPasswordScreen: (context) => const ForgetPasswordScreen(),
-//   //AppRoutes.vrefiyCodeScreen: (context) => const VrefiyCodeScreen(),
-
-//  // AppRoutes.resetPasswordScreen: (context) => const ResetPasswordScreen(),
-//   AppRoutes.successResetPasswordScreen: (context) =>
-//       const SuccessResetPasswordScreen(),
-// };

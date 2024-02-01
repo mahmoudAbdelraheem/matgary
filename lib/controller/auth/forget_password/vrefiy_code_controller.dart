@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
+import 'package:matgary/core/functions/defualt_alert_dialog.dart';
+import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/data/datasource/remote/auth/forgetpassword/vrefiy_code_data.dart';
 
 abstract class VrefiyCodeController extends GetxController {
   //? login and go to the home screen
@@ -10,31 +13,40 @@ abstract class VrefiyCodeController extends GetxController {
 }
 
 class VrefiyCodeControllerImp extends VrefiyCodeController {
-  late TextEditingController email;
+  String? email;
+
+  StatuseRequest? statuseRequest;
+  VrefiyPassCodeData vrefiyPassCodeData =
+      VrefiyPassCodeData(crudImp: Get.find());
 
   @override
-  checkVerificationCode(String vrefiyCode) {
-    // TODO: implement login
-    throw UnimplementedError();
+  checkVerificationCode(String vrefiyCode) async {
+    statuseRequest = StatuseRequest.loading;
+    update();
+    var response = await vrefiyPassCodeData.checkData(
+      email: email!,
+      vrefiyCode: vrefiyCode,
+    );
+    statuseRequest = handlingData(response);
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        Get.offNamed(AppRoutes.resetPasswordScreen,
+            arguments: {'email': email});
+      } else {
+        defualtAlertDialog('Warring', 'Vreification Code Not Correct');
+      }
+    } else {
+      defualtAlertDialog('Warring', 'some thing went wrrong.');
+    }
   }
 
   @override
-  goToResetPassword() {
-    Get.offNamed(AppRoutes.resetPasswordScreen);
-  }
+  goToResetPassword() {}
 
   @override
   void onInit() {
-    //formState = GlobalKey<FormState>();
-    email = TextEditingController();
+    email = Get.arguments['email'];
 
     super.onInit();
-  }
-
-  @override
-  void dispose() {
-    email.dispose();
-
-    super.dispose();
   }
 }

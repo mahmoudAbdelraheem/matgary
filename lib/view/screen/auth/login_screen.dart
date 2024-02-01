@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/auth/login_controller.dart';
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/core/functions/exit_app_alert.dart';
@@ -10,6 +11,7 @@ import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
 import 'package:matgary/view/widget/auth/custom_title_text_widget.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
 import 'package:matgary/view/widget/auth/have_or_not_account_text.dart';
+import 'package:matgary/view/widget/defualt_btn_loading_widget.dart';
 
 import '../../widget/auth/custom_auth_btn_widget.dart';
 import '../../widget/auth/custom_text_form_auth.dart';
@@ -85,14 +87,19 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
                 //? sign in button
-                CustomAuthBtnWidget(
-                  btnText: LocalizationKeys.signIn,
-                  btnColor: AppColors.myBlue,
-                  textColor: AppColors.myWhite,
-                  myPressed: () {
-                    controller.login();
-                  },
-                ),
+                controller.statuseRequest == StatuseRequest.loading
+                    ? DefualtBtnLoadingWidget(
+                        btnText: LocalizationKeys.signIn,
+                        textColor: AppColors.myWhite,
+                      )
+                    : CustomAuthBtnWidget(
+                        btnText: LocalizationKeys.signIn,
+                        btnColor: AppColors.myBlue,
+                        textColor: AppColors.myWhite,
+                        myPressed: () {
+                          controller.login();
+                        },
+                      ),
                 //? don't have an account text widget
                 HaveOrNotHaveAccountText(
                   firstText: LocalizationKeys.dontHaveAccount,

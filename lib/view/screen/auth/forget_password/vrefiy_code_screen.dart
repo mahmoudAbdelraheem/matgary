@@ -47,8 +47,8 @@ class VrefiyCodeScreen extends StatelessWidget {
               },
               //runs when every textfield is filled
               onSubmit: (String verificationCode) {
-                //controller.checkVerificationCode(verificationCode);
-                controller.goToResetPassword();
+                controller.checkVerificationCode(verificationCode);
+                //controller.goToResetPassword();
               }, // end onSubmit
             ),
           ],

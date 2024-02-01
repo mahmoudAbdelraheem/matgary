@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
+import 'package:matgary/core/functions/defualt_alert_dialog.dart';
+import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/data/datasource/remote/auth/login_data.dart';
 
 abstract class LoginController extends GetxController {
   //? login and go to the home screen
@@ -18,6 +22,9 @@ class LoginControllerImp extends LoginController {
   late TextEditingController password;
   bool isPasswordShow = true;
 
+  StatuseRequest? statuseRequest;
+  LoginData loginData = LoginData(crudImp: Get.find());
+
 //? for show password and change icon
   showPassword() {
     isPasswordShow = isPasswordShow == true ? false : true;
@@ -25,11 +32,30 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  login() {
+  login() async {
     if (loginFormState.currentState!.validate()) {
-      print('valid input');
-    } else {
-      print('not valid input');
+      //? loading
+      statuseRequest = StatuseRequest.loading;
+      update(); //? update to refresh loading ui
+      //? check user data
+      var response = await loginData.checkData(
+        email: email.text,
+        password: password.text,
+      );
+      //? check response
+      statuseRequest = handlingData(response);
+      if (statuseRequest == StatuseRequest.success) {
+        if (response['status'] == 'success') {
+          //? login success and go to home page
+          Get.offAllNamed(AppRoutes.homeScreen);
+        } else {
+          defualtAlertDialog(
+            'Warring',
+            'Email Or Password Not Correct.',
+          );
+        }
+      }
+      update();
     }
   }
 
@@ -45,7 +71,6 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
-    //formState = GlobalKey<FormState>();
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();
