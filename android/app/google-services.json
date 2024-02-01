@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "686911501542",
+    "project_id": "matgary-app-7b637",
+    "storage_bucket": "matgary-app-7b637.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686911501542:android:e2c13a179dec8dc86f7727",
+        "android_client_info": {
+          "package_name": "com.example.matgary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB79vmLDaVlAhbfJwZ0gOHAPLd79ofggVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
