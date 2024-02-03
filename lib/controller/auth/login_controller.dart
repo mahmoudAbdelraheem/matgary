@@ -4,7 +4,9 @@ import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/defualt_alert_dialog.dart';
 import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/auth/login_data.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 abstract class LoginController extends GetxController {
   //? login and go to the home screen
@@ -21,6 +23,8 @@ class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
   bool isPasswordShow = true;
+
+  final MyServices _myServices = Get.find();
 
   StatuseRequest statuseRequest = StatuseRequest.defualt;
   LoginData loginData = LoginData(crudImp: Get.find());
@@ -51,6 +55,15 @@ class LoginControllerImp extends LoginController {
       statuseRequest = handlingData(response);
       if (statuseRequest == StatuseRequest.success) {
         if (response['status'] == 'success') {
+          //? save user data in cache
+          _myServices.sharedPreferences.setString("id", response['data']['id']);
+          _myServices.sharedPreferences
+              .setString("name", response['data']['name']);
+          _myServices.sharedPreferences
+              .setString("email", response['data']['email']);
+          _myServices.sharedPreferences
+              .setString("phone", response['data']['phone']);
+          _myServices.sharedPreferences.setString("step", '2');
           //? login success and go to home page
           Get.offAllNamed(AppRoutes.homeScreen);
         } else {
@@ -76,6 +89,10 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
+    FirebaseMessaging.instance.getToken().then((value) {
+      String? token = value;
+      print('firebase token is = $token');
+    });
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();

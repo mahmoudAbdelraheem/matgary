@@ -11,7 +11,10 @@ class MyMiddleWare extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    if (myServices.sharedPreferences.getBool('login') == true) {
+    if (myServices.sharedPreferences.getString('step') == '2') {
+      return const RouteSettings(name: AppRoutes.homeScreen);
+    }
+    if (myServices.sharedPreferences.getString('step') == '1') {
       return const RouteSettings(name: AppRoutes.loginScreen);
     }
     return null;
