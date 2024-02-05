@@ -1,49 +1,51 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/home_date.dart';
+import 'package:matgary/view/screen/home_screen.dart';
 
 abstract class HomeController extends GetxController {
-  getUserDate();
-  getHomeDate();
+  changePage(int index);
 }
 
 class HomeControllerImp extends HomeController {
-  final MyServices _myServices = Get.find();
-  String? name;
-  String? email;
-  String? phone;
-  //? home data
-  List categories = [];
-  StatuseRequest statuseRequest = StatuseRequest.defualt;
-  final HomeData _homeData = HomeData(crudImp: Get.find());
+  //? current page index
+  int pageIndex = 0;
+
+  //? nav bar botton and title
+  final List navBarData = [
+    {
+      'title': "Home",
+      'icon': Icons.home,
+    },
+    {
+      'title': "Favorite",
+      'icon': Icons.favorite,
+    },
+    {
+      'title': "Setting",
+      'icon': Icons.settings,
+    },
+    {
+      'title': "Profile",
+      'icon': Icons.person,
+    },
+  ];
+  //? list for button bar screen
+  List<Widget> pageList = [
+    const HomeScreen(),
+    const Center(
+      child: Text('favorite'),
+    ),
+    const Center(
+      child: Text('Setting'),
+    ),
+    const Center(
+      child: Text('profile'),
+    ),
+  ];
 
   @override
-  getUserDate() {
-    name = _myServices.sharedPreferences.getString('name');
-    email = _myServices.sharedPreferences.getString('email');
-    phone = _myServices.sharedPreferences.getString('phone');
-  }
-
-  @override
-  getHomeDate() async {
-    statuseRequest = StatuseRequest.loading;
+  changePage(int index) {
+    pageIndex = index;
     update();
-    var response = await _homeData.getData();
-    statuseRequest = handlingData(response);
-    if (statuseRequest == StatuseRequest.success) {
-      if (response['status'] == 'success') {
-        categories.addAll(response['categories']);
-      }
-    }
-    update();
-  }
-
-  @override
-  void onInit() {
-    getUserDate();
-    getHomeDate();
-    super.onInit();
   }
 }

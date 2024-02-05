@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class OffersCardWidget extends StatelessWidget {
+  final String title;
+  final String body;
   const OffersCardWidget({
     super.key,
+    required this.title,
+    required this.body,
   });
 
   @override
@@ -40,14 +44,14 @@ class OffersCardWidget extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Summer Offers',
+              title,
               style: TextStyle(
                 height: 4,
                 color: AppColors.myWhite,
               ),
             ),
             subtitle: Text(
-              'Cashback 20%',
+              body,
               style: TextStyle(
                 color: AppColors.myWhite,
                 fontSize: 25,

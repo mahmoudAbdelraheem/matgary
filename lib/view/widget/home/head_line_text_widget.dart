@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class HeadLineTextWidget extends StatelessWidget {
-  final String text;
+  final String title;
   const HeadLineTextWidget({
     super.key,
-    required this.text,
+    required this.title,
   });
 
   @override
@@ -13,7 +13,7 @@ class HeadLineTextWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: Text(
-        text,
+        title,
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w600,

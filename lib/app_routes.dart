@@ -10,7 +10,7 @@ import 'package:matgary/view/screen/auth/signup_screen.dart';
 import 'package:matgary/view/screen/auth/success_sign_up_screen.dart';
 import 'package:matgary/view/screen/auth/vrefiy_email_code_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
-import 'package:matgary/view/screen/home_screen.dart';
+import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 
 List<GetPage<dynamic>> routes = [
@@ -59,6 +59,6 @@ List<GetPage<dynamic>> routes = [
   //! home page
   GetPage(
     name: AppRoutes.homeScreen,
-    page: () => const HomeScreen(),
+    page: () => const Home(),
   ),
 ];
