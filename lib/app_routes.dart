@@ -11,6 +11,7 @@ import 'package:matgary/view/screen/auth/success_sign_up_screen.dart';
 import 'package:matgary/view/screen/auth/vrefiy_email_code_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
+import 'package:matgary/view/screen/items_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 
 List<GetPage<dynamic>> routes = [
@@ -60,5 +61,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.homeScreen,
     page: () => const Home(),
+  ),
+  //! categorise items
+  GetPage(
+    name: AppRoutes.itemsScreen,
+    page: () => const ItemsScreen(),
   ),
 ];

@@ -19,7 +19,7 @@ class HomeSearchAppBar extends StatelessWidget {
         Expanded(
           child: Container(
             height: 50,
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppColors.myBlue.withOpacity(0.5),
               borderRadius: BorderRadius.circular(15),

@@ -5,7 +5,7 @@ import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/view/widget/home/categories_list_widget.dart';
 import 'package:matgary/view/widget/home/discount_items_widget.dart';
 import 'package:matgary/view/widget/home/head_line_text_widget.dart';
-import 'package:matgary/view/widget/home/home_search_app_bar.dart';
+import 'package:matgary/view/widget/home_search_app_bar.dart';
 import 'package:matgary/view/widget/home/offers_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         builder: (controller) => HandlingDataView(
           statuseRequest: controller.statuseRequest,
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.all(15),
             children: <Widget>[
               //? search and notification icons
               HomeSearchAppBar(
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               //? categories head line text
               const HeadLineTextWidget(title: 'Categoties'),
               //? categories list
-              CategoriesListWidget(onTap: () {}),
+              const CategoriesListWidget(),
               //? Products with discount for you head line text
               const HeadLineTextWidget(title: 'Good Offers'),
               //? discount products (items) list

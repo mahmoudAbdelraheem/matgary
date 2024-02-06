@@ -11,6 +11,8 @@ class AppRoutes {
   static const String vrefiyEmailCodeScreen = '/vrefiyEmailCode';
   static const String resetPasswordScreen = '/resetPassword';
   static const String successResetPasswordScreen = '/successResetPassword';
-  //? home page
+  //? home page that contain buttom nav bar
   static const String homeScreen = '/home';
+  //? categories items
+  static const String itemsScreen = '/items';
 }

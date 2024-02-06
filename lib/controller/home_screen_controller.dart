@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
+import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/home_date.dart';
@@ -7,6 +8,8 @@ import 'package:matgary/data/datasource/remote/home_date.dart';
 abstract class HomeScreenController extends GetxController {
   getUserDate();
   getHomeDate();
+  //? go to categories items
+  goToCategoryItems(List categories, int cateIndex);
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
@@ -40,6 +43,14 @@ class HomeScreenControllerImp extends HomeScreenController {
       }
     }
     update();
+  }
+
+  @override
+  goToCategoryItems(List categories, int cateIndex) {
+    Get.toNamed(AppRoutes.itemsScreen, arguments: {
+      'categories': categories,
+      'cateIndex': cateIndex,
+    });
   }
 
   @override
