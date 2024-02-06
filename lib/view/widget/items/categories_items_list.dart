@@ -13,8 +13,7 @@ class CategoriesItemsListWidget extends GetView<ItemsControllerImp> {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      padding: const EdgeInsets.only(bottom: 10, top: 15),
-      alignment: Alignment.center,
+      margin: const EdgeInsets.only(bottom: 10, top: 5),
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
@@ -45,7 +44,7 @@ class Categories extends GetView<ItemsControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.changeCategoryIndex(selectedIndex);
+        controller.changeCategoryIndex(selectedIndex, categorey.id);
       },
       child: GetBuilder<ItemsControllerImp>(
         builder: (controller) => Chip(

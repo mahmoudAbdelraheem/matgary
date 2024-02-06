@@ -23,4 +23,7 @@ class ApiLink {
 
   //? all categories
   static const String categories = '$server/categories/view.php';
+
+  //? items view data
+  static const String itemsView = '$server/items/itemsview.php';
 }

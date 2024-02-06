@@ -4,6 +4,7 @@ import 'package:matgary/apis_link.dart';
 import 'package:matgary/controller/home_screen_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/data/models/items_view_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DiscountItemsWidget extends GetView<HomeScreenControllerImp> {
   final void Function()? onTap;
@@ -49,15 +50,15 @@ class Item extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          //height: 150,
+          height: 150,
           width: 200,
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: AppColors.myBlue.withOpacity(0.4),
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              image: NetworkImage('${ApiLink.itemsImg}/${item.itemImage}'),
-            ),
+          ),
+          child: CachedNetworkImage(
+            imageUrl: ('${ApiLink.itemsImg}/${item.itemImage}'),
           ),
         ),
         Container(

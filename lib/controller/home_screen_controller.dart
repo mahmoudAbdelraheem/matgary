@@ -9,7 +9,7 @@ abstract class HomeScreenController extends GetxController {
   getUserDate();
   getHomeDate();
   //? go to categories items
-  goToCategoryItems(List categories, int cateIndex);
+  goToCategoryItems(List categories, int cateIndex, String categoryId);
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
@@ -46,10 +46,11 @@ class HomeScreenControllerImp extends HomeScreenController {
   }
 
   @override
-  goToCategoryItems(List categories, int cateIndex) {
+  goToCategoryItems(List categories, int cateIndex, String categoryId) {
     Get.toNamed(AppRoutes.itemsScreen, arguments: {
       'categories': categories,
       'cateIndex': cateIndex,
+      'categoryId': categoryId,
     });
   }
 

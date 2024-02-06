@@ -46,7 +46,8 @@ class Categories extends GetView<HomeScreenControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToCategoryItems(controller.categories, cateIndex);
+        controller.goToCategoryItems(
+            controller.categories, cateIndex, categorey.id);
       },
       child: Container(
         height: 100,
