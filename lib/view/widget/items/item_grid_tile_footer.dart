@@ -28,11 +28,8 @@ class ItemGridTileFooter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Hero(
-              tag: "${item.itemId}title",
-              child: BuildFooterTextWidget(
-                text: translateDatabase(item.itemName!, item.itemNameAr!),
-              ),
+            child: BuildFooterTextWidget(
+              text: translateDatabase(item.itemName!, item.itemNameAr!),
             ),
           ),
           const SizedBox(width: 5),
