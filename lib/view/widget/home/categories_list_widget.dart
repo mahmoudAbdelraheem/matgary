@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:matgary/apis_link.dart';
 import 'package:matgary/controller/home_screen_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/functions/translate_database.dart';
 import 'package:matgary/data/models/categories_model.dart';
 
 class CategoriesListWidget extends GetView<HomeScreenControllerImp> {
@@ -52,7 +53,7 @@ class Categories extends GetView<HomeScreenControllerImp> {
       child: Container(
         height: 100,
         width: 100,
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
           color: AppColors.myBlue.withOpacity(0.5),
@@ -60,17 +61,22 @@ class Categories extends GetView<HomeScreenControllerImp> {
         ),
         child: Stack(
           children: [
-            SvgPicture.network(
-              '${ApiLink.categoriesImg}/${categorey.image}',
-              height: 80,
-              width: 80,
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: SvgPicture.network(
+                '${ApiLink.categoriesImg}/${categorey.image}',
+                height: 80,
+                width: 80,
+              ),
             ),
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: Text(
-                categorey.name,
+                translateDatabase(categorey.name, categorey.nameAr),
                 textAlign: TextAlign.center,
               ),
             ),

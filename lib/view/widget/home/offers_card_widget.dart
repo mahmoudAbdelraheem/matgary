@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:matgary/controller/home_screen_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class OffersCardWidget extends StatelessWidget {
@@ -22,26 +24,7 @@ class OffersCardWidget extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Positioned(
-            top: 20,
-            right: -80,
-            child: Container(
-              height: 160,
-              width: 160,
-              decoration: BoxDecoration(
-                color: AppColors.myBlue,
-                borderRadius: BorderRadius.circular(160),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.myBlack.withOpacity(0.2),
-                    blurRadius: 8,
-                    spreadRadius: 2,
-                    offset: const Offset(-10, 10),
-                  )
-                ],
-              ),
-            ),
-          ),
+          const BuildBackgroundCircularWidget(),
           ListTile(
             title: Text(
               title,
@@ -60,6 +43,38 @@ class OffersCardWidget extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class BuildBackgroundCircularWidget extends GetView<HomeScreenControllerImp> {
+  const BuildBackgroundCircularWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 20,
+      //? rigth circular
+      right: controller.lang == 'en' ? -80 : null,
+      left: controller.lang == 'ar' ? -80 : null,
+      child: Container(
+        height: 160,
+        width: 160,
+        decoration: BoxDecoration(
+          color: AppColors.myBlue,
+          borderRadius: BorderRadius.circular(160),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.myBlack.withOpacity(0.2),
+              blurRadius: 8,
+              spreadRadius: 2,
+              offset: const Offset(-10, 10),
+            )
+          ],
+        ),
       ),
     );
   }

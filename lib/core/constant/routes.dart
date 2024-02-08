@@ -15,4 +15,6 @@ class AppRoutes {
   static const String homeScreen = '/home';
   //? categories items
   static const String itemsScreen = '/items';
+  //? product details screen
+  static const String itemDetailsScreen = '/itemDetails';
 }

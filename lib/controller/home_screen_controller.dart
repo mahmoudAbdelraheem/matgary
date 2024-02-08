@@ -14,6 +14,10 @@ abstract class HomeScreenController extends GetxController {
 
 class HomeScreenControllerImp extends HomeScreenController {
   final MyServices _myServices = Get.find();
+
+  //? selected device lang
+  late String lang;
+  //? for user data
   String? name;
   String? email;
   String? phone;
@@ -25,6 +29,7 @@ class HomeScreenControllerImp extends HomeScreenController {
 
   @override
   getUserDate() {
+    lang = _myServices.sharedPreferences.getString('langCode')!;
     name = _myServices.sharedPreferences.getString('name');
     email = _myServices.sharedPreferences.getString('email');
     phone = _myServices.sharedPreferences.getString('phone');

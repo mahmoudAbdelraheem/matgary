@@ -46,6 +46,15 @@ class ItemsScreen extends StatelessWidget {
                         itemBuilder: (_, index) {
                           return ItemViewModelWidget(
                             itemsIndex: index,
+                            //? go to product details screen
+                            onTap: () {
+                              controller.goToItemDetails(
+                                ItemsViewModel.fromJson(
+                                  controller.itemsView[index],
+                                ),
+                              );
+                            },
+                            //? build items view model
                             item: ItemsViewModel.fromJson(
                               controller.itemsView[index],
                             ),

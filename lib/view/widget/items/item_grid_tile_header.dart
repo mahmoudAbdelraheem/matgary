@@ -12,25 +12,52 @@ class ItemGridTileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        BuildHeaderIconWidget(
-          icon: Icons.card_travel_outlined,
-          onTap: () {},
-        ),
-        GetBuilder<ItemsControllerImp>(
-          builder: (controller) => BuildHeaderIconWidget(
+    return GetBuilder<ItemsControllerImp>(
+      builder: (controller) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          BuildHeaderIconWidget(
+            icon: Icons.card_travel_outlined,
+            borderRadius: BorderRadius.only(
+              topLeft: controller.lang == 'ar'
+                  ? const Radius.circular(0)
+                  : const Radius.circular(20),
+              topRight: controller.lang == 'ar'
+                  ? const Radius.circular(20)
+                  : const Radius.circular(0),
+              bottomLeft: controller.lang == 'ar'
+                  ? const Radius.circular(20)
+                  : const Radius.circular(0),
+              bottomRight: controller.lang == 'ar'
+                  ? const Radius.circular(0)
+                  : const Radius.circular(20),
+            ),
+            onTap: () {},
+          ),
+          BuildHeaderIconWidget(
+            borderRadius: BorderRadius.only(
+              topLeft: controller.lang == 'ar'
+                  ? const Radius.circular(20)
+                  : const Radius.circular(0),
+              topRight: controller.lang == 'ar'
+                  ? const Radius.circular(0)
+                  : const Radius.circular(20),
+              bottomLeft: controller.lang == 'ar'
+                  ? const Radius.circular(0)
+                  : const Radius.circular(20),
+              bottomRight: controller.lang == 'ar'
+                  ? const Radius.circular(20)
+                  : const Radius.circular(0),
+            ),
             icon: controller.favoriteItems.contains(favIndex)
                 ? Icons.favorite
                 : Icons.favorite_border_outlined,
-            isLeftIcon: false,
             onTap: () {
               controller.addAbdRemoveItemToFavorite(favIndex);
             },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -38,13 +65,13 @@ class ItemGridTileHeader extends StatelessWidget {
 class BuildHeaderIconWidget extends StatelessWidget {
   final IconData icon;
   final void Function()? onTap;
-  final bool isLeftIcon;
+  final BorderRadiusGeometry? borderRadius;
 
   const BuildHeaderIconWidget({
     super.key,
     required this.icon,
-    this.onTap,
-    this.isLeftIcon = true,
+    required this.borderRadius,
+    required this.onTap,
   });
 
   @override
@@ -53,23 +80,7 @@ class BuildHeaderIconWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: AppColors.myBlack.withOpacity(0.2),
-        borderRadius: BorderRadius.only(
-          //? border for left icon
-          topLeft: isLeftIcon == true
-              ? const Radius.circular(20)
-              : const Radius.circular(0),
-          bottomRight: isLeftIcon == true
-              ? const Radius.circular(20)
-              : const Radius.circular(0),
-
-          //? border for right icon
-          topRight: isLeftIcon == false
-              ? const Radius.circular(20)
-              : const Radius.circular(0),
-          bottomLeft: isLeftIcon == false
-              ? const Radius.circular(20)
-              : const Radius.circular(0),
-        ),
+        borderRadius: borderRadius,
       ),
       child: InkWell(
         onTap: onTap,

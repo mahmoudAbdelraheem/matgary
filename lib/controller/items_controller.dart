@@ -1,7 +1,10 @@
 import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
+import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/items_view_data.dart';
+import 'package:matgary/data/models/items_view_model.dart';
 
 abstract class ItemsController extends GetxController {
   //? to initialize selected & list of Categories comming from home page
@@ -14,9 +17,14 @@ abstract class ItemsController extends GetxController {
   addItemToCart();
   //? add & remove items to the favorite list
   addAbdRemoveItemToFavorite(int favIndex);
+  //? go to product details screen
+  goToItemDetails(ItemsViewModel selectedItem);
 }
 
 class ItemsControllerImp extends ItemsController {
+  //? for selected device language
+  late String lang;
+  MyServices myServices = Get.find();
   //? data come from home page
   late int selectedCate;
   late List categories;
@@ -37,6 +45,7 @@ class ItemsControllerImp extends ItemsController {
     selectedCate = Get.arguments['cateIndex'];
     categories = Get.arguments['categories'] as List;
     categoryId = Get.arguments['categoryId'];
+    lang = myServices.sharedPreferences.getString('langCode')!;
     getItemsData(categoryId);
   }
 
@@ -47,12 +56,6 @@ class ItemsControllerImp extends ItemsController {
     getItemsData(categoryId);
 
     update();
-  }
-
-  @override
-  addItemToCart() {
-    // TODO: implement addItemToCart
-    throw UnimplementedError();
   }
 
   @override
@@ -85,6 +88,19 @@ class ItemsControllerImp extends ItemsController {
       favoriteItems.removeWhere((i) => i == favIndex);
     }
     update();
+  }
+
+  @override
+  addItemToCart() {
+    // TODO: implement addItemToCart
+    throw UnimplementedError();
+  }
+
+  @override
+  goToItemDetails(ItemsViewModel selectedItem) {
+    Get.toNamed(AppRoutes.itemDetailsScreen, arguments: {
+      'selectedItem': selectedItem,
+    });
   }
 
   @override

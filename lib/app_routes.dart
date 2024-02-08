@@ -13,6 +13,7 @@ import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/items_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
+import 'package:matgary/view/screen/item_details_screen.dart';
 
 List<GetPage<dynamic>> routes = [
   //! on boarding , choose language , auth screens
@@ -66,5 +67,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.itemsScreen,
     page: () => const ItemsScreen(),
+  ),
+  //! products details screen
+  GetPage(
+    name: AppRoutes.itemDetailsScreen,
+    page: () => const ItemDetailsScreen(),
   ),
 ];

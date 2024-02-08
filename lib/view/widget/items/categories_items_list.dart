@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/items_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/functions/translate_database.dart';
 import 'package:matgary/data/models/categories_model.dart';
 
 class CategoriesItemsListWidget extends GetView<ItemsControllerImp> {
@@ -52,7 +53,7 @@ class Categories extends GetView<ItemsControllerImp> {
               ? AppColors.myBlue.withOpacity(0.5)
               : AppColors.myGrey.withOpacity(0.3),
           label: Text(
-            categorey.name,
+            translateDatabase(categorey.name, categorey.nameAr),
             textAlign: TextAlign.center,
             style: TextStyle(
               color: selectedIndex == controller.selectedCate

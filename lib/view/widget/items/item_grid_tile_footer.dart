@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/functions/translate_database.dart';
 import 'package:matgary/data/models/items_view_model.dart';
 
 class ItemGridTileFooter extends StatelessWidget {
@@ -26,7 +27,14 @@ class ItemGridTileFooter extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(child: BuildFooterTextWidget(text: item.itemName!)),
+          Expanded(
+            child: Hero(
+              tag: "${item.itemId}title",
+              child: BuildFooterTextWidget(
+                text: translateDatabase(item.itemName!, item.itemNameAr!),
+              ),
+            ),
+          ),
           const SizedBox(width: 5),
           BuildFooterTextWidget(text: '${item.itemPrice}\$', isTitle: false),
         ],
@@ -53,6 +61,7 @@ class BuildFooterTextWidget extends StatelessWidget {
         fontSize: isTitle == true ? 14 : 16,
         fontWeight: FontWeight.bold,
         color: AppColors.myWhite,
+        height: 1,
       ),
       maxLines: isTitle == true ? 2 : null,
       overflow: isTitle == true ? TextOverflow.ellipsis : null,
