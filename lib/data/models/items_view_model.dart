@@ -16,25 +16,28 @@ class ItemsViewModel {
   String? cateNameAr;
   String? cateImage;
   String? cateDateTime;
+  String? itemFavorite;
 
-  ItemsViewModel(
-      {this.itemId,
-      this.itemName,
-      this.itemNameAr,
-      this.itemDescription,
-      this.itemDescriptionAr,
-      this.itemImage,
-      this.itemCount,
-      this.itemActive,
-      this.itemPrice,
-      this.itemDiscount,
-      this.itemDateTime,
-      this.itemCategory,
-      this.cateId,
-      this.cateName,
-      this.cateNameAr,
-      this.cateImage,
-      this.cateDateTime});
+  ItemsViewModel({
+    this.itemId,
+    this.itemName,
+    this.itemNameAr,
+    this.itemDescription,
+    this.itemDescriptionAr,
+    this.itemImage,
+    this.itemCount,
+    this.itemActive,
+    this.itemPrice,
+    this.itemDiscount,
+    this.itemDateTime,
+    this.itemCategory,
+    this.cateId,
+    this.cateName,
+    this.cateNameAr,
+    this.cateImage,
+    this.cateDateTime,
+    this.itemFavorite,
+  });
 
   ItemsViewModel.fromJson(Map<String, dynamic> json) {
     itemId = json['item_id'];
@@ -54,6 +57,7 @@ class ItemsViewModel {
     cateNameAr = json['cate_name_ar'];
     cateImage = json['cate_image'];
     cateDateTime = json['cate_date_time'];
+    itemFavorite = json['favorite_item'];
   }
 
   Map<String, dynamic> toJson() {
@@ -75,6 +79,7 @@ class ItemsViewModel {
     data['cate_name_ar'] = cateNameAr;
     data['cate_image'] = cateImage;
     data['cate_date_time'] = cateDateTime;
+    data['favorite_item'] = itemFavorite;
     return data;
   }
 }

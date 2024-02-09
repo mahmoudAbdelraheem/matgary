@@ -27,7 +27,7 @@ class ItemViewModelWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: GridTile(
-          header: ItemGridTileHeader(favIndex: itemsIndex),
+          header: ItemGridTileHeader(index: itemsIndex, item: item),
           footer: ItemGridTileFooter(item: item),
           //child: CachedNetworkImage(imageUrl: model.itemImage!),
 

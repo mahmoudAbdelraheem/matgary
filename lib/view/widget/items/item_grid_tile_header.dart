@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/controller/favorite_controller.dart';
 import 'package:matgary/controller/items_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/data/models/items_view_model.dart';
 
 class ItemGridTileHeader extends StatelessWidget {
-  final int favIndex;
+  final int index;
+  final ItemsViewModel item;
   const ItemGridTileHeader({
     super.key,
-    required this.favIndex,
+    required this.index,
+    required this.item,
   });
 
   @override
@@ -16,79 +20,82 @@ class ItemGridTileHeader extends StatelessWidget {
       builder: (controller) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          BuildHeaderIconWidget(
-            icon: Icons.card_travel_outlined,
-            borderRadius: BorderRadius.only(
-              topLeft: controller.lang == 'ar'
-                  ? const Radius.circular(0)
-                  : const Radius.circular(20),
-              topRight: controller.lang == 'ar'
-                  ? const Radius.circular(20)
-                  : const Radius.circular(0),
-              bottomLeft: controller.lang == 'ar'
-                  ? const Radius.circular(20)
-                  : const Radius.circular(0),
-              bottomRight: controller.lang == 'ar'
-                  ? const Radius.circular(0)
-                  : const Radius.circular(20),
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: controller.lang == 'ar'
+                    ? const Radius.circular(0)
+                    : const Radius.circular(20),
+                topRight: controller.lang == 'ar'
+                    ? const Radius.circular(20)
+                    : const Radius.circular(0),
+                bottomLeft: controller.lang == 'ar'
+                    ? const Radius.circular(20)
+                    : const Radius.circular(0),
+                bottomRight: controller.lang == 'ar'
+                    ? const Radius.circular(0)
+                    : const Radius.circular(20),
+              ),
+              color: AppColors.myBlack.withOpacity(0.2),
             ),
-            onTap: () {},
+            child: InkWell(
+              onTap: () {},
+              child: Icon(
+                //?Icons.shopping_cart
+                Icons.shopping_cart_checkout_outlined,
+                size: 30,
+                color: AppColors.myWhite,
+              ),
+            ),
           ),
-          BuildHeaderIconWidget(
-            borderRadius: BorderRadius.only(
-              topLeft: controller.lang == 'ar'
-                  ? const Radius.circular(20)
-                  : const Radius.circular(0),
-              topRight: controller.lang == 'ar'
-                  ? const Radius.circular(0)
-                  : const Radius.circular(20),
-              bottomLeft: controller.lang == 'ar'
-                  ? const Radius.circular(0)
-                  : const Radius.circular(20),
-              bottomRight: controller.lang == 'ar'
-                  ? const Radius.circular(20)
-                  : const Radius.circular(0),
+          GetBuilder<FavoriteControllerImp>(
+            builder: (favController) => Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: AppColors.myBlack.withOpacity(0.2),
+                borderRadius: BorderRadius.only(
+                  topLeft: controller.lang == 'ar'
+                      ? const Radius.circular(20)
+                      : const Radius.circular(0),
+                  topRight: controller.lang == 'ar'
+                      ? const Radius.circular(0)
+                      : const Radius.circular(20),
+                  bottomLeft: controller.lang == 'ar'
+                      ? const Radius.circular(0)
+                      : const Radius.circular(20),
+                  bottomRight: controller.lang == 'ar'
+                      ? const Radius.circular(20)
+                      : const Radius.circular(0),
+                ),
+              ),
+              child: InkWell(
+                onTap: () {
+                  if (favController.isFavorite[item.itemId] == '1') {
+                    //? remove item from map
+                    favController.setFavorite(item.itemId!, '0');
+                    //? remove item from database
+                    favController.removeFromFavorite(
+                        favController.userId, item.itemId!);
+                  } else {
+                    //? add item from map
+                    favController.setFavorite(item.itemId!, '1');
+                    //? add item from database
+                    favController.addToFavorite(
+                        favController.userId, item.itemId!);
+                  }
+                },
+                child: Icon(
+                  favController.isFavorite[item.itemId] == '1'
+                      ? Icons.favorite
+                      : Icons.favorite_border_outlined,
+                  color: AppColors.myWhite,
+                  size: 30,
+                ),
+              ),
             ),
-            icon: controller.favoriteItems.contains(favIndex)
-                ? Icons.favorite
-                : Icons.favorite_border_outlined,
-            onTap: () {
-              controller.addAbdRemoveItemToFavorite(favIndex);
-            },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class BuildHeaderIconWidget extends StatelessWidget {
-  final IconData icon;
-  final void Function()? onTap;
-  final BorderRadiusGeometry? borderRadius;
-
-  const BuildHeaderIconWidget({
-    super.key,
-    required this.icon,
-    required this.borderRadius,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: AppColors.myBlack.withOpacity(0.2),
-        borderRadius: borderRadius,
-      ),
-      child: InkWell(
-        onTap: onTap,
-        child: Icon(
-          icon,
-          color: AppColors.myWhite,
-          size: 30,
-        ),
       ),
     );
   }

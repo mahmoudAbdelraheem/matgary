@@ -26,4 +26,10 @@ class ApiLink {
 
   //? items view data
   static const String itemsView = '$server/items/itemsview.php';
+
+  //? add & remove item (into/from) favorite table
+  static const String addToFavorite = '$server/favorite/add.php';
+  static const String removeFromFavorite = '$server/favorite/remove.php';
+  //? get favorite items based on user id
+  static const String viewFavorite = '$server/favorite/view.php';
 }

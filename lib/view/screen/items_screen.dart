@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/controller/favorite_controller.dart';
 import 'package:matgary/controller/items_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/data/models/items_view_model.dart';
@@ -13,6 +14,9 @@ class ItemsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp());
+
+    FavoriteControllerImp favController = Get.put(FavoriteControllerImp());
+
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -44,6 +48,11 @@ class ItemsScreen extends StatelessWidget {
                           mainAxisSpacing: 10,
                         ),
                         itemBuilder: (_, index) {
+                          //? add item id and item favorite value in isFavorite Map
+                          favController.isFavorite[controller.itemsView[index]
+                                  ['item_id']] =
+                              controller.itemsView[index]['favorite_item'];
+                          //? build item model
                           return ItemViewModelWidget(
                             itemsIndex: index,
                             //? go to product details screen
