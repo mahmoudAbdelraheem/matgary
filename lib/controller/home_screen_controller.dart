@@ -10,6 +10,8 @@ abstract class HomeScreenController extends GetxController {
   getHomeDate();
   //? go to categories items
   goToCategoryItems(List categories, int cateIndex, String categoryId);
+  //? user favorite Screen
+  goToUserFavoriteScreen();
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
@@ -57,6 +59,11 @@ class HomeScreenControllerImp extends HomeScreenController {
       'cateIndex': cateIndex,
       'categoryId': categoryId,
     });
+  }
+
+  @override
+  goToUserFavoriteScreen() {
+    Get.toNamed(AppRoutes.myFavoriteScreen);
   }
 
   @override

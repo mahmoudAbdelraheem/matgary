@@ -24,8 +24,11 @@ class HomeScreen extends StatelessWidget {
               //? search and notification icons
               HomeSearchAppBar(
                 hintText: 'Find Product ?',
-                onPressedIcon: () {},
+                onPressedNotifiation: () {},
                 onPressedSearch: () {},
+                onPressedFavorite: () {
+                  controller.goToUserFavoriteScreen();
+                },
               ),
               //? card for offers , cashback & discount
               const OffersCardWidget(

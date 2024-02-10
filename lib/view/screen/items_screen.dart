@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/favorite_controller.dart';
+import 'package:matgary/controller/favorite/favorite_controller.dart';
 import 'package:matgary/controller/items_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/data/models/items_view_model.dart';
@@ -27,8 +27,11 @@ class ItemsScreen extends StatelessWidget {
                 //? search app bar
                 HomeSearchAppBar(
                   hintText: 'Find Product',
-                  onPressedIcon: () {},
+                  onPressedNotifiation: () {},
                   onPressedSearch: () {},
+                  onPressedFavorite: () {
+                    controller.goToUserFavoriteScreen();
+                  },
                 ),
                 //? categories data
                 const CategoriesItemsListWidget(),

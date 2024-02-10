@@ -17,6 +17,8 @@ abstract class ItemsController extends GetxController {
   addItemToCart();
   //? go to product details screen
   goToItemDetails(ItemsViewModel selectedItem);
+  //? go to user favorite screen
+  goToUserFavoriteScreen();
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -88,6 +90,11 @@ class ItemsControllerImp extends ItemsController {
     Get.toNamed(AppRoutes.itemDetailsScreen, arguments: {
       'selectedItem': selectedItem,
     });
+  }
+
+  @override
+  goToUserFavoriteScreen() {
+    Get.toNamed(AppRoutes.myFavoriteScreen);
   }
 
   @override

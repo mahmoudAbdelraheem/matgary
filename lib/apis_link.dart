@@ -32,4 +32,7 @@ class ApiLink {
   static const String removeFromFavorite = '$server/favorite/remove.php';
   //? get favorite items based on user id
   static const String viewFavorite = '$server/favorite/view.php';
+  //? delete favorite
+  static const String deleteFromFavorite =
+      '$server/favorite/deletefromfavorite.php';
 }

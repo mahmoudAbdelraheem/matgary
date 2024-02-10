@@ -3,13 +3,15 @@ import 'package:matgary/core/constant/app_colors.dart';
 
 class HomeSearchAppBar extends StatelessWidget {
   final String hintText;
-  final void Function()? onPressedIcon;
+  final void Function()? onPressedNotifiation;
   final void Function()? onPressedSearch;
+  final void Function()? onPressedFavorite;
   const HomeSearchAppBar({
     super.key,
     required this.hintText,
-    required this.onPressedIcon,
+    required this.onPressedNotifiation,
     required this.onPressedSearch,
+    required this.onPressedFavorite,
   });
 
   @override
@@ -43,24 +45,47 @@ class HomeSearchAppBar extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Container(
-          height: 50,
-          width: 55,
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: AppColors.myBlue.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          alignment: Alignment.center,
-          child: IconButton(
-            onPressed: onPressedIcon,
-            icon: Icon(
-              Icons.notifications_on_outlined,
-              color: AppColors.myBlack,
-            ),
-          ),
+        AppBarIconWidget(
+          onPressedIcon: onPressedFavorite,
+          icon: Icons.notifications_on_outlined,
+        ),
+        const SizedBox(width: 10),
+        AppBarIconWidget(
+          onPressedIcon: onPressedFavorite,
+          icon: Icons.favorite_border_outlined,
         ),
       ],
+    );
+  }
+}
+
+class AppBarIconWidget extends StatelessWidget {
+  final void Function()? onPressedIcon;
+  final IconData icon;
+  const AppBarIconWidget({
+    super.key,
+    required this.onPressedIcon,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: 55,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: AppColors.myBlue.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      alignment: Alignment.center,
+      child: IconButton(
+        onPressed: onPressedIcon,
+        icon: Icon(
+          icon,
+          color: AppColors.myBlack,
+        ),
+      ),
     );
   }
 }

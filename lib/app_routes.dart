@@ -12,6 +12,7 @@ import 'package:matgary/view/screen/auth/vrefiy_email_code_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/items_screen.dart';
+import 'package:matgary/view/screen/my_favorite_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 import 'package:matgary/view/screen/item_details_screen.dart';
 
@@ -72,5 +73,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.itemDetailsScreen,
     page: () => const ItemDetailsScreen(),
+  ),
+  //! user favorite screen
+  GetPage(
+    name: AppRoutes.myFavoriteScreen,
+    page: () => const MyFavoriteScreen(),
   ),
 ];

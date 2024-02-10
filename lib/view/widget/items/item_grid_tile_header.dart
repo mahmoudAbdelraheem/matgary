@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/favorite_controller.dart';
+import 'package:matgary/controller/favorite/favorite_controller.dart';
 import 'package:matgary/controller/items_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/data/models/items_view_model.dart';
