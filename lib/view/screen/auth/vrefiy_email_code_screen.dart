@@ -5,6 +5,7 @@ import 'package:matgary/controller/auth/vrefiy_email_code_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
+import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
 import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
 import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
 
@@ -28,8 +29,9 @@ class VrefiyEmailCodeScreen extends StatelessWidget {
             const CustomAuthLogoWidget(),
             const SizedBox(height: 50),
             //? body message
-            const CustomBodyTextWidget(
+            CustomBodyTextWidget(
               body: LocalizationKeys.vrefiyCodeBody,
+              email: " ${controller.email!}",
             ),
             //? otp text field
             OtpTextField(
@@ -49,6 +51,16 @@ class VrefiyEmailCodeScreen extends StatelessWidget {
                 controller.checkEmailVerificationCode(verificationCode);
                 //controller.goToSuccessSignUp();
               }, // end onSubmit
+            ),
+            const SizedBox(height: 50),
+            //? resend virefiy code button
+            CustomAuthBtnWidget(
+              btnText: 'Resend Vireification Code',
+              btnColor: AppColors.myBlue,
+              textColor: AppColors.myWhite,
+              myPressed: () {
+                controller.resendVirefiyCode();
+              },
             ),
           ],
         ),

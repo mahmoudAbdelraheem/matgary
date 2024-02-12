@@ -12,6 +12,7 @@ class ApiLink {
   static const String signup = '$server/auth/signup.php';
   static const String login = '$server/auth/login.php';
   static const String vrefiyCode = '$server/auth/vrefiycode.php';
+  static const String resendVrefiyCode = '$server/auth/resendvrefiycode.php';
 
   //? forget password
   static const String vrefiyCodePass = '$server/forgetpassword/vrefiycode.php';

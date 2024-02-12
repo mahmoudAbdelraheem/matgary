@@ -55,18 +55,28 @@ class LoginControllerImp extends LoginController {
       statuseRequest = handlingData(response);
       if (statuseRequest == StatuseRequest.success) {
         if (response['status'] == 'success') {
-          //? save user data in cache
-          _myServices.sharedPreferences
-              .setString("id", response['data']['user_id']);
-          _myServices.sharedPreferences
-              .setString("name", response['data']['user_name']);
-          _myServices.sharedPreferences
-              .setString("email", response['data']['user_email']);
-          _myServices.sharedPreferences
-              .setString("phone", response['data']['user_phone']);
-          _myServices.sharedPreferences.setString("step", '2');
-          //? login success and go to home page
-          Get.offAllNamed(AppRoutes.homeScreen);
+          if (response['data']['user_approve'] == '1') {
+            //? save user data in cache
+            _myServices.sharedPreferences
+                .setString("id", response['data']['user_id']);
+            _myServices.sharedPreferences
+                .setString("name", response['data']['user_name']);
+            _myServices.sharedPreferences
+                .setString("email", response['data']['user_email']);
+            _myServices.sharedPreferences
+                .setString("phone", response['data']['user_phone']);
+            _myServices.sharedPreferences.setString("step", '2');
+            //? login success and go to home page
+            Get.offAllNamed(AppRoutes.homeScreen);
+          } else {
+            Get.offNamed(
+              AppRoutes.vrefiyEmailCodeScreen,
+              arguments: {
+                'email': email.text,
+                'code': '1', //? to send new vreficiation code to user email
+              },
+            );
+          }
         } else {
           defualtAlertDialog(
             'Warring',

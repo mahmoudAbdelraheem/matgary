@@ -16,4 +16,13 @@ class VrefiyEmailCodeData {
     });
     return response.fold((failuer) => failuer, (correct) => correct);
   }
+
+  resendVrefiyCode({
+    required String email,
+  }) async {
+    var response = await crudImp.postData(ApiLink.resendVrefiyCode, {
+      'email': email,
+    });
+    return response.fold((failuer) => failuer, (correct) => correct);
+  }
 }

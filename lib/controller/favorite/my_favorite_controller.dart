@@ -25,9 +25,8 @@ class MyFavoriteControllerImp extends MyFavoriteController {
 
   @override
   deleteItemFromFavorite(String favId) {
-    var response = _deleteFromFavorite.deleteData(favId: favId);
-    // if (response['status'] == 'success') {
-    // } else {}
+    _deleteFromFavorite.deleteData(favId: favId);
+    myFavorite.removeWhere((element) => element.favoriteId == favId);
     update();
   }
 

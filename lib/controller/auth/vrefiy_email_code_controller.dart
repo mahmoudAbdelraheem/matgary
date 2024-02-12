@@ -8,12 +8,15 @@ import 'package:matgary/data/datasource/remote/auth/vrefiy_email_code.dart';
 abstract class VrefiyEmailCodeController extends GetxController {
   //? login and go to the home screen
   checkEmailVerificationCode(String vrefiyCode);
+  //? resend virefiy code
+  resendVirefiyCode();
 
   goToSuccessSignUp();
 }
 
 class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
   String? email;
+  String? code;
   //? post user vrefiy code data
   VrefiyEmailCodeData vrefiyData = VrefiyEmailCodeData(crudImp: Get.find());
   //? check response of posting user data
@@ -51,6 +54,30 @@ class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
   }
 
   @override
+  resendVirefiyCode() async {
+    //? send another vrefiy code to user email
+    var response = await vrefiyData.resendVrefiyCode(
+      email: email!,
+    );
+    //? check response
+    statuseRequest = handlingData(response);
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        defualtAlertDialog(
+          'hint',
+          'Vreification Code Send To Your Email.',
+        );
+      } else {
+        defualtAlertDialog(
+          'Warring',
+          'Something Wrong Please Try Again.',
+        );
+      }
+    }
+    update();
+  }
+
+  @override
   goToSuccessSignUp() {
     Get.offNamed(AppRoutes.successSignUpScreen);
   }
@@ -58,7 +85,12 @@ class VrefiyEmailCodeControllerImp extends VrefiyEmailCodeController {
   @override
   void onInit() {
     email = Get.arguments['email'];
-
+    code = Get.arguments['code'];
+    //? if the value of code = 1
+    //? the new vreification code will send to user email
+    if (code == '1') {
+      resendVirefiyCode();
+    }
     super.onInit();
   }
 }

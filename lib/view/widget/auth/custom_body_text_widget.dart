@@ -3,15 +3,15 @@ import 'package:get/get.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class CustomBodyTextWidget extends StatelessWidget {
-  final String body;
-  const CustomBodyTextWidget({super.key, required this.body});
+  final String body, email;
+  const CustomBodyTextWidget({super.key, required this.body, this.email = ''});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 40, top: 10),
       child: Text(
-        body.tr,
+        "${body.tr}$email",
         style: TextStyle(
           fontSize: 18,
           color: AppColors.myGrey,

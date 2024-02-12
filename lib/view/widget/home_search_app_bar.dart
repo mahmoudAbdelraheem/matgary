@@ -37,7 +37,7 @@ class HomeSearchAppBar extends StatelessWidget {
                   onPressed: onPressedSearch,
                   icon: Icon(
                     Icons.search,
-                    color: AppColors.myBlack,
+                    color: AppColors.myGrey,
                   ),
                 ),
               ),
@@ -46,7 +46,7 @@ class HomeSearchAppBar extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         AppBarIconWidget(
-          onPressedIcon: onPressedFavorite,
+          onPressedIcon: onPressedNotifiation,
           icon: Icons.notifications_on_outlined,
         ),
         const SizedBox(width: 10),
@@ -83,7 +83,7 @@ class AppBarIconWidget extends StatelessWidget {
         onPressed: onPressedIcon,
         icon: Icon(
           icon,
-          color: AppColors.myBlack,
+          color: AppColors.myGrey,
         ),
       ),
     );
