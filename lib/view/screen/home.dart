@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: AppColors.myBlue,
-          child: const Icon(Icons.card_travel),
+          child: const Icon(Icons.shopping_cart_checkout_outlined),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         //? custom buttom navegation bar

@@ -3,13 +3,11 @@ import 'package:matgary/core/constant/app_colors.dart';
 
 class HomeSearchAppBar extends StatelessWidget {
   final String hintText;
-  final void Function()? onPressedNotifiation;
   final void Function()? onPressedSearch;
   final void Function()? onPressedFavorite;
   const HomeSearchAppBar({
     super.key,
     required this.hintText,
-    required this.onPressedNotifiation,
     required this.onPressedSearch,
     required this.onPressedFavorite,
   });
@@ -43,11 +41,6 @@ class HomeSearchAppBar extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        const SizedBox(width: 10),
-        AppBarIconWidget(
-          onPressedIcon: onPressedNotifiation,
-          icon: Icons.notifications_on_outlined,
         ),
         const SizedBox(width: 10),
         AppBarIconWidget(

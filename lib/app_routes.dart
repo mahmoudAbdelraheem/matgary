@@ -15,6 +15,7 @@ import 'package:matgary/view/screen/items_screen.dart';
 import 'package:matgary/view/screen/my_favorite_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 import 'package:matgary/view/screen/item_details_screen.dart';
+import 'package:matgary/view/screen/setting_screen.dart';
 
 List<GetPage<dynamic>> routes = [
   //! on boarding , choose language , auth screens
@@ -78,5 +79,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.myFavoriteScreen,
     page: () => const MyFavoriteScreen(),
+  ),
+  //! user setting screen
+  GetPage(
+    name: AppRoutes.settingScreen,
+    page: () => const SettingScreen(),
   ),
 ];

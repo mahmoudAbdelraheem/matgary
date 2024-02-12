@@ -27,7 +27,6 @@ class ItemsScreen extends StatelessWidget {
                 //? search app bar
                 HomeSearchAppBar(
                   hintText: 'Find Product',
-                  onPressedNotifiation: () {},
                   onPressedSearch: () {},
                   onPressedFavorite: () {
                     controller.goToUserFavoriteScreen();

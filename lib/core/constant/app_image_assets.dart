@@ -6,6 +6,9 @@ class AppImageAssets {
 
   //? app logo image
   static const String logo = '$rootImage/logo.png';
+  //? user avatar image
+  static const String avatar = '$rootImage/avatar.png';
+  static const String avatar1 = '$rootImage/avatar1.png';
   //? on boading images
   static const String onBoardingImageOne = '$rootImage/onboardingone.PNG';
   static const String onBoardingImageTwo = '$rootImage/onboardingtwo.PNG';

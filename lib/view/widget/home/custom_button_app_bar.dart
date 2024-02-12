@@ -24,18 +24,16 @@ class CustomButtonAppBar extends StatelessWidget {
           Icon(
             icon,
             size: 35,
-            color: isActive == true
-                ? AppColors.myWhite
-                : AppColors.myBlack.withOpacity(0.7),
+            color: isActive == true ? AppColors.myWhite : AppColors.myGrey,
           ),
-          Text(
-            title,
-            style: TextStyle(
-              color: isActive == true
-                  ? AppColors.myWhite
-                  : AppColors.myBlack.withOpacity(0.7),
-            ),
-          ),
+          // Text(
+          //   title,
+          //   style: TextStyle(
+          //     color: isActive == true
+          //         ? AppColors.myWhite
+          //         : AppColors.myBlack.withOpacity(0.7),
+          //   ),
+          // ),
         ],
       ),
     );

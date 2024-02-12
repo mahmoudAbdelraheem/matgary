@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
               //? search and notification icons
               HomeSearchAppBar(
                 hintText: 'Find Product ?',
-                onPressedNotifiation: () {},
                 onPressedSearch: () {},
                 onPressedFavorite: () {
                   controller.goToUserFavoriteScreen();
