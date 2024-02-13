@@ -18,16 +18,22 @@ class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
         children: [
           Text(
             '${controller.item.itemPrice!}\$',
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: AppColors.myRed.withOpacity(0.7)),
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CustomItemPriceIcon(icon: Icons.add, onTap: () {}),
+              CustomItemPriceIcon(
+                icon: Icons.add,
+                onTap: () {
+                  controller.cartController
+                      .addItemToCart(controller.item.itemId!);
+                },
+              ),
               Container(
                 margin:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -48,7 +54,12 @@ class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
                   ),
                 ),
               ),
-              CustomItemPriceIcon(icon: Icons.remove, onTap: () {}),
+              CustomItemPriceIcon(
+                  icon: Icons.remove,
+                  onTap: () {
+                    controller.cartController
+                        .removeFromCart(controller.item.itemId!);
+                  }),
             ],
           ),
         ],

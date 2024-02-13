@@ -36,4 +36,9 @@ class ApiLink {
   //? delete favorite
   static const String deleteFromFavorite =
       '$server/favorite/deletefromfavorite.php';
+
+  //? cart screen
+  static const String addToCart = '$server/cart/add.php';
+  static const String removeFromCart = '$server/cart/remove.php';
+  static const String viewCart = '$server/cart/view.php';
 }

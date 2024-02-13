@@ -15,7 +15,9 @@ class Home extends StatelessWidget {
       builder: (controller) => Scaffold(
         //? floating action button
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.goToCart();
+          },
           backgroundColor: AppColors.myBlue,
           child: const Icon(Icons.shopping_cart_checkout_outlined),
         ),

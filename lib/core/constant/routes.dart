@@ -21,4 +21,6 @@ class AppRoutes {
   static const String myFavoriteScreen = '/myFavorite';
   //? user setting screen
   static const String settingScreen = '/setting';
+  //? cart screen
+  static const String cartScreen = '/cart';
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/test_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
-class TestBackEndView extends StatelessWidget {
-  const TestBackEndView({super.key});
+class TestView extends StatelessWidget {
+  const TestView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +14,12 @@ class TestBackEndView extends StatelessWidget {
         backgroundColor: AppColors.myBlue,
         title: const Text('test data'),
       ),
-      body: GetBuilder<TestController>(
-        builder: (controller) {
-          return HandlingDataView(
-            statuseRequest: controller.statuseRequest,
-            child: ListView.builder(
-              itemCount: controller.data.length,
-              itemBuilder: (_, index) {
-                return Center(child: Text("${controller.data[index]}"));
-              },
-            ),
-          );
-        },
-      ),
+      body: const Center(child: Text('Page body')),
+
+      //? location
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //? animated container
+      //floatingActionButton: CartFloatingActionBtnWidget(),
     );
   }
 }

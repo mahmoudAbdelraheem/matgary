@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/view/screen/home_screen.dart';
 import 'package:matgary/view/screen/setting_screen.dart';
 
 abstract class HomeController extends GetxController {
   changePage(int index);
+  //? go to cart screen
+  goToCart();
 }
 
 class HomeControllerImp extends HomeController {
@@ -46,5 +49,10 @@ class HomeControllerImp extends HomeController {
   changePage(int index) {
     pageIndex = index;
     update();
+  }
+
+  @override
+  goToCart() {
+    Get.toNamed(AppRoutes.cartScreen);
   }
 }

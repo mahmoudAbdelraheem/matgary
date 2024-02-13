@@ -23,6 +23,13 @@ class TestController extends GetxController {
     update();
   }
 
+  bool isOpen = false;
+
+  changeContainerHeigth() {
+    isOpen = !isOpen;
+    update();
+  }
+
   @override
   void onInit() {
     getData();
