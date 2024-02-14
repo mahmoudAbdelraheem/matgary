@@ -11,7 +11,7 @@ class CartData {
       "userid": userId,
       "itemid": itemId,
     });
-    response.fold((l) => l, (r) => r);
+    return response.fold((l) => l, (r) => r);
   }
 
   removeFromCart({required String userId, required String itemId}) async {
@@ -19,6 +19,21 @@ class CartData {
       "userid": userId,
       "itemid": itemId,
     });
-    response.fold((l) => l, (r) => r);
+    return response.fold((l) => l, (r) => r);
+  }
+
+  viewCartItems({required String userId}) async {
+    var response = await crudImp.postData(ApiLink.viewCart, {
+      "id": userId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
+
+  getItemCount({required String userId, required String itemId}) async {
+    var response = await crudImp.postData(ApiLink.cartGetItemCount, {
+      "userid": userId,
+      "itemid": itemId,
+    });
+    return response.fold((l) => l, (r) => r);
   }
 }

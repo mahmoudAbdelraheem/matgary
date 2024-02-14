@@ -22,7 +22,7 @@ class CustomFloatingActionBtn extends StatelessWidget {
         ),
         onPressed: onTap,
         child: const Text(
-          'Add To Cart',
+          'Go To Cart',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

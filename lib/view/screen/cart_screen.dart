@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/cart_controller.dart';
+import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/view/widget/cart/cart_floation_action_btn.dart';
 import 'package:matgary/view/widget/cart/cart_item_count_text.dart';
@@ -30,19 +31,26 @@ class CartScreen extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            const CartItemCountTextWidget(),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 5,
-                itemBuilder: (_, index) => const CartItemWidget(),
-              ),
+        child: GetBuilder<CartControllerImp>(
+          builder: (controller) => HandlingDataView(
+            statuseRequest: controller.statuseRequest,
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
+              children: [
+                //? user items count
+                CartItemCountTextWidget(
+                  cartItemsCount: controller.cartTotal.totalCount,
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.cart.length,
+                  itemBuilder: (_, index) =>
+                      CartItemWidget(model: controller.cart[index]),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

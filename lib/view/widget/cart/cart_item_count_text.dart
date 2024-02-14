@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class CartItemCountTextWidget extends StatelessWidget {
+  final String? cartItemsCount;
   const CartItemCountTextWidget({
     super.key,
+    this.cartItemsCount = '0',
   });
 
   @override
@@ -18,7 +20,7 @@ class CartItemCountTextWidget extends StatelessWidget {
         color: AppColors.myBlue.withOpacity(0.5),
       ),
       child: Text(
-        'You Have 4 Items In Your Cart.',
+        'You Have $cartItemsCount Items In Your Cart.',
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,

@@ -30,8 +30,7 @@ class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
               CustomItemPriceIcon(
                 icon: Icons.add,
                 onTap: () {
-                  controller.cartController
-                      .addItemToCart(controller.item.itemId!);
+                  controller.add();
                 },
               ),
               Container(
@@ -46,20 +45,23 @@ class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
                     color: AppColors.myBlack,
                   ),
                 ),
-                child: const Text(
-                  '270',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                //? item quantity (count)
+                child: GetBuilder<ItemDetailsControllerImp>(
+                  builder: (controller) => Text(
+                    '${controller.itemCount}',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
               CustomItemPriceIcon(
-                  icon: Icons.remove,
-                  onTap: () {
-                    controller.cartController
-                        .removeFromCart(controller.item.itemId!);
-                  }),
+                icon: Icons.remove,
+                onTap: () {
+                  controller.remove();
+                },
+              ),
             ],
           ),
         ],

@@ -1,10 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:matgary/apis_link.dart';
 import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/app_image_assets.dart';
+import 'package:matgary/data/models/cart_view_model.dart';
 
 class CartItemWidget extends StatelessWidget {
+  final CartViewModel model;
   const CartItemWidget({
     super.key,
+    required this.model,
   });
 
   @override
@@ -30,7 +34,11 @@ class CartItemWidget extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.4),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Image.asset(AppImageAssets.logo),
+                child: CachedNetworkImage(
+                  imageUrl: "${ApiLink.itemsImg}/${model.itemImage}",
+                  height: 200,
+                  width: 200,
+                ),
               ),
             ),
             Expanded(
@@ -40,7 +48,7 @@ class CartItemWidget extends StatelessWidget {
                 children: [
                   //? item Name
                   Text(
-                    'item name',
+                    model.itemName!,
                     style: TextStyle(
                       color: AppColors.myWhite,
                       fontSize: 16,
@@ -51,7 +59,7 @@ class CartItemWidget extends StatelessWidget {
                   const SizedBox(height: 50),
                   //? item price
                   Text(
-                    '1520\$',
+                    '${model.itemTotalPrice}\$',
                     style: TextStyle(
                       color: AppColors.myRed.withOpacity(0.7),
                       fontWeight: FontWeight.bold,
@@ -79,7 +87,7 @@ class CartItemWidget extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(5),
                     child: Text(
-                      '5',
+                      model.itemTotalCount!,
                       style: TextStyle(
                         color: AppColors.myWhite,
                         fontWeight: FontWeight.bold,

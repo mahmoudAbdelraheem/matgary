@@ -41,4 +41,5 @@ class ApiLink {
   static const String addToCart = '$server/cart/add.php';
   static const String removeFromCart = '$server/cart/remove.php';
   static const String viewCart = '$server/cart/view.php';
+  static const String cartGetItemCount = '$server/cart/getitemcount.php';
 }

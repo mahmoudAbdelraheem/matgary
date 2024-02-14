@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:matgary/controller/cart_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
-class TotalPriceTextWidget extends StatelessWidget {
+class TotalPriceTextWidget extends GetView<CartControllerImp> {
   const TotalPriceTextWidget({
     super.key,
   });
@@ -25,7 +27,7 @@ class TotalPriceTextWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                '232\$',
+                '${controller.cartTotal.totalPrice}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -49,7 +51,7 @@ class TotalPriceTextWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                '18\$',
+                '0\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -74,7 +76,7 @@ class TotalPriceTextWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                '250\$',
+                '${controller.cartTotal.totalPrice}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
