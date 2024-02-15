@@ -27,6 +27,7 @@ class ApiLink {
 
   //? items view data
   static const String itemsView = '$server/items/itemsview.php';
+  static const String itemsSearch = '$server/items/search.php';
 
   //? add & remove item (into/from) favorite table
   static const String addToFavorite = '$server/favorite/add.php';

@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
-class HomeSearchAppBar extends StatelessWidget {
+class CustomSearchAppBar extends StatelessWidget {
   final String hintText;
+  final TextEditingController myController;
   final void Function()? onPressedSearch;
+  final void Function(String)? onFromChange;
   final void Function()? onPressedFavorite;
-  const HomeSearchAppBar({
+  const CustomSearchAppBar({
     super.key,
     required this.hintText,
+    required this.myController,
     required this.onPressedSearch,
     required this.onPressedFavorite,
+    required this.onFromChange,
   });
 
   @override
@@ -25,6 +29,8 @@ class HomeSearchAppBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
             child: TextFormField(
+              onChanged: onFromChange,
+              controller: myController,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(vertical: 8),
                 hintText: hintText,

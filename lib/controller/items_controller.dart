@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:matgary/controller/search_controller.dart';
 import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
@@ -6,7 +7,7 @@ import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/items_view_data.dart';
 import 'package:matgary/data/models/items_view_model.dart';
 
-abstract class ItemsController extends GetxController {
+abstract class ItemsController extends SearchControllerImp {
   //? to initialize selected & list of Categories comming from home page
   initialData();
   //? get items data from API
@@ -33,8 +34,8 @@ class ItemsControllerImp extends ItemsController {
   late String userId;
 
   //? for get items from api
-  StatuseRequest statuseRequest = StatuseRequest.defualt;
-  List itemsView = [];
+  // StatuseRequest statuseRequest = StatuseRequest.defualt;
+  List<ItemsViewModel> itemsView = [];
   final ItemsViewData _itemsViewData = ItemsViewData(crudImp: Get.find());
 
   //? category id
@@ -71,7 +72,8 @@ class ItemsControllerImp extends ItemsController {
     statuseRequest = handlingData(response);
     if (statuseRequest == StatuseRequest.success) {
       if (response['status'] == 'success') {
-        itemsView.addAll(response['data']);
+        List responseData = response['data'];
+        itemsView.addAll(responseData.map((e) => ItemsViewModel.fromJson(e)));
       } else {
         statuseRequest = StatuseRequest.failuer;
       }

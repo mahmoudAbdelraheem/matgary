@@ -1,17 +1,21 @@
 import 'package:get/get.dart';
+import 'package:matgary/controller/search_controller.dart';
 import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/home_date.dart';
+import 'package:matgary/data/models/items_view_model.dart';
 
-abstract class HomeScreenController extends GetxController {
+abstract class HomeScreenController extends SearchControllerImp {
   getUserDate();
   getHomeDate();
   //? go to categories items
   goToCategoryItems(List categories, int cateIndex, String categoryId);
   //? user favorite Screen
   goToUserFavoriteScreen();
+
+  goToItemDetails(ItemsViewModel selectedItem);
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
@@ -26,7 +30,7 @@ class HomeScreenControllerImp extends HomeScreenController {
   //? home data
   List categories = [];
   List items = [];
-  StatuseRequest statuseRequest = StatuseRequest.defualt;
+  //StatuseRequest statuseRequest = StatuseRequest.defualt;
   final HomeData _homeData = HomeData(crudImp: Get.find());
 
   @override
@@ -64,6 +68,13 @@ class HomeScreenControllerImp extends HomeScreenController {
   @override
   goToUserFavoriteScreen() {
     Get.toNamed(AppRoutes.myFavoriteScreen);
+  }
+
+  @override
+  goToItemDetails(ItemsViewModel selectedItem) {
+    Get.toNamed(AppRoutes.itemDetailsScreen, arguments: {
+      'selectedItem': selectedItem,
+    });
   }
 
   @override
