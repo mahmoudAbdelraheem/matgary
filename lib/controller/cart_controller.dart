@@ -13,10 +13,13 @@ abstract class CartController extends GetxController {
   //? remove Item From Cart
   removeFromCart(String itemId);
 
-  ///? get all cart items
+  //? reset cart variables
+  resetCartVar();
+  //? refresh cart data after add or remover
+  refreshCart();
+
+  //? get all cart items
   getCartItem();
-  //? get cart item count
-  getItemCount(String itemId);
 }
 
 class CartControllerImp extends CartController {
@@ -29,7 +32,8 @@ class CartControllerImp extends CartController {
 
   //? user Cart items
   List<CartViewModel> cart = [];
-  CartTotalModel cartTotal = CartTotalModel(totalCount: '0', totalPrice: '0');
+  double orderTotalPrice = 0.0;
+  int orderTotalCount = 0;
 
   @override
   changeContainerHeigth() {
@@ -76,18 +80,25 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  getItemCount(itemId) async {
+  getCartItem() async {
     statuseRequest = StatuseRequest.loading;
     update();
-    var response = await _cartData.getItemCount(
+
+    var response = await _cartData.viewCartItems(
       userId: _myServices.sharedPreferences.getString('id')!,
-      itemId: itemId,
     );
     statuseRequest = handlingData(response);
     if (statuseRequest == StatuseRequest.success) {
       if (response['status'] == 'success') {
-        int itemCount = int.parse(response['data']);
-        return itemCount;
+        if (response['data']['status'] == 'success') {
+          List responseData = response['data']['data'];
+          cart.clear();
+          cart.addAll(
+              responseData.map((cartItem) => CartViewModel.fromJson(cartItem)));
+          Map totalPriceCountData = response['totlaPriceCount'];
+          orderTotalPrice = double.parse(totalPriceCountData['total_price']);
+          orderTotalCount = int.parse(totalPriceCountData['total_count']);
+        }
       } else {
         statuseRequest = StatuseRequest.failuer;
       }
@@ -96,24 +107,16 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  getCartItem() async {
-    statuseRequest = StatuseRequest.loading;
-    update();
-    var response = await _cartData.viewCartItems(
-      userId: _myServices.sharedPreferences.getString('id')!,
-    );
-    statuseRequest = handlingData(response);
-    if (statuseRequest == StatuseRequest.success) {
-      if (response['status'] == 'success') {
-        List responseData = response['data'];
-        cart.addAll(
-            responseData.map((cartItem) => CartViewModel.fromJson(cartItem)));
-        cartTotal = CartTotalModel.fromJson(response["totlaPriceCount"]);
-      } else {
-        statuseRequest = StatuseRequest.failuer;
-      }
-    }
-    update();
+  resetCartVar() {
+    orderTotalCount = 0;
+    orderTotalPrice = 0.0;
+    cart.clear();
+  }
+
+  @override
+  refreshCart() {
+    resetCartVar();
+    getCartItem();
   }
 
   @override

@@ -6,9 +6,13 @@ import 'package:matgary/data/models/cart_view_model.dart';
 
 class CartItemWidget extends StatelessWidget {
   final CartViewModel model;
+  final void Function()? onAdd;
+  final void Function()? onRemove;
   const CartItemWidget({
     super.key,
     required this.model,
+    required this.onAdd,
+    required this.onRemove,
   });
 
   @override
@@ -75,7 +79,7 @@ class CartItemWidget extends StatelessWidget {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: onAdd,
                     child: CircleAvatar(
                       backgroundColor: AppColors.myGrey.withOpacity(0.4),
                       child: Icon(
@@ -96,7 +100,7 @@ class CartItemWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: onRemove,
                     child: CircleAvatar(
                       backgroundColor: AppColors.myGrey.withOpacity(0.4),
                       child: Icon(

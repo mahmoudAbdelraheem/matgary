@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class CartItemCountTextWidget extends StatelessWidget {
-  final String? cartItemsCount;
+  final int cartItemsCount;
   const CartItemCountTextWidget({
     super.key,
-    this.cartItemsCount = '0',
+    this.cartItemsCount = 0,
   });
 
   @override

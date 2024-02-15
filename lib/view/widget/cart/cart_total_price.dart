@@ -27,7 +27,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                 ),
               ),
               Text(
-                '${controller.cartTotal.totalPrice}\$',
+                '${controller.orderTotalPrice}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                 ),
               ),
               Text(
-                '${controller.cartTotal.totalPrice}\$',
+                '${controller.orderTotalPrice}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

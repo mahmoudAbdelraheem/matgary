@@ -39,14 +39,25 @@ class CartScreen extends StatelessWidget {
               children: [
                 //? user items count
                 CartItemCountTextWidget(
-                  cartItemsCount: controller.cartTotal.totalCount,
+                  cartItemsCount: controller.orderTotalCount,
                 ),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.cart.length,
-                  itemBuilder: (_, index) =>
-                      CartItemWidget(model: controller.cart[index]),
+                  itemBuilder: (_, index) => CartItemWidget(
+                    model: controller.cart[index],
+                    onAdd: () async {
+                      await controller
+                          .addItemToCart(controller.cart[index].itemId!);
+                      controller.refreshCart();
+                    },
+                    onRemove: () async {
+                      await controller
+                          .removeFromCart(controller.cart[index].itemId!);
+                      controller.refreshCart();
+                    },
+                  ),
                 ),
               ],
             ),

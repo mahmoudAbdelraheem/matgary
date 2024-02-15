@@ -78,25 +78,3 @@ class CartViewModel {
     return data;
   }
 }
-
-class CartTotalModel {
-  String? totalPrice;
-  String? totalCount;
-
-  CartTotalModel({
-    this.totalPrice,
-    this.totalCount,
-  });
-
-  CartTotalModel.fromJson(Map<String, dynamic> json) {
-    totalPrice = json["total_price"];
-    totalCount = json["total_count"];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data["total_price"] = totalPrice;
-    data["total_count"] = totalCount;
-    return data;
-  }
-}
