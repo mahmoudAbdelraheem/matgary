@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/functions/translate_database.dart';
 import 'package:matgary/data/models/items_view_model.dart';
+import 'package:matgary/view/widget/items/item_price_discount_widget.dart';
 
 class ItemGridTileFooter extends StatelessWidget {
   final ItemsViewModel item;
@@ -14,7 +15,7 @@ class ItemGridTileFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 55,
+      height: 60,
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
         color: AppColors.myBlack.withOpacity(0.3),
@@ -33,7 +34,7 @@ class ItemGridTileFooter extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 5),
-          BuildFooterTextWidget(text: '${item.itemPrice}\$', isTitle: false),
+          ItemPriceAndDiscountWidget(item: item),
         ],
       ),
     );
@@ -42,11 +43,9 @@ class ItemGridTileFooter extends StatelessWidget {
 
 class BuildFooterTextWidget extends StatelessWidget {
   final String text;
-  final bool isTitle;
   const BuildFooterTextWidget({
     super.key,
     required this.text,
-    this.isTitle = true,
   });
 
   @override
@@ -55,13 +54,13 @@ class BuildFooterTextWidget extends StatelessWidget {
       text,
       style: TextStyle(
         //? if text is title (font =14) else text is price (font 16)
-        fontSize: isTitle == true ? 14 : 16,
+        fontSize: 14,
         fontWeight: FontWeight.bold,
         color: AppColors.myWhite,
         height: 1,
       ),
-      maxLines: isTitle == true ? 2 : null,
-      overflow: isTitle == true ? TextOverflow.ellipsis : null,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

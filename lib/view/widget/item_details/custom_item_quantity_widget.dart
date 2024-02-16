@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:matgary/controller/item_details_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/view/widget/item_details/custom_item_price_icon.dart';
+import 'package:matgary/view/widget/item_details/item_price_and_discount.dart';
 
 class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
   const CustomItemQuantityWidget({
@@ -16,13 +17,8 @@ class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            '${controller.item.itemPrice!}\$',
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: AppColors.myRed.withOpacity(0.7)),
-          ),
+          //? item price and discount
+          ItemPriceAndDiscount(item: controller.item),
           Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

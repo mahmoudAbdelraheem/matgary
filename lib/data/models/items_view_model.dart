@@ -17,6 +17,7 @@ class ItemsViewModel {
   String? cateImage;
   String? cateDateTime;
   String? itemFavorite;
+  String? itemDiscountPrice;
 
   ItemsViewModel({
     this.itemId,
@@ -37,6 +38,7 @@ class ItemsViewModel {
     this.cateImage,
     this.cateDateTime,
     this.itemFavorite,
+    this.itemDiscountPrice,
   });
 
   ItemsViewModel.fromJson(Map<String, dynamic> json) {
@@ -58,6 +60,7 @@ class ItemsViewModel {
     cateImage = json['cate_image'];
     cateDateTime = json['cate_date_time'];
     itemFavorite = json['favorite_item'];
+    itemDiscountPrice = json['item_discount_price'];
   }
 
   Map<String, dynamic> toJson() {
@@ -80,6 +83,7 @@ class ItemsViewModel {
     data['cate_image'] = cateImage;
     data['cate_date_time'] = cateDateTime;
     data['favorite_item'] = itemFavorite;
+    data['item_discount_price'] = itemDiscountPrice;
     return data;
   }
 }
