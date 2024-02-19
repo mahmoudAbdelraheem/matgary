@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
@@ -45,5 +46,25 @@ class AddControllerImp extends AddController {
     getLocation();
 
     super.onInit();
+  }
+
+  //? for page view
+  PageController myPageController = PageController();
+
+  nextPage() {
+    myPageController.nextPage(
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+    update();
+  }
+
+  backPage() {
+    myPageController.animateToPage(
+      0,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+    update();
   }
 }

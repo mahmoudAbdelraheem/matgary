@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomAuthBtnWidget extends StatelessWidget {
+class CustomAppBotton extends StatelessWidget {
   final String btnText;
   final Color textColor;
   final Color btnColor;
   final void Function() myPressed;
-  const CustomAuthBtnWidget({
+  const CustomAppBotton({
     super.key,
     required this.btnText,
     required this.btnColor,

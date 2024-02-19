@@ -5,7 +5,7 @@ import 'package:matgary/controller/auth/vrefiy_email_code_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
+import 'package:matgary/core/shared/custom_app_botton.dart';
 import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
 import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
 
@@ -54,7 +54,7 @@ class VrefiyEmailCodeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             //? resend virefiy code button
-            CustomAuthBtnWidget(
+            CustomAppBotton(
               btnText: 'Resend Vireification Code',
               btnColor: AppColors.myBlue,
               textColor: AppColors.myWhite,

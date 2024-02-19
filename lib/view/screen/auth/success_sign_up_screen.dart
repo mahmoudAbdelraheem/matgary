@@ -4,7 +4,7 @@ import 'package:matgary/controller/auth/success_signup_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
+import 'package:matgary/core/shared/custom_app_botton.dart';
 
 class SuccessSignUpScreen extends StatelessWidget {
   const SuccessSignUpScreen({super.key});
@@ -30,7 +30,7 @@ class SuccessSignUpScreen extends StatelessWidget {
             const Spacer(),
             SizedBox(
               width: double.infinity,
-              child: CustomAuthBtnWidget(
+              child: CustomAppBotton(
                 btnText: LocalizationKeys.signIn,
                 btnColor: AppColors.myBlue,
                 textColor: AppColors.myWhite,

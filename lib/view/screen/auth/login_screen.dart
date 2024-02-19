@@ -11,8 +11,8 @@ import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
 import 'package:matgary/view/widget/auth/custom_title_text_widget.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
 import 'package:matgary/view/widget/auth/have_or_not_account_text.dart';
-import '../../widget/auth/custom_auth_btn_widget.dart';
-import '../../widget/auth/custom_text_form_auth.dart';
+import '../../../core/shared/custom_app_botton.dart';
+import '../../../core/shared/custom_app_text_form.dart';
 import '../../widget/auth/forget_password_text_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   //? body message
                   const CustomBodyTextWidget(body: LocalizationKeys.singInBody),
                   //? email text form
-                  CustomTextFomAuthWidget(
+                  CustomAppTextFom(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'email', min: 5, max: 50);
@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                   //? password text form
                   const SizedBox(height: 20),
                   GetBuilder<LoginControllerImp>(
-                    builder: (controller) => CustomTextFomAuthWidget(
+                    builder: (controller) => CustomAppTextFom(
                       myValidator: (val) {
                         return formVaildInput(
                             value: val!, type: 'password', min: 6, max: 30);
@@ -91,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   //? sign in button
-                  CustomAuthBtnWidget(
+                  CustomAppBotton(
                     btnText: LocalizationKeys.signIn,
                     btnColor: AppColors.myBlue,
                     textColor: AppColors.myWhite,

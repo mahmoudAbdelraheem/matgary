@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomTextFomAuthWidget extends StatelessWidget {
+class CustomAppTextFom extends StatelessWidget {
   final String labelText;
   final String hintText;
   final IconData sufixIcon;
@@ -11,7 +11,7 @@ class CustomTextFomAuthWidget extends StatelessWidget {
   final TextInputType myKeyboardType;
   final void Function()? showPassword;
   final bool? isPassword;
-  const CustomTextFomAuthWidget({
+  const CustomAppTextFom({
     super.key,
     required this.labelText,
     required this.hintText,

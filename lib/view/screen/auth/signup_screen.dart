@@ -10,8 +10,8 @@ import 'package:matgary/view/widget/auth/custom_title_text_widget.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
 import 'package:matgary/view/widget/auth/have_or_not_account_text.dart';
 import '../../../controller/auth/sign_up_controller.dart';
-import '../../widget/auth/custom_auth_btn_widget.dart';
-import '../../widget/auth/custom_text_form_auth.dart';
+import '../../../core/shared/custom_app_botton.dart';
+import '../../../core/shared/custom_app_text_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -52,7 +52,7 @@ class SignUpScreen extends StatelessWidget {
                       const CustomBodyTextWidget(
                           body: LocalizationKeys.singUpBody),
                       //? name text form
-                      CustomTextFomAuthWidget(
+                      CustomAppTextFom(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -70,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
 
                       //? email text form
                       const SizedBox(height: 20),
-                      CustomTextFomAuthWidget(
+                      CustomAppTextFom(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -87,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       //? phone text form
                       const SizedBox(height: 20),
-                      CustomTextFomAuthWidget(
+                      CustomAppTextFom(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -105,7 +105,7 @@ class SignUpScreen extends StatelessWidget {
                       //? password text form
                       const SizedBox(height: 20),
                       GetBuilder<SignUpControllerImp>(
-                        builder: (controller) => CustomTextFomAuthWidget(
+                        builder: (controller) => CustomAppTextFom(
                           myValidator: (val) {
                             return formVaildInput(
                               value: val!,
@@ -129,7 +129,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
 
                       //? go to check email address code
-                      CustomAuthBtnWidget(
+                      CustomAppBotton(
                         btnText: LocalizationKeys.signUp,
                         btnColor: AppColors.myBlue,
                         textColor: AppColors.myWhite,

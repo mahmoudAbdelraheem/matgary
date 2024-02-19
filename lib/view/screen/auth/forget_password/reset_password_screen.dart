@@ -7,10 +7,10 @@ import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/core/functions/form_valid_input.dart';
 
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
+import 'package:matgary/core/shared/custom_app_botton.dart';
 import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
 import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
-import 'package:matgary/view/widget/auth/custom_text_form_auth.dart';
+import 'package:matgary/core/shared/custom_app_text_form.dart';
 
 import '../../../../controller/auth/forget_password/reset_password_controller.dart';
 
@@ -46,7 +46,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 //? password text form
                 const SizedBox(height: 20),
                 GetBuilder<ResetPassworControllerImp>(
-                  builder: (controller) => CustomTextFomAuthWidget(
+                  builder: (controller) => CustomAppTextFom(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'password', min: 6, max: 30);
@@ -67,7 +67,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 //? password text form
                 const SizedBox(height: 20),
                 GetBuilder<ResetPassworControllerImp>(
-                  builder: (controller) => CustomTextFomAuthWidget(
+                  builder: (controller) => CustomAppTextFom(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'password', min: 6, max: 30);
@@ -87,7 +87,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 ),
 
                 //? reset new password
-                CustomAuthBtnWidget(
+                CustomAppBotton(
                   btnText: 'Save',
                   btnColor: AppColors.myBlue,
                   textColor: AppColors.myWhite,

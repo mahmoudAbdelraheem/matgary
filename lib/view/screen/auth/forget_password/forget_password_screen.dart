@@ -5,10 +5,10 @@ import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/core/constant/localizaion_keys.dart';
 import 'package:matgary/core/functions/form_valid_input.dart';
 import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/view/widget/auth/custom_auth_btn_widget.dart';
+import 'package:matgary/core/shared/custom_app_botton.dart';
 import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
 import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
-import 'package:matgary/view/widget/auth/custom_text_form_auth.dart';
+import 'package:matgary/core/shared/custom_app_text_form.dart';
 
 import '../../../../controller/auth/forget_password/forget_password_controller.dart';
 
@@ -41,7 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   body: LocalizationKeys.forgetPasswordBody,
                 ),
                 //? email text form
-                CustomTextFomAuthWidget(
+                CustomAppTextFom(
                   myValidator: (val) {
                     return formVaildInput(
                         value: val!, type: 'email', min: 6, max: 50);
@@ -54,7 +54,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 ),
 
                 //? check button and go to vrefiy code screen
-                CustomAuthBtnWidget(
+                CustomAppBotton(
                   btnText: LocalizationKeys.check,
                   btnColor: AppColors.myBlue,
                   textColor: AppColors.myWhite,

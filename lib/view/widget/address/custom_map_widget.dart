@@ -14,28 +14,32 @@ class CustomMapWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterMap(
-      options: MapOptions(
-        initialCenter: currentLocation,
-        initialZoom: 16.0,
-        onTap: onMapTap,
-      ),
+    return Stack(
       children: [
-        TileLayer(
-          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.example.app',
-        ),
-        MarkerLayer(
-          markers: [
-            Marker(
-              width: 80.0,
-              height: 80.0,
-              point: currentLocation,
-              child: Icon(
-                Icons.location_on,
-                color: AppColors.myRed,
-                size: 30,
-              ),
+        FlutterMap(
+          options: MapOptions(
+            initialCenter: currentLocation,
+            initialZoom: 16.0,
+            onTap: onMapTap,
+          ),
+          children: [
+            TileLayer(
+              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+              userAgentPackageName: 'com.example.app',
+            ),
+            MarkerLayer(
+              markers: [
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: currentLocation,
+                  child: Icon(
+                    Icons.location_on,
+                    color: AppColors.myRed,
+                    size: 30,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
