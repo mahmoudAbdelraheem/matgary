@@ -29,7 +29,7 @@ class SettingScreen extends StatelessWidget {
                       print('case number 0');
                       break;
                     case 1:
-                      print('case number 1');
+                      controller.goToUserAddressScreen();
                       break;
                     case 2:
                       print('case number 2');

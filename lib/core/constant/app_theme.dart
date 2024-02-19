@@ -2,6 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 ThemeData englishTheme = ThemeData(
+  //? floating action button
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: AppColors.myBlue,
+  ),
+  //? app bar theme
+  appBarTheme: AppBarTheme(
+    centerTitle: true,
+    color: AppColors.myBlue,
+    titleTextStyle: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: AppColors.myWhite,
+    ),
+  ),
   fontFamily: 'SignikaNegative',
   textTheme: TextTheme(
     titleLarge: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

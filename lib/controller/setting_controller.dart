@@ -4,6 +4,9 @@ import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/services/my_services.dart';
 
 abstract class SettingController extends GetxController {
+  //? go to user address screens
+  goToUserAddressScreen();
+
   //? logout from account
   logout();
 }
@@ -48,5 +51,10 @@ class SettingControllerImp extends SettingController {
     _myServices.sharedPreferences.setString('langCode', _langCode);
     //? go to login screen
     Get.offAllNamed(AppRoutes.loginScreen);
+  }
+
+  @override
+  goToUserAddressScreen() {
+    Get.toNamed(AppRoutes.viewAddressScreen);
   }
 }

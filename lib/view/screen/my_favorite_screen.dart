@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/favorite/my_favorite_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/view/widget/my_favorite_item_widget.dart';
 
 class MyFavoriteScreen extends StatelessWidget {
@@ -13,15 +12,8 @@ class MyFavoriteScreen extends StatelessWidget {
     Get.put(MyFavoriteControllerImp());
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.myBlue,
-        centerTitle: true,
-        title: Text(
+        title: const Text(
           'Favorite Items',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: AppColors.myWhite,
-          ),
         ),
       ),
       body: Container(

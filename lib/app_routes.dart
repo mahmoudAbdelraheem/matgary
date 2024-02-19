@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/middleware/my_middleware.dart';
+import 'package:matgary/view/screen/address/add_screen.dart';
+import 'package:matgary/view/screen/address/update_screen.dart';
+import 'package:matgary/view/screen/address/view_screen.dart';
 import 'package:matgary/view/screen/auth/forget_password/forget_password_screen.dart';
 import 'package:matgary/view/screen/auth/forget_password/reset_password_screen.dart';
 import 'package:matgary/view/screen/auth/forget_password/success_reset_password_screen.dart';
@@ -95,5 +98,18 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.cartScreen,
     page: () => const CartScreen(),
+  ),
+  //! user address screens
+  GetPage(
+    name: AppRoutes.addAddressScreen,
+    page: () => const AddAddressScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.updateAddressScreen,
+    page: () => const UpdateAddressScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.viewAddressScreen,
+    page: () => const ViewAddressScreen(),
   ),
 ];
