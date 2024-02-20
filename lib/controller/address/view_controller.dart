@@ -1,19 +1,64 @@
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/defualt_alert_dialog.dart';
+import 'package:matgary/core/functions/handling_data.dart';
+import 'package:matgary/core/services/my_services.dart';
+import 'package:matgary/data/datasource/remote/address_data.dart';
+import 'package:matgary/data/models/address_model.dart';
 
 abstract class ViewController extends GetxController {
   //? for location permission
   requestLocationPermission();
   //? go to add user address screen
   goToAddAddressScreen();
+  //? Get saved user Address in data base
+  getAllAddress();
+  //? delete address from database
+  deleteAddress(String addressId);
 }
 
 class ViewControllerImp extends ViewController {
   //? for request user permission
   bool? serviceEnabled;
   LocationPermission? permission;
+
+  List<AddressModel> userAddress = [];
+  final AddressData _addressData = AddressData(crudImp: Get.find());
+  StatuseRequest statuseRequest = StatuseRequest.defualt;
+  final MyServices _myServices = Get.find();
+
+  @override
+  getAllAddress() async {
+    statuseRequest = StatuseRequest.loading;
+    update();
+    var response = await _addressData.viewData(
+      userId: _myServices.sharedPreferences.getString('id')!,
+    );
+    statuseRequest = handlingData(response);
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        List responseData = response['data'];
+        userAddress.addAll(responseData.map((e) => AddressModel.fromJson(e)));
+      } else {
+        statuseRequest = StatuseRequest.failuer;
+      }
+    }
+    update();
+  }
+
+  @override
+  deleteAddress(String addressId) {
+    _addressData.removeData(
+      addressId: addressId,
+    );
+
+    userAddress.removeWhere((element) => element.addressId == addressId);
+
+    update();
+  }
+
   @override
   requestLocationPermission() async {
     //? Test if location services are enabled.
@@ -43,7 +88,8 @@ class ViewControllerImp extends ViewController {
   }
 
   @override
-  void onInit() {
+  void onInit() async {
+    await getAllAddress();
     requestLocationPermission();
     super.onInit();
   }

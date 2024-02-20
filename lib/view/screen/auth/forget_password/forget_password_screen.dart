@@ -41,7 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   body: LocalizationKeys.forgetPasswordBody,
                 ),
                 //? email text form
-                CustomAppTextFom(
+                CustomAppTextForm(
                   myValidator: (val) {
                     return formVaildInput(
                         value: val!, type: 'email', min: 6, max: 50);

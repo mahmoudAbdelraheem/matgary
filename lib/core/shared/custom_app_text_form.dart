@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomAppTextFom extends StatelessWidget {
+class CustomAppTextForm extends StatelessWidget {
   final String labelText;
   final String hintText;
   final IconData sufixIcon;
@@ -11,7 +11,7 @@ class CustomAppTextFom extends StatelessWidget {
   final TextInputType myKeyboardType;
   final void Function()? showPassword;
   final bool? isPassword;
-  const CustomAppTextFom({
+  const CustomAppTextForm({
     super.key,
     required this.labelText,
     required this.hintText,
@@ -26,7 +26,7 @@ class CustomAppTextFom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
         validator: myValidator,
         keyboardType: myKeyboardType,

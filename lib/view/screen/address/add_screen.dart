@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:matgary/controller/address/add_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/view/screen/address/user_address_details.dart';
 import '../../widget/address/custom_map_widget.dart';
 import '../../../core/shared/custom_app_botton.dart';
 
@@ -49,33 +50,8 @@ class AddAddressScreen extends StatelessWidget {
               ),
             ),
 
-            //? second page setting up user data
-            Container(
-              width: double.infinity,
-              color: AppColors.myWhite,
-              child: Center(
-                child: Row(
-                  children: [
-                    CustomAppBotton(
-                      btnText: 'Back',
-                      btnColor: AppColors.myBlue,
-                      textColor: AppColors.myWhite,
-                      myPressed: () {
-                        //? back to the map page
-                        controller.backPage();
-                      },
-                    ),
-                    const SizedBox(width: 20),
-                    CustomAppBotton(
-                      btnText: 'Save',
-                      btnColor: AppColors.myBlue,
-                      textColor: AppColors.myWhite,
-                      myPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            //? second page setting up user address details
+            const UserAddressDetails(),
           ],
         ),
       ),

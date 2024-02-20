@@ -6,8 +6,8 @@ class AddressData {
 
   AddressData({required this.crudImp});
   viewData({required String userId}) async {
-    var response = await crudImp.postData(ApiLink.test, {
-      'userId': userId,
+    var response = await crudImp.postData(ApiLink.viewAddress, {
+      'userid': userId,
     });
     return response.fold((l) => l, (r) => r);
   }

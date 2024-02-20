@@ -46,7 +46,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 //? password text form
                 const SizedBox(height: 20),
                 GetBuilder<ResetPassworControllerImp>(
-                  builder: (controller) => CustomAppTextFom(
+                  builder: (controller) => CustomAppTextForm(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'password', min: 6, max: 30);
@@ -67,7 +67,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 //? password text form
                 const SizedBox(height: 20),
                 GetBuilder<ResetPassworControllerImp>(
-                  builder: (controller) => CustomAppTextFom(
+                  builder: (controller) => CustomAppTextForm(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'password', min: 6, max: 30);

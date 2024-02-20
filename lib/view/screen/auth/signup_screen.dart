@@ -52,7 +52,7 @@ class SignUpScreen extends StatelessWidget {
                       const CustomBodyTextWidget(
                           body: LocalizationKeys.singUpBody),
                       //? name text form
-                      CustomAppTextFom(
+                      CustomAppTextForm(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -70,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
 
                       //? email text form
                       const SizedBox(height: 20),
-                      CustomAppTextFom(
+                      CustomAppTextForm(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -87,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       //? phone text form
                       const SizedBox(height: 20),
-                      CustomAppTextFom(
+                      CustomAppTextForm(
                         myValidator: (val) {
                           return formVaildInput(
                             value: val!,
@@ -105,7 +105,7 @@ class SignUpScreen extends StatelessWidget {
                       //? password text form
                       const SizedBox(height: 20),
                       GetBuilder<SignUpControllerImp>(
-                        builder: (controller) => CustomAppTextFom(
+                        builder: (controller) => CustomAppTextForm(
                           myValidator: (val) {
                             return formVaildInput(
                               value: val!,

@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   //? body message
                   const CustomBodyTextWidget(body: LocalizationKeys.singInBody),
                   //? email text form
-                  CustomAppTextFom(
+                  CustomAppTextForm(
                     myValidator: (val) {
                       return formVaildInput(
                           value: val!, type: 'email', min: 5, max: 50);
@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                   //? password text form
                   const SizedBox(height: 20),
                   GetBuilder<LoginControllerImp>(
-                    builder: (controller) => CustomAppTextFom(
+                    builder: (controller) => CustomAppTextForm(
                       myValidator: (val) {
                         return formVaildInput(
                             value: val!, type: 'password', min: 6, max: 30);
