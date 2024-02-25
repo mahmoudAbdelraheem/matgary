@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/cart_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/shared/custom_app_text_form.dart';
 
 class TotalPriceTextWidget extends GetView<CartControllerImp> {
   const TotalPriceTextWidget({
@@ -13,6 +14,53 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        InkWell(
+          onTap: () {
+            //? open an aleart dialog to insart coupone
+
+            Get.defaultDialog(
+              title: 'Coupon',
+              //? text form feild
+              content: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                child: CustomAppTextForm(
+                  labelText: 'Coupon',
+                  hintText: 'Enter Your Coupone',
+                  sufixIcon: Icons.discount_outlined,
+                  myValidator: (val) {
+                    return null;
+                  },
+                  myController: controller.couponController,
+                  myKeyboardType: TextInputType.text,
+                ),
+              ),
+              buttonColor: AppColors.myBlue,
+              confirmTextColor: AppColors.myWhite,
+
+              //?
+              onConfirm: () {
+                //? check user coupon from data base
+              },
+            );
+          },
+          child: Container(
+            padding: const EdgeInsets.all(5),
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: AppColors.myBlue,
+            ),
+            child: Text(
+              'Have An Coupone ?',
+              style: TextStyle(
+                color: AppColors.myWhite,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(

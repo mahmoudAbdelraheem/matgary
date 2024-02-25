@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/functions/handling_data.dart';
@@ -34,6 +35,8 @@ class CartControllerImp extends CartController {
   List<CartViewModel> cart = [];
   double orderTotalPrice = 0.0;
   int orderTotalCount = 0;
+  //? for coupone
+  late TextEditingController couponController;
 
   @override
   changeContainerHeigth() {
@@ -122,6 +125,7 @@ class CartControllerImp extends CartController {
   @override
   void onInit() {
     getCartItem();
+    couponController = TextEditingController();
     super.onInit();
   }
 }

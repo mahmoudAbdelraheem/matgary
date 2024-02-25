@@ -17,7 +17,7 @@ class CartFloatingActionBtnWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 700),
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-        height: controller.isOpen ? 260 : 110,
+        height: controller.isOpen ? 310 : 110,
         decoration: BoxDecoration(
           color: controller.isOpen ? AppColors.myWhite : null,
           borderRadius: BorderRadius.circular(20),
