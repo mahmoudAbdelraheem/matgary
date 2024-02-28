@@ -48,4 +48,6 @@ class ApiLink {
   static const String viewAddress = '$server/address/view.php';
   static const String removeAddress = '$server/address/remove.php';
   static const String updateAddress = '$server/address/update.php';
+  //? coupons
+  static const String checkCoupone = '$server/coupon/checkcoupon.php';
 }

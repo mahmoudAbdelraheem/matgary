@@ -36,4 +36,12 @@ class CartData {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+//? for coupon
+  checkCoupone({required String couponName}) async {
+    var response = await crudImp.postData(ApiLink.checkCoupone, {
+      'couponname': couponName,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

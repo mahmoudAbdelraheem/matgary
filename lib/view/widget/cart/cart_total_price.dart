@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/cart_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/shared/custom_app_text_form.dart';
+import 'package:matgary/core/functions/coupon_text_form.dart';
 
 class TotalPriceTextWidget extends GetView<CartControllerImp> {
   const TotalPriceTextWidget({
@@ -14,34 +14,13 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        //? coupon
         InkWell(
           onTap: () {
             //? open an aleart dialog to insart coupone
-
-            Get.defaultDialog(
-              title: 'Coupon',
-              //? text form feild
-              content: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: CustomAppTextForm(
-                  labelText: 'Coupon',
-                  hintText: 'Enter Your Coupone',
-                  sufixIcon: Icons.discount_outlined,
-                  myValidator: (val) {
-                    return null;
-                  },
-                  myController: controller.couponController,
-                  myKeyboardType: TextInputType.text,
-                ),
-              ),
-              buttonColor: AppColors.myBlue,
-              confirmTextColor: AppColors.myWhite,
-
-              //?
-              onConfirm: () {
-                //? check user coupon from data base
-              },
-            );
+            couponTextForm(controller.couponController, () {
+              controller.checkCoupon();
+            });
           },
           child: Container(
             padding: const EdgeInsets.all(5),
@@ -61,6 +40,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
             ),
           ),
         ),
+        //? total order price
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
@@ -74,17 +54,65 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                   color: AppColors.myBlack,
                 ),
               ),
-              Text(
-                '${controller.orderTotalPrice}\$',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.myBlack,
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  //? price befor coupon discount
+                  if (controller.couponModel != null)
+                    Text(
+                      '${controller.orderTotalPrice}\$',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.myBlack,
+                        decoration: TextDecoration.lineThrough,
+                        decorationStyle: TextDecorationStyle.solid,
+                        decorationColor: AppColors.myRed,
+                        decorationThickness: 3,
+                      ),
+                    ),
+                  const SizedBox(width: 10),
+                  //? price after coupon discount
+                  Text(
+                    '${controller.orderTotalDicountPrice}\$',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.myBlack,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
+        //? user coupon discount
+        if (controller.couponModel != null)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Discount',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.myBlack,
+                  ),
+                ),
+                Text(
+                  '${controller.couponModel!.couponDiscount}%',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.myBlack,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+        //? shipping price
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
@@ -124,7 +152,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                 ),
               ),
               Text(
-                '${controller.orderTotalPrice}\$',
+                '${controller.orderTotalDicountPrice}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
