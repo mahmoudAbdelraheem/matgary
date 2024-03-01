@@ -9,6 +9,10 @@ class AppImageAssets {
   //? user avatar image
   static const String avatar = '$rootImage/avatar.png';
   static const String avatar1 = '$rootImage/avatar1.png';
+  //? check out images
+  static const String delivery = '$rootImage/delivery.png';
+  static const String driveThru = '$rootImage/drivethru.png';
+
   //? on boading images
   static const String onBoardingImageOne = '$rootImage/onboardingone.PNG';
   static const String onBoardingImageTwo = '$rootImage/onboardingtwo.PNG';

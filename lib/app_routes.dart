@@ -12,6 +12,7 @@ import 'package:matgary/view/screen/auth/login_screen.dart';
 import 'package:matgary/view/screen/auth/signup_screen.dart';
 import 'package:matgary/view/screen/auth/success_sign_up_screen.dart';
 import 'package:matgary/view/screen/auth/vrefiy_email_code_screen.dart';
+import 'package:matgary/view/screen/check_out_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/items_screen.dart';
@@ -111,5 +112,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.viewAddressScreen,
     page: () => const ViewAddressScreen(),
+  ),
+  //! user order check out screen
+  GetPage(
+    name: AppRoutes.checkOutScreen,
+    page: () => const CheckOutScreen(),
   ),
 ];

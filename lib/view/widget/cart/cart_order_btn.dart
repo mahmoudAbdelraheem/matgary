@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 
 class OrderButtonWidget extends StatelessWidget {
+  final void Function()? onPressed;
   const OrderButtonWidget({
     super.key,
+    required this.onPressed,
   });
 
   @override
@@ -24,7 +26,7 @@ class OrderButtonWidget extends StatelessWidget {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           'Order',
           style: TextStyle(

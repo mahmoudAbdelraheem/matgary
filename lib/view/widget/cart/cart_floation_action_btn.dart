@@ -56,7 +56,11 @@ class CartFloatingActionBtnWidget extends StatelessWidget {
                 }
               },
             ),
-            const OrderButtonWidget(),
+            OrderButtonWidget(
+              onPressed: () {
+                controller.goToCheckOut();
+              },
+            ),
           ],
         ),
       ),

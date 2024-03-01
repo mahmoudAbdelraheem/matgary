@@ -27,4 +27,6 @@ class AppRoutes {
   static const String addAddressScreen = '/addAddress';
   static const String updateAddressScreen = '/updateAddress';
   static const String viewAddressScreen = '/viewAddress';
+  //? check out screen
+  static const String checkOutScreen = '/checkOut';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
+import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/defualt_alert_dialog.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
@@ -25,6 +26,8 @@ abstract class CartController extends GetxController {
   getCartItem();
   //? chech uesr coupon
   checkCoupon();
+  //? go to check out order screen
+  goToCheckOut();
 }
 
 class CartControllerImp extends CartController {
@@ -163,6 +166,11 @@ class CartControllerImp extends CartController {
   getTotalPrice() {
     orderTotalDicountPrice =
         (orderTotalPrice - orderTotalPrice * couponDiscount / 100);
+  }
+
+  @override
+  goToCheckOut() {
+    Get.toNamed(AppRoutes.checkOutScreen);
   }
 
   @override
