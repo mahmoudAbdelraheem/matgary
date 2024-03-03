@@ -50,4 +50,9 @@ class ApiLink {
   static const String updateAddress = '$server/address/update.php';
   //? coupons
   static const String checkCoupone = '$server/coupon/checkcoupon.php';
+  //? user order
+  static const String addOrder = '$server/orders/add.php';
+  static const String updateOrder = '$server/orders/update.php';
+  static const String removeOrder = '$server/orders/remove.php';
+  static const String viewOrder = '$server/orders/view.php';
 }

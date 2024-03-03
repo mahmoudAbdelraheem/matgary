@@ -39,13 +39,17 @@ class ItemGridTileHeader extends StatelessWidget {
               ),
               color: AppColors.myBlack.withOpacity(0.2),
             ),
-            child: InkWell(
-              onTap: () {},
-              child: Icon(
-                //?Icons.shopping_cart
-                Icons.shopping_cart_checkout_outlined,
-                size: 30,
-                color: AppColors.myWhite,
+            child: GetBuilder<ItemsControllerImp>(
+              builder: (itemController) => InkWell(
+                onTap: () {
+                  itemController.addItemToCart(item.itemId!);
+                },
+                child: Icon(
+                  //?Icons.shopping_cart
+                  Icons.add_shopping_cart_outlined,
+                  size: 30,
+                  color: AppColors.myWhite,
+                ),
               ),
             ),
           ),

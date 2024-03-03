@@ -27,9 +27,11 @@ class CartFloatingActionBtnWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             InkWell(
-              onTap: () {
-                controller.changeContainerHeigth();
-              },
+              onTap: controller.cart.isEmpty
+                  ? null
+                  : () {
+                      controller.changeContainerHeigth();
+                    },
               child: CircleAvatar(
                 backgroundColor: controller.isOpen
                     ? AppColors.myWhite

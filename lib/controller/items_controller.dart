@@ -4,6 +4,7 @@ import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
+import 'package:matgary/data/datasource/remote/cart_data.dart';
 import 'package:matgary/data/datasource/remote/items_view_data.dart';
 import 'package:matgary/data/models/items_view_model.dart';
 
@@ -15,7 +16,7 @@ abstract class ItemsController extends SearchControllerImp {
   //? to change categorise of items screen
   changeCategoryIndex(int index, String categoryId);
   //? add items for cart
-  addItemToCart();
+  addItemToCart(String itemId);
   //? go to product details screen
   goToItemDetails(ItemsViewModel selectedItem);
   //? go to user favorite screen
@@ -37,6 +38,7 @@ class ItemsControllerImp extends ItemsController {
   // StatuseRequest statuseRequest = StatuseRequest.defualt;
   List<ItemsViewModel> itemsView = [];
   final ItemsViewData _itemsViewData = ItemsViewData(crudImp: Get.find());
+  final CartData _cartData = CartData(crudImp: Get.find());
 
   //? category id
   late String categoryId;
@@ -82,9 +84,22 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  addItemToCart() {
-    // TODO: implement addItemToCart
-    throw UnimplementedError();
+  addItemToCart(String itemId) async {
+    statuseRequest = StatuseRequest.loading;
+    update();
+    var response = await _cartData.addToCart(
+      userId: myServices.sharedPreferences.getString('id')!,
+      itemId: itemId,
+    );
+    statuseRequest = handlingData(response);
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        Get.snackbar('Success', 'Item Added Successfully');
+      } else {
+        Get.snackbar('Failuer', 'Please Try Again');
+      }
+    }
+    update();
   }
 
   @override

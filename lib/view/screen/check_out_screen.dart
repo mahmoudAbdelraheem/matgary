@@ -15,33 +15,36 @@ class CheckOutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(CheckOutControllerImp());
-    return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: MaterialButton(
-          height: 50,
-          textColor: AppColors.myWhite,
-          color: AppColors.myBlue,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          onPressed: () {},
-          child: const Text(
-            'Check Out',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
+    //? page scaffold
+    return GetBuilder<CheckOutControllerImp>(
+      builder: (controller) => Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: MaterialButton(
+            height: 50,
+            textColor: AppColors.myWhite,
+            color: AppColors.myBlue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            onPressed: () {
+              controller.orderCheckOut();
+            },
+            child: const Text(
+              'Check Out',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
           ),
         ),
-      ),
-      appBar: AppBar(
-        title: const Text('Check Out'),
-      ),
-      body: GetBuilder<CheckOutControllerImp>(
-        builder: (controller) => HandlingDataView(
+        appBar: AppBar(
+          title: const Text('Check Out'),
+        ),
+        body: HandlingDataView(
           statuseRequest: controller.statuseRequest,
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -51,16 +54,16 @@ class CheckOutScreen extends StatelessWidget {
                 const CoustomCheckOutText(title: 'Choose Payment Method.'),
                 CustomPaymentMethod(
                   title: 'Payment Card',
-                  isSelected: controller.paymentMethod == 'Card' ? true : false,
+                  isSelected: controller.paymentMethod == '0' ? true : false,
                   onTap: () {
-                    controller.choosePaymentMethod('Card');
+                    controller.choosePaymentMethod('0');
                   },
                 ),
                 CustomPaymentMethod(
                   title: 'Cash On Delivery',
-                  isSelected: controller.paymentMethod == 'Cash' ? true : false,
+                  isSelected: controller.paymentMethod == '1' ? true : false,
                   onTap: () {
-                    controller.choosePaymentMethod('Cash');
+                    controller.choosePaymentMethod('1');
                   },
                 ),
                 //? Delivery section
@@ -71,26 +74,24 @@ class CheckOutScreen extends StatelessWidget {
                     CustomDeliveryType(
                       image: AppImageAssets.delivery,
                       title: 'Delivery',
-                      isSelected:
-                          controller.deliveryType == 'Delivery' ? true : false,
+                      isSelected: controller.deliveryType == '0' ? true : false,
                       onTap: () {
-                        controller.chooseDeliveryType('Delivery');
+                        controller.chooseDeliveryType('0');
                       },
                     ),
                     CustomDeliveryType(
                       image: AppImageAssets.driveThru,
                       title: 'Drive Thru',
-                      isSelected: controller.deliveryType == 'Drive Thru'
-                          ? true
-                          : false,
+                      isSelected: controller.deliveryType == '1' ? true : false,
                       onTap: () {
-                        controller.chooseDeliveryType('Drive Thru');
+                        controller.chooseDeliveryType('1');
                       },
                     ),
                   ],
                 ),
+
                 //? address section
-                if (controller.deliveryType == 'Delivery')
+                if (controller.deliveryType == '0')
                   Column(
                     children: [
                       const CoustomCheckOutText(title: 'Shipping Address.'),

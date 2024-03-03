@@ -44,6 +44,7 @@ class CartControllerImp extends CartController {
   double orderTotalDicountPrice = 0.0;
   int couponDiscount = 0;
   int orderTotalCount = 0;
+  String couponId = '0';
   //? for coupone
   CouponModel? couponModel;
   late TextEditingController couponController;
@@ -147,6 +148,7 @@ class CartControllerImp extends CartController {
         if (response['status'] == 'success') {
           Map<String, dynamic> responseMap = response['data'][0];
           couponModel = CouponModel.fromJson(responseMap);
+          couponId = couponModel!.couponId!;
           couponDiscount = int.parse(couponModel!.couponDiscount!);
           //? calc total price with coupon discount
           getTotalPrice();
@@ -170,7 +172,15 @@ class CartControllerImp extends CartController {
 
   @override
   goToCheckOut() {
-    Get.toNamed(AppRoutes.checkOutScreen);
+    if (cart.isEmpty) {
+      Get.snackbar('Warning', 'Your Cart Is Empty, You Neet To Add Items.');
+    } else {
+      Get.toNamed(AppRoutes.checkOutScreen, arguments: {
+        'couponid': couponId,
+        'coupondiscount': couponDiscount.toString(),
+        'orderprice': orderTotalPrice.toStringAsFixed(2),
+      });
+    }
   }
 
   @override

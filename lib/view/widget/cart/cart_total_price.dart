@@ -60,7 +60,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                   //? price befor coupon discount
                   if (controller.couponModel != null)
                     Text(
-                      '${controller.orderTotalPrice}\$',
+                      '${controller.orderTotalPrice.toStringAsFixed(2)}\$',
                       style: TextStyle(
                         fontSize: 14,
                         color: AppColors.myBlack,
@@ -73,7 +73,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                   const SizedBox(width: 10),
                   //? price after coupon discount
                   Text(
-                    '${controller.orderTotalDicountPrice}\$',
+                    '${controller.orderTotalDicountPrice.toStringAsFixed(2)}\$',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class TotalPriceTextWidget extends GetView<CartControllerImp> {
                 ),
               ),
               Text(
-                '${controller.orderTotalDicountPrice}\$',
+                '${controller.orderTotalDicountPrice.toStringAsFixed(2)}\$',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
