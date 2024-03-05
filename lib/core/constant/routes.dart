@@ -29,4 +29,8 @@ class AppRoutes {
   static const String viewAddressScreen = '/viewAddress';
   //? check out screen
   static const String checkOutScreen = '/checkOut';
+  //? orders
+  static const String pendingScreen = '/pending';
+  static const String archiveScreen = '/archive';
+  static const String cancledScreen = '/cancled';
 }

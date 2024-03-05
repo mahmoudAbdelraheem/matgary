@@ -28,4 +28,45 @@ class OrderData {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+  //? get user pending orders
+  getPendingOrdersData({required String userId}) async {
+    var response = await crudImp.postData(ApiLink.pendingOrder, {
+      'id': userId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
+
+  //? get user canceld order
+  getCanceldOrdersData({required String userId}) async {
+    var response = await crudImp.postData(ApiLink.getCanceldOrder, {
+      'id': userId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
+
+  //? get user archived orders
+  getArchiveOrdersData({required String userId}) async {
+    var response = await crudImp.postData(ApiLink.archiveOrder, {
+      'id': userId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
+  //? put user order on archive
+  // todo put order in archived by make order status  = 3
+  // archiveOrderData({required String userId}) async {
+  //   var response = await crudImp.postData(ApiLink.archiveOrder, {
+  //     'id': userId,
+  //   });
+  //   return response.fold((l) => l, (r) => r);
+  // }
+
+  //? cancel order
+  canceldOrderData({required String orderId, required String userId}) async {
+    var response = await crudImp.postData(ApiLink.cancelOrder, {
+      'orderid': orderId,
+      'userid': userId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

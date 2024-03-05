@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/view/screen/home_screen.dart';
+import 'package:matgary/view/screen/orders/orders_screen.dart';
 import 'package:matgary/view/screen/setting_screen.dart';
 
 abstract class HomeController extends GetxController {
@@ -25,8 +26,8 @@ class HomeControllerImp extends HomeController {
       'icon': Icons.notifications_on_outlined,
     },
     {
-      'title': "Profile",
-      'icon': Icons.person_2_outlined,
+      'title': "Orders",
+      'icon': Icons.assignment_outlined,
     },
     {
       'title': "Setting",
@@ -39,9 +40,7 @@ class HomeControllerImp extends HomeController {
     const Center(
       child: Text('Notifivcation'),
     ),
-    const Center(
-      child: Text('Profile'),
-    ),
+    const OrdersSceen(),
     const SettingScreen(),
   ];
 

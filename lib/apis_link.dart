@@ -54,5 +54,10 @@ class ApiLink {
   static const String addOrder = '$server/orders/add.php';
   static const String updateOrder = '$server/orders/update.php';
   static const String removeOrder = '$server/orders/remove.php';
-  static const String viewOrder = '$server/orders/view.php';
+  static const String pendingOrder = '$server/orders/pending.php';
+  static const String archiveOrder = '$server/orders/archive.php';
+  static const String getCanceldOrder =
+      '$server/orders/canceld.php'; // get all canceld order
+  static const String cancelOrder =
+      '$server/orders/cancelorder.php'; // cancle order
 }
