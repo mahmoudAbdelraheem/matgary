@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/app_theme.dart';
+import 'package:matgary/core/functions/fcm_config.dart';
 import 'package:matgary/core/services/my_services.dart';
 
 class LocaleController extends GetxController {
@@ -27,6 +28,10 @@ class LocaleController extends GetxController {
 
   @override
   void onInit() {
+    //? set up notifications
+    initFcmMessageNotification();
+
+    //? set up app language
     String? codeLang = myServices.sharedPreferences.getString('langCode');
     if (codeLang == 'ar') {
       language = Locale(codeLang!);

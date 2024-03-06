@@ -65,6 +65,8 @@ dependencies:
   flutter_otp_text_field: ^1.1.1
   #for failuer lotties images
   lottie: ^3.0.0
+  # for play defualt device notification sound
+  flutter_ringtone_player: ^4.0.0+2
 
   
 dev_dependencies:

@@ -59,6 +59,7 @@ class LoginControllerImp extends LoginController {
             //? save user data in cache
             _myServices.sharedPreferences
                 .setString("id", response['data']['user_id']);
+            String userId = _myServices.sharedPreferences.getString("id")!;
             _myServices.sharedPreferences
                 .setString("name", response['data']['user_name']);
             _myServices.sharedPreferences
@@ -67,6 +68,9 @@ class LoginControllerImp extends LoginController {
                 .setString("phone", response['data']['user_phone']);
             _myServices.sharedPreferences.setString("step", '2');
             //? login success and go to home page
+            //? end notification to all users that subscribe to topic users
+            FirebaseMessaging.instance.subscribeToTopic('users');
+            FirebaseMessaging.instance.subscribeToTopic('users$userId');
             Get.offAllNamed(AppRoutes.homeScreen);
           } else {
             Get.offNamed(

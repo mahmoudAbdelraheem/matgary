@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
@@ -42,6 +43,10 @@ class SettingControllerImp extends SettingController {
   late String _langCode;
   @override
   logout() {
+    //? get user id
+    final String userId = _myServices.sharedPreferences.getString('id')!;
+    FirebaseMessaging.instance.unsubscribeFromTopic('users');
+    FirebaseMessaging.instance.unsubscribeFromTopic('users$userId');
     //? get user selected language
     _langCode = _myServices.sharedPreferences.getString('langCode')!;
     //? clear user data from device cache
