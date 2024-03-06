@@ -8,9 +8,6 @@ import 'package:matgary/data/datasource/remote/order_data.dart';
 import 'package:matgary/data/models/order_model.dart';
 
 abstract class PendingController extends GetxController {
-  String printPaymentMethod(String val);
-  String printOrderType(String val);
-  String printOrderStatus(String val);
   //? get all user pending orders
   getPendingOrders();
   //? cancle user order
@@ -78,33 +75,6 @@ class PendingControllerImp extends PendingController {
       ],
     );
     update();
-  }
-
-  @override
-  String printPaymentMethod(String val) {
-    if (val == '0') {
-      return "Card Payment";
-    } else {
-      return "Cash Payment";
-    }
-  }
-
-  @override
-  String printOrderType(String val) {
-    if (val == '0') {
-      return "Delivery";
-    } else {
-      return "Recive";
-    }
-  }
-
-  @override
-  String printOrderStatus(String val) {
-    if (val == '0') {
-      return "Pending Approval";
-    } else {
-      return "On The Way";
-    }
   }
 
   @override

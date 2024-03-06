@@ -57,7 +57,7 @@ class ApiLink {
   static const String pendingOrder = '$server/orders/pending.php';
   static const String archiveOrder = '$server/orders/archive.php';
   static const String getCanceldOrder =
-      '$server/orders/canceld.php'; // get all canceld order
+      '$server/orders/getcancled.php'; // get all canceld order
   static const String cancelOrder =
       '$server/orders/cancelorder.php'; // cancle order
 }

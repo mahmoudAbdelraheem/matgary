@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:matgary/controller/orders/pending_controller.dart';
+import 'package:matgary/core/class/orders.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/data/models/order_model.dart';
 
-class CustomPendingOrderCard extends GetView<PendingControllerImp> {
+class CustomOrderCardWidget extends StatelessWidget {
   final OrdersModel order;
-  const CustomPendingOrderCard({
+  final bool isPending;
+  final void Function()? onCancle;
+  const CustomOrderCardWidget({
     super.key,
     required this.order,
+    this.isPending = true,
+    this.onCancle,
   });
 
   @override
@@ -36,11 +39,9 @@ class CustomPendingOrderCard extends GetView<PendingControllerImp> {
                   ),
                 ),
                 //? order will cancle only if status is pending approver
-                if (order.orderStatus == '0')
+                if (order.orderStatus == '0' && isPending == true)
                   IconButton(
-                    onPressed: () {
-                      controller.cancleOrder(order.orderId!);
-                    },
+                    onPressed: onCancle,
                     icon: Icon(
                       Icons.cancel_presentation_rounded,
                       color: AppColors.myRed,
@@ -51,7 +52,7 @@ class CustomPendingOrderCard extends GetView<PendingControllerImp> {
             const Divider(thickness: 2),
             //? order payment method
             Text(
-              'Payment Method : ${controller.printPaymentMethod(order.orderPaymentMethod!)}',
+              'Payment Method : ${Orders.printPaymentMethod(order.orderPaymentMethod!)}',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -61,7 +62,7 @@ class CustomPendingOrderCard extends GetView<PendingControllerImp> {
             ),
             //? order type
             Text(
-              'Order type : ${controller.printOrderType(order.orderType!)}',
+              'Order type : ${Orders.printOrderType(order.orderType!)}',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -71,7 +72,7 @@ class CustomPendingOrderCard extends GetView<PendingControllerImp> {
             ),
             //? order status
             Text(
-              'Order Status : ${controller.printOrderStatus(order.orderStatus!)}',
+              'Order Status : ${Orders.printOrderStatus(order.orderStatus!)}',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
