@@ -6,13 +6,13 @@ class CustomSearchAppBar extends StatelessWidget {
   final TextEditingController myController;
   final void Function()? onPressedSearch;
   final void Function(String)? onFromChange;
-  final void Function()? onPressedFavorite;
+  final void Function()? onPressedNotify;
   const CustomSearchAppBar({
     super.key,
     required this.hintText,
     required this.myController,
     required this.onPressedSearch,
-    required this.onPressedFavorite,
+    required this.onPressedNotify,
     required this.onFromChange,
   });
 
@@ -50,8 +50,8 @@ class CustomSearchAppBar extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         AppBarIconWidget(
-          onPressedIcon: onPressedFavorite,
-          icon: Icons.favorite_border_outlined,
+          onPressedIcon: onPressedNotify,
+          icon: Icons.notifications_on_outlined,
         ),
       ],
     );

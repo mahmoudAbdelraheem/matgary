@@ -35,8 +35,8 @@ class ItemsScreen extends StatelessWidget {
                   onFromChange: (val) {
                     controller.endSearch(val);
                   },
-                  onPressedFavorite: () {
-                    controller.goToUserFavoriteScreen();
+                  onPressedNotify: () {
+                    controller.goToUserNotificationScreen();
                   },
                 ),
                 //? categories data

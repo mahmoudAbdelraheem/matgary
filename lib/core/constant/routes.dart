@@ -17,8 +17,8 @@ class AppRoutes {
   static const String itemsScreen = '/items';
   //? product details screen
   static const String itemDetailsScreen = '/itemDetails';
-  //? user favorite screen
-  static const String myFavoriteScreen = '/myFavorite';
+  //? user Notifications screen
+  static const String notificationScreen = '/notification';
   //? user setting screen
   static const String settingScreen = '/setting';
   //? cart screen

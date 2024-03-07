@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/controller/orders/order_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/shared/custom_app_appbar.dart';
 import 'package:matgary/view/widget/orders/custom_order_btn.dart';
 
 class OrdersSceen extends StatelessWidget {
@@ -17,23 +17,7 @@ class OrdersSceen extends StatelessWidget {
         child: ListView(
           children: [
             //? custom order app bar
-            Container(
-              width: double.infinity,
-              height: 60,
-              decoration: BoxDecoration(
-                color: AppColors.myBlue,
-              ),
-              child: Text(
-                'Orders',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.myWhite,
-                  height: 2,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            const CustomAppAppBar(title: 'Orders'),
             Padding(
               padding: const EdgeInsets.all(15),
               child: GridView.builder(

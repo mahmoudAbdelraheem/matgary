@@ -12,13 +12,15 @@ abstract class PendingController extends GetxController {
   getPendingOrders();
   //? cancle user order
   cancleOrder(String orderId);
+  //? refresh orders data when send notification and user in pending order
+  refreshPendingOrders();
 }
 
 class PendingControllerImp extends PendingController {
   StatuseRequest statuseRequest = StatuseRequest.defualt;
   final MyServices _myServices = Get.find();
   final OrderData _orderData = OrderData(crudImp: Get.find());
-  final List<OrdersModel> orders = [];
+  List<OrdersModel> orders = [];
 
   @override
   getPendingOrders() async {
@@ -32,11 +34,18 @@ class PendingControllerImp extends PendingController {
       if (response['status'] == 'success') {
         List responseData = response['data'];
         orders.addAll(responseData.map((e) => OrdersModel.fromJson(e)));
+        orders = orders.reversed.toList();
       } else {
         statuseRequest = StatuseRequest.failuer;
       }
     }
     update();
+  }
+
+  @override
+  refreshPendingOrders() async {
+    orders.clear();
+    await getPendingOrders();
   }
 
   @override

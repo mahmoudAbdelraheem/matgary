@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:matgary/core/class/orders.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/data/models/order_model.dart';
+import 'package:jiffy/jiffy.dart';
 
 class CustomOrderCardWidget extends StatelessWidget {
   final OrdersModel order;
@@ -49,6 +50,7 @@ class CustomOrderCardWidget extends StatelessWidget {
                   ),
               ],
             ),
+            Text(Jiffy.parse(order.orderDateTime!).fromNow()),
             const Divider(thickness: 2),
             //? order payment method
             Text(

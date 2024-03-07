@@ -16,7 +16,7 @@ import 'package:matgary/view/screen/check_out_screen.dart';
 import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/items_screen.dart';
-import 'package:matgary/view/screen/my_favorite_screen.dart';
+import 'package:matgary/view/screen/notification_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 import 'package:matgary/view/screen/item_details_screen.dart';
 import 'package:matgary/view/screen/orders/archive_screen.dart';
@@ -90,8 +90,8 @@ List<GetPage<dynamic>> routes = [
   ),
   //! user favorite screen
   GetPage(
-    name: AppRoutes.myFavoriteScreen,
-    page: () => const MyFavoriteScreen(),
+    name: AppRoutes.notificationScreen,
+    page: () => const NotificationScreen(),
   ),
   //! user setting screen
   GetPage(

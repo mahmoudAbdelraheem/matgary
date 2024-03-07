@@ -19,8 +19,8 @@ abstract class ItemsController extends SearchControllerImp {
   addItemToCart(String itemId);
   //? go to product details screen
   goToItemDetails(ItemsViewModel selectedItem);
-  //? go to user favorite screen
-  goToUserFavoriteScreen();
+  //? go to user notifications screen
+  goToUserNotificationScreen();
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -110,8 +110,8 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  goToUserFavoriteScreen() {
-    Get.toNamed(AppRoutes.myFavoriteScreen);
+  goToUserNotificationScreen() {
+    Get.toNamed(AppRoutes.notificationScreen);
   }
 
   @override

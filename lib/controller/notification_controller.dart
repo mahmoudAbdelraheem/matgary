@@ -2,33 +2,34 @@ import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/order_data.dart';
-import 'package:matgary/data/models/order_model.dart';
+import 'package:matgary/data/datasource/remote/notification_data.dart';
+import 'package:matgary/data/models/notification_model.dart';
 
-abstract class ArchiveController extends GetxController {
-  //? get all user cancled orders
-  getArchivedOrders();
+abstract class NotificationController extends GetxController {
+  getNotification();
 }
 
-class ArchiveControllerImp extends ArchiveController {
+class NotificationControllerImp extends NotificationController {
   StatuseRequest statuseRequest = StatuseRequest.defualt;
   final MyServices _myServices = Get.find();
-  final OrderData _orderData = OrderData(crudImp: Get.find());
-  List<OrdersModel> orders = [];
+  final NotificationData _notificationData =
+      NotificationData(crudImp: Get.find());
+  List<NotificationModel> notifications = [];
 
   @override
-  getArchivedOrders() async {
+  getNotification() async {
     statuseRequest = StatuseRequest.loading;
     update();
-    var response = await _orderData.getArchiveOrdersData(
+    var response = await _notificationData.getData(
         userId: _myServices.sharedPreferences.getString('id')!);
     statuseRequest = handlingData(response);
 
     if (statuseRequest == StatuseRequest.success) {
       if (response['status'] == 'success') {
         List responseData = response['data'];
-        orders.addAll(responseData.map((e) => OrdersModel.fromJson(e)));
-        orders = orders.reversed.toList();
+        notifications
+            .addAll(responseData.map((e) => NotificationModel.fromJson(e)));
+        notifications = notifications.reversed.toList();
       } else {
         statuseRequest = StatuseRequest.failuer;
       }
@@ -38,7 +39,7 @@ class ArchiveControllerImp extends ArchiveController {
 
   @override
   void onInit() {
-    getArchivedOrders();
+    getNotification();
     super.onInit();
   }
 }

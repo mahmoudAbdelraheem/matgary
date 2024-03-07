@@ -12,8 +12,8 @@ abstract class HomeScreenController extends SearchControllerImp {
   getHomeDate();
   //? go to categories items
   goToCategoryItems(List categories, int cateIndex, String categoryId);
-  //? user favorite Screen
-  goToUserFavoriteScreen();
+  //? user notifications Screen
+  goToUserNotificationScreen();
 
   goToItemDetails(ItemsViewModel selectedItem);
 }
@@ -66,8 +66,8 @@ class HomeScreenControllerImp extends HomeScreenController {
   }
 
   @override
-  goToUserFavoriteScreen() {
-    Get.toNamed(AppRoutes.myFavoriteScreen);
+  goToUserNotificationScreen() {
+    Get.toNamed(AppRoutes.notificationScreen);
   }
 
   @override

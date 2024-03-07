@@ -14,7 +14,7 @@ class CancledControllerImp extends CancledController {
   StatuseRequest statuseRequest = StatuseRequest.defualt;
   final MyServices _myServices = Get.find();
   final OrderData _orderData = OrderData(crudImp: Get.find());
-  final List<OrdersModel> orders = [];
+  List<OrdersModel> orders = [];
 
   @override
   getCanceldOrders() async {
@@ -28,6 +28,7 @@ class CancledControllerImp extends CancledController {
       if (response['status'] == 'success') {
         List responseData = response['data'];
         orders.addAll(responseData.map((e) => OrdersModel.fromJson(e)));
+        orders = orders.reversed.toList();
       } else {
         statuseRequest = StatuseRequest.failuer;
       }

@@ -10,6 +10,8 @@ ThemeData englishTheme = ThemeData(
   appBarTheme: AppBarTheme(
     centerTitle: true,
     color: AppColors.myBlue,
+    toolbarHeight: 60,
+    elevation: 0,
     titleTextStyle: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,

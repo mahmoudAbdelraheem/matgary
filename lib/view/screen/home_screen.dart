@@ -30,8 +30,8 @@ class HomeScreen extends StatelessWidget {
               onFromChange: (val) {
                 controller.endSearch(val);
               },
-              onPressedFavorite: () {
-                controller.goToUserFavoriteScreen();
+              onPressedNotify: () {
+                controller.goToUserNotificationScreen();
               },
             ),
             controller.isSearch
