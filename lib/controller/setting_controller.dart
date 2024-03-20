@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/services/my_services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 abstract class SettingController extends GetxController {
   //? go to user address screens
@@ -10,6 +11,8 @@ abstract class SettingController extends GetxController {
 
   //? logout from account
   logout();
+  //? conacte US
+  contactUS();
 }
 
 class SettingControllerImp extends SettingController {
@@ -61,5 +64,10 @@ class SettingControllerImp extends SettingController {
   @override
   goToUserAddressScreen() {
     Get.toNamed(AppRoutes.viewAddressScreen);
+  }
+
+  @override
+  contactUS() async {
+    await launchUrl(Uri.parse("tel:+201017495718"));
   }
 }

@@ -26,15 +26,18 @@ class SettingScreen extends StatelessWidget {
                 onTap: () {
                   switch (index) {
                     case 0:
+                      //? disable notify
                       print('case number 0');
                       break;
                     case 1:
                       controller.goToUserAddressScreen();
                       break;
                     case 2:
-                      print('case number 2');
+                      //?
+                      controller.contactUS();
                       break;
                     case 3:
+                      //? about US
                       print('case number 3');
                       break;
                     case 4:

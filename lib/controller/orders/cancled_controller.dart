@@ -5,9 +5,12 @@ import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/order_data.dart';
 import 'package:matgary/data/models/orders/order_model.dart';
 
+import '../../core/constant/routes.dart';
+
 abstract class CancledController extends GetxController {
   //? get all user cancled orders
   getCanceldOrders();
+  goToOrderDetails(OrdersModel model);
 }
 
 class CancledControllerImp extends CancledController {
@@ -34,6 +37,13 @@ class CancledControllerImp extends CancledController {
       }
     }
     update();
+  }
+
+  @override
+  goToOrderDetails(OrdersModel model) {
+    Get.toNamed(AppRoutes.orderDetailsScreen, arguments: {
+      'ordermodel': model,
+    });
   }
 
   @override

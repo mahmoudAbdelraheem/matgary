@@ -11,7 +11,7 @@ class ArchiveScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ArchiveControllerImp());
     return Scaffold(
-      appBar: AppBar(title: const Text('Pending Orders')),
+      appBar: AppBar(title: const Text('Archive Orders')),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: GetBuilder<ArchiveControllerImp>(
@@ -23,6 +23,9 @@ class ArchiveScreen extends StatelessWidget {
               itemBuilder: (_, index) => CustomOrderCardWidget(
                 order: controller.orders[index],
                 isPending: false,
+                onDetails: () {
+                  controller.goToOrderDetails(controller.orders[index]);
+                },
               ),
             ),
           ),

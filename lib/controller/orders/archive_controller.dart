@@ -5,9 +5,12 @@ import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/order_data.dart';
 import 'package:matgary/data/models/orders/order_model.dart';
 
+import '../../core/constant/routes.dart';
+
 abstract class ArchiveController extends GetxController {
   //? get all user cancled orders
   getArchivedOrders();
+  goToOrderDetails(OrdersModel model);
 }
 
 class ArchiveControllerImp extends ArchiveController {
@@ -34,6 +37,13 @@ class ArchiveControllerImp extends ArchiveController {
       }
     }
     update();
+  }
+
+  @override
+  goToOrderDetails(OrdersModel model) {
+    Get.toNamed(AppRoutes.orderDetailsScreen, arguments: {
+      'ordermodel': model,
+    });
   }
 
   @override

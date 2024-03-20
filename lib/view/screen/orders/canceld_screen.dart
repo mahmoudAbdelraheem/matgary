@@ -11,7 +11,7 @@ class CanceldScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(CancledControllerImp());
     return Scaffold(
-      appBar: AppBar(title: const Text('Pending Orders')),
+      appBar: AppBar(title: const Text('Canceld Orders')),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: GetBuilder<CancledControllerImp>(
@@ -23,6 +23,9 @@ class CanceldScreen extends StatelessWidget {
               itemBuilder: (_, index) => CustomOrderCardWidget(
                 order: controller.orders[index],
                 isPending: false,
+                onDetails: () {
+                  controller.goToOrderDetails(controller.orders[index]);
+                },
               ),
             ),
           ),
