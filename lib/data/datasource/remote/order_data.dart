@@ -69,4 +69,14 @@ class OrderData {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+  //? get order details
+  getOrderDetails({
+    required String orderId,
+  }) async {
+    var response = await crudImp.postData(ApiLink.getOrderDetails, {
+      'id': orderId,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

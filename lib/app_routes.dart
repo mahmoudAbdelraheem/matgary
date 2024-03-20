@@ -21,6 +21,7 @@ import 'package:matgary/view/screen/on_boarding_screen.dart';
 import 'package:matgary/view/screen/item_details_screen.dart';
 import 'package:matgary/view/screen/orders/archive_screen.dart';
 import 'package:matgary/view/screen/orders/canceld_screen.dart';
+import 'package:matgary/view/screen/orders/details_screen.dart';
 import 'package:matgary/view/screen/orders/pending_screen.dart';
 import 'package:matgary/view/screen/setting_screen.dart';
 import 'package:matgary/view/screen/cart_screen.dart';
@@ -135,5 +136,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.cancledScreen,
     page: () => const CanceldScreen(),
+  ),
+  //! user order details  screen
+  GetPage(
+    name: AppRoutes.orderDetailsScreen,
+    page: () => const OrderDetailsScreen(),
   ),
 ];

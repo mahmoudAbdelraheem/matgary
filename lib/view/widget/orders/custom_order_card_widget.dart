@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:matgary/core/class/orders.dart';
 import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/order_model.dart';
+import 'package:matgary/data/models/orders/order_model.dart';
 import 'package:jiffy/jiffy.dart';
 
 class CustomOrderCardWidget extends StatelessWidget {
   final OrdersModel order;
   final bool isPending;
   final void Function()? onCancle;
+  final void Function()? onDetails;
   const CustomOrderCardWidget({
     super.key,
     required this.order,
     this.isPending = true,
     this.onCancle,
+    this.onDetails,
   });
 
   @override
@@ -129,7 +131,7 @@ class CustomOrderCardWidget extends StatelessWidget {
                 ),
                 //? order details
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: onDetails,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

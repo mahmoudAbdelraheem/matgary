@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/constant/app_colors.dart';
+import 'package:matgary/core/constant/routes.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/order_data.dart';
-import 'package:matgary/data/models/order_model.dart';
+import 'package:matgary/data/models/orders/order_model.dart';
 
 abstract class PendingController extends GetxController {
   //? get all user pending orders
@@ -14,6 +15,8 @@ abstract class PendingController extends GetxController {
   cancleOrder(String orderId);
   //? refresh orders data when send notification and user in pending order
   refreshPendingOrders();
+  //? go to details screen
+  goToOrderDetails(OrdersModel model);
 }
 
 class PendingControllerImp extends PendingController {
@@ -84,6 +87,13 @@ class PendingControllerImp extends PendingController {
       ],
     );
     update();
+  }
+
+  @override
+  goToOrderDetails(OrdersModel model) {
+    Get.toNamed(AppRoutes.orderDetailsScreen, arguments: {
+      'ordermodel': model,
+    });
   }
 
   @override

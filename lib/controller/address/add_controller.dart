@@ -53,11 +53,11 @@ class AddControllerImp extends AddController {
       update();
       Position position = await Geolocator.getCurrentPosition();
       currentLocation = LatLng(position.latitude, position.longitude);
-      print('current location = $currentLocation');
+      //print('current location = $currentLocation');
       statuseRequest = StatuseRequest.success;
     } catch (e) {
       statuseRequest = StatuseRequest.serverException;
-      print("Error: $e");
+      //print("Error: $e");
     }
     update();
   }
@@ -104,7 +104,7 @@ class AddControllerImp extends AddController {
         lat: currentLocation!.latitude.toString(),
         long: currentLocation!.longitude.toString(),
       );
-      print('respond of add address = $response');
+      //print('respond of add address = $response');
       statuseRequest = handlingData(response);
       if (statuseRequest == StatuseRequest.success) {
         if (response['status'] == 'success') {

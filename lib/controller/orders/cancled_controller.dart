@@ -3,7 +3,7 @@ import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/order_data.dart';
-import 'package:matgary/data/models/order_model.dart';
+import 'package:matgary/data/models/orders/order_model.dart';
 
 abstract class CancledController extends GetxController {
   //? get all user cancled orders

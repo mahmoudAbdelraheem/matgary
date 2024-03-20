@@ -25,6 +25,10 @@ class PendingScreen extends StatelessWidget {
                 onCancle: () {
                   controller.cancleOrder(controller.orders[index].orderId!);
                 },
+                //? go to details screen
+                onDetails: () {
+                  controller.goToOrderDetails(controller.orders[index]);
+                },
               ),
             ),
           ),

@@ -33,4 +33,5 @@ class AppRoutes {
   static const String pendingScreen = '/pending';
   static const String archiveScreen = '/archive';
   static const String cancledScreen = '/cancled';
+  static const String orderDetailsScreen = '/orderDetails';
 }
