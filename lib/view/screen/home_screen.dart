@@ -53,9 +53,9 @@ class HomeScreen extends StatelessWidget {
                         //? Products with discount for you head line text
                         const HeadLineTextWidget(title: 'Good Offers'),
                         //? discount products (items) list
-                        DiscountItemsWidget(onTap: () {}),
-                        DiscountItemsWidget(onTap: () {}),
-                        DiscountItemsWidget(onTap: () {}),
+                        DiscountItemsWidget(onTap: () {
+                          controller.goToOffersScreen();
+                        }),
                       ],
                     ),
                   ),

@@ -34,4 +34,6 @@ class AppRoutes {
   static const String archiveScreen = '/archive';
   static const String cancledScreen = '/cancled';
   static const String orderDetailsScreen = '/orderDetails';
+  //? offers screen
+  static const String offersScreen = '/offers';
 }

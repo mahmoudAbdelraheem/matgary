@@ -17,6 +17,7 @@ import 'package:matgary/view/screen/choose_language_screen.dart';
 import 'package:matgary/view/screen/home.dart';
 import 'package:matgary/view/screen/items_screen.dart';
 import 'package:matgary/view/screen/notification_screen.dart';
+import 'package:matgary/view/screen/offers_screen.dart';
 import 'package:matgary/view/screen/on_boarding_screen.dart';
 import 'package:matgary/view/screen/item_details_screen.dart';
 import 'package:matgary/view/screen/orders/archive_screen.dart';
@@ -141,5 +142,10 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.orderDetailsScreen,
     page: () => const OrderDetailsScreen(),
+  ),
+  //! items offers  screen
+  GetPage(
+    name: AppRoutes.offersScreen,
+    page: () => const OffersScreen(),
   ),
 ];

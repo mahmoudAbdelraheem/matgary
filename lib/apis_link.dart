@@ -64,4 +64,6 @@ class ApiLink {
       '$server/orders/details.php'; // cancle order
   //? notifications user data
   static const String getNotification = '$server/getnotify.php';
+  //? get offers items
+  static const String offers = '$server/offers.php';
 }

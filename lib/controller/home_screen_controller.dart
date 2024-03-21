@@ -16,6 +16,8 @@ abstract class HomeScreenController extends SearchControllerImp {
   goToUserNotificationScreen();
 
   goToItemDetails(ItemsViewModel selectedItem);
+  //? go to offers page
+  goToOffersScreen();
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
@@ -75,6 +77,11 @@ class HomeScreenControllerImp extends HomeScreenController {
     Get.toNamed(AppRoutes.itemDetailsScreen, arguments: {
       'selectedItem': selectedItem,
     });
+  }
+
+  @override
+  goToOffersScreen() {
+    Get.toNamed(AppRoutes.offersScreen);
   }
 
   @override
