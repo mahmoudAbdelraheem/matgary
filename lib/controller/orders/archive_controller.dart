@@ -11,6 +11,8 @@ abstract class ArchiveController extends GetxController {
   //? get all user cancled orders
   getArchivedOrders();
   goToOrderDetails(OrdersModel model);
+  //? submit order rating
+  submitOrderRating(String orderId, double rate, String comment);
 }
 
 class ArchiveControllerImp extends ArchiveController {
@@ -21,6 +23,7 @@ class ArchiveControllerImp extends ArchiveController {
 
   @override
   getArchivedOrders() async {
+    orders.clear();
     statuseRequest = StatuseRequest.loading;
     update();
     var response = await _orderData.getArchiveOrdersData(
@@ -44,6 +47,27 @@ class ArchiveControllerImp extends ArchiveController {
     Get.toNamed(AppRoutes.orderDetailsScreen, arguments: {
       'ordermodel': model,
     });
+  }
+
+  @override
+  submitOrderRating(String orderId, double rate, String comment) async {
+    statuseRequest = StatuseRequest.loading;
+    update();
+    var response = await _orderData.ratingOrder(
+      orderId: orderId,
+      rating: rate.toString(),
+      comment: comment,
+    );
+    statuseRequest = handlingData(response);
+
+    if (statuseRequest == StatuseRequest.success) {
+      if (response['status'] == 'success') {
+        getArchivedOrders();
+      } else {
+        statuseRequest = StatuseRequest.failuer;
+      }
+    }
+    update();
   }
 
   @override

@@ -8,8 +8,8 @@ import 'package:matgary/controller/orders/pending_controller.dart';
 import '../constant/routes.dart';
 
 fcmRequestPermission() async {
-  NotificationSettings settings =
-      await FirebaseMessaging.instance.requestPermission(
+  // NotificationSettings settings =
+  await FirebaseMessaging.instance.requestPermission(
     alert: true,
     announcement: false,
     badge: true,

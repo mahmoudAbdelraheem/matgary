@@ -20,6 +20,7 @@ class AppImageAssets {
   static const String onBoardingImageFour = '$rootImage/onboardingfour.PNG';
   //? lottie file
   static const String loading = '$rootLottie/loading.json';
+  static const String loadingCart = '$rootLottie/loadingcart.json';
   static const String noData = '$rootLottie/nodata.json';
   static const String offline = '$rootLottie/offline.json';
   static const String serverFailuer = '$rootLottie/server.json';

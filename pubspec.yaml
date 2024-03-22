@@ -67,6 +67,7 @@ dependencies:
   lottie: ^3.0.0
   # for play defualt device notification sound
   flutter_ringtone_player: ^4.0.0+2
+  rating_dialog: ^2.0.4
 
   
 dev_dependencies:

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:matgary/controller/orders/archive_controller.dart';
 import 'package:matgary/core/class/handling_data_view.dart';
 import 'package:matgary/view/widget/orders/custom_order_card_widget.dart';
+import 'package:matgary/view/widget/orders/order_rating_dialog.dart';
 
 class ArchiveScreen extends StatelessWidget {
   const ArchiveScreen({super.key});
@@ -20,11 +21,14 @@ class ArchiveScreen extends StatelessWidget {
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               itemCount: controller.orders.length,
-              itemBuilder: (_, index) => CustomOrderCardWidget(
+              itemBuilder: (context, index) => CustomOrderCardWidget(
                 order: controller.orders[index],
                 isPending: false,
                 onDetails: () {
                   controller.goToOrderDetails(controller.orders[index]);
+                },
+                onRating: () {
+                  showRatingDialog(context, controller.orders[index].orderId);
                 },
               ),
             ),

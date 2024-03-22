@@ -9,12 +9,14 @@ class CustomOrderCardWidget extends StatelessWidget {
   final bool isPending;
   final void Function()? onCancle;
   final void Function()? onDetails;
+  final void Function()? onRating;
   const CustomOrderCardWidget({
     super.key,
     required this.order,
     this.isPending = true,
     this.onCancle,
     this.onDetails,
+    this.onRating,
   });
 
   @override
@@ -122,13 +124,46 @@ class CustomOrderCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'total Price : ${order.orderTotalPrice}\$',
+                  'total Price: ${order.orderTotalPrice}\$',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.myRed,
                   ),
                 ),
+
+                //? order rating
+                order.orderRating == '0'
+                    ? MaterialButton(
+                        onPressed: onRating,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        color: AppColors.myBlue,
+                        textColor: AppColors.myWhite,
+                        child: const Text(
+                          'Rate',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )
+                    : Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '${order.orderRating}.0',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(width: 5),
+                          Icon(
+                            Icons.star,
+                            color: AppColors.myBlue,
+                            size: 20,
+                          ),
+                        ],
+                      ),
                 //? order details
                 MaterialButton(
                   onPressed: onDetails,
@@ -138,9 +173,9 @@ class CustomOrderCardWidget extends StatelessWidget {
                   color: AppColors.myBlue,
                   textColor: AppColors.myWhite,
                   child: const Text(
-                    'Order Details',
+                    'Details',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -79,4 +79,18 @@ class OrderData {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+  //? rate order
+  ratingOrder({
+    required String orderId,
+    required String rating,
+    required String comment,
+  }) async {
+    var response = await crudImp.postData(ApiLink.rating, {
+      'id': orderId,
+      'rating': rating,
+      'comment': comment,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }
