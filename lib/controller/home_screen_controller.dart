@@ -6,6 +6,7 @@ import 'package:matgary/core/functions/handling_data.dart';
 import 'package:matgary/core/services/my_services.dart';
 import 'package:matgary/data/datasource/remote/home_date.dart';
 import 'package:matgary/data/models/items_view_model.dart';
+import 'package:matgary/data/models/top_selling_model.dart';
 
 abstract class HomeScreenController extends SearchControllerImp {
   getUserDate();
@@ -32,6 +33,7 @@ class HomeScreenControllerImp extends HomeScreenController {
   //? home data
   List categories = [];
   List items = [];
+  List<TopSellingModel> topSelling = [];
   //StatuseRequest statuseRequest = StatuseRequest.defualt;
   final HomeData _homeData = HomeData(crudImp: Get.find());
 
@@ -53,6 +55,9 @@ class HomeScreenControllerImp extends HomeScreenController {
       if (response['status'] == 'success') {
         categories.addAll(response['categories']['data']);
         items.addAll(response['items']['data']);
+        List topSellingData = response['topselling']['data'];
+        topSelling
+            .addAll(topSellingData.map((e) => TopSellingModel.fromJson(e)));
       }
     }
     update();

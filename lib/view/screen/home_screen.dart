@@ -7,6 +7,7 @@ import 'package:matgary/view/widget/home/discount_items_widget.dart';
 import 'package:matgary/view/widget/home/head_line_text_widget.dart';
 import 'package:matgary/view/widget/custom_search_app_bar.dart';
 import 'package:matgary/view/widget/home/offers_card_widget.dart';
+import 'package:matgary/view/widget/home/top_selling_card_widget.dart';
 import 'package:matgary/view/widget/item_search_result_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -55,6 +56,13 @@ class HomeScreen extends StatelessWidget {
                         //? discount products (items) list
                         DiscountItemsWidget(onTap: () {
                           controller.goToOffersScreen();
+                        }),
+                        // todo complete top selling ui and logic
+                        //? top selling porducts
+                        const HeadLineTextWidget(title: 'Top Selling'),
+                        ...List.generate(controller.topSelling.length, (index) {
+                          return TopSellingCardWidget(
+                              model: controller.topSelling[index]);
                         }),
                       ],
                     ),
