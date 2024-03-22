@@ -108,9 +108,9 @@ class CustomOffersCardWidget extends StatelessWidget {
                             }
                           },
                           icon: Icon(
-                            model.itemFavorite == "0"
-                                ? Icons.favorite_border_outlined
-                                : Icons.favorite,
+                            favController.isFavorite[model.itemId] == '1'
+                                ? Icons.favorite
+                                : Icons.favorite_border_outlined,
                             color: AppColors.myBlue,
                             size: 30,
                           ),

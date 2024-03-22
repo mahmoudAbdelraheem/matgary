@@ -11,7 +11,7 @@ class OffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(OffersControllerImp());
-    Get.put(FavoriteControllerImp());
+    FavoriteControllerImp favController = Get.put(FavoriteControllerImp());
     return Scaffold(
       appBar: AppBar(title: const Text('Offers')),
       body: Padding(
@@ -23,6 +23,11 @@ class OffersScreen extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               itemCount: controller.offers.length,
               itemBuilder: (_, index) {
+                //? set is favorite map
+                favController.setFavorite(
+                  controller.offers[index].itemId!,
+                  controller.offers[index].itemFavorite!,
+                );
                 return CustomOffersCardWidget(
                   model: controller.offers[index],
                   onDetails: () {

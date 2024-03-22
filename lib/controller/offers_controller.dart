@@ -19,6 +19,7 @@ class OffersControllerImp extends OffersController {
   final List<ItemsViewModel> offers = [];
   @override
   getOffers() async {
+    offers.clear();
     statuseRequest = StatuseRequest.loading;
     update();
     var response = await _offersData.getData();

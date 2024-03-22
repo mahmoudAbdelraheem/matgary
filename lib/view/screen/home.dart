@@ -4,6 +4,8 @@ import 'package:matgary/controller/home_controller.dart';
 import 'package:matgary/core/constant/app_colors.dart';
 import 'package:matgary/view/widget/home/custom_buttom_nav_bar.dart';
 
+import '../../core/functions/exit_app_alert.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -25,7 +27,17 @@ class Home extends StatelessWidget {
         //? custom buttom navegation bar
         bottomNavigationBar: const CustomButtomNavBar(),
         //? selected page
-        body: controller.pageList.elementAt(controller.pageIndex),
+        body: PopScope(
+          canPop: false,
+          onPopInvoked: (bool didPop) {
+            if (didPop) {
+              return;
+            } else {
+              exitAppAlert();
+            }
+          },
+          child: controller.pageList.elementAt(controller.pageIndex),
+        ),
       ),
     );
   }
