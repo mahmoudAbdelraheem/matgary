@@ -48,6 +48,10 @@ class HomeScreenControllerImp extends HomeScreenController {
 
   @override
   getHomeDate() async {
+    cardOffers.clear();
+    items.clear();
+    topSelling.clear();
+    categories.clear();
     statuseRequest = StatuseRequest.loading;
     update();
     var response = await _homeData.getData();

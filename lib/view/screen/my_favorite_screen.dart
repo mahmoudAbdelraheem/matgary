@@ -14,29 +14,34 @@ class MyFavoriteScreen extends StatelessWidget {
     return GetBuilder<MyFavoriteControllerImp>(
       builder: (controller) => HandlingDataView(
         statuseRequest: controller.statuseRequest,
-        child: ListView(
-          children: [
-            const CustomAppAppBar(title: 'Favorite Items'),
+        child: RefreshIndicator(
+          onRefresh: () async {
+            await controller.getUserFavorite(controller.userId);
+          },
+          child: ListView(
+            children: [
+              const CustomAppAppBar(title: 'Favorite Items'),
 
-            //? user favorite items
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: ListView.builder(
-                itemCount: controller.myFavorite.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (_, index) {
-                  return MyFavoriteItemWidget(
-                    item: controller.myFavorite[index],
-                    onDelete: () {
-                      controller.deleteItemFromFavorite(
-                          controller.myFavorite[index].favoriteId!);
-                    },
-                  );
-                },
+              //? user favorite items
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: ListView.builder(
+                  itemCount: controller.myFavorite.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (_, index) {
+                    return MyFavoriteItemWidget(
+                      item: controller.myFavorite[index],
+                      onDelete: () {
+                        controller.deleteItemFromFavorite(
+                            controller.myFavorite[index].favoriteId!);
+                      },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
