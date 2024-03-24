@@ -1,5 +1,6 @@
 class TopSellingModel {
-  String? itemscount;
+  String? sellingtime;
+  String? itemdiscountprice;
   String? cartId;
   String? cartUserId;
   String? cartItemId;
@@ -16,9 +17,15 @@ class TopSellingModel {
   String? itemDiscount;
   String? itemDateTime;
   String? itemCategory;
+  String? cateId;
+  String? cateName;
+  String? cateNameAr;
+  String? cateImage;
+  String? cateDateTime;
 
   TopSellingModel(
-      {this.itemscount,
+      {this.sellingtime,
+      this.itemdiscountprice,
       this.cartId,
       this.cartUserId,
       this.cartItemId,
@@ -34,10 +41,16 @@ class TopSellingModel {
       this.itemPrice,
       this.itemDiscount,
       this.itemDateTime,
-      this.itemCategory});
+      this.itemCategory,
+      this.cateId,
+      this.cateName,
+      this.cateNameAr,
+      this.cateImage,
+      this.cateDateTime});
 
   TopSellingModel.fromJson(Map<String, dynamic> json) {
-    itemscount = json['itemscount'];
+    sellingtime = json['sellingtime'];
+    itemdiscountprice = json['itemdiscountprice'];
     cartId = json['cart_id'];
     cartUserId = json['cart_user_id'];
     cartItemId = json['cart_item_id'];
@@ -54,11 +67,17 @@ class TopSellingModel {
     itemDiscount = json['item_discount'];
     itemDateTime = json['item_date_time'];
     itemCategory = json['item_category'];
+    cateId = json['cate_id'];
+    cateName = json['cate_name'];
+    cateNameAr = json['cate_name_ar'];
+    cateImage = json['cate_image'];
+    cateDateTime = json['cate_date_time'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['itemscount'] = itemscount;
+    data['sellingtime'] = sellingtime;
+    data['itemdiscountprice'] = itemdiscountprice;
     data['cart_id'] = cartId;
     data['cart_user_id'] = cartUserId;
     data['cart_item_id'] = cartItemId;
@@ -75,6 +94,11 @@ class TopSellingModel {
     data['item_discount'] = itemDiscount;
     data['item_date_time'] = itemDateTime;
     data['item_category'] = itemCategory;
+    data['cate_id'] = cateId;
+    data['cate_name'] = cateName;
+    data['cate_name_ar'] = cateNameAr;
+    data['cate_image'] = cateImage;
+    data['cate_date_time'] = cateDateTime;
     return data;
   }
 }

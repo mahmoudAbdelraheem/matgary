@@ -52,9 +52,9 @@ class MyFavoriteControllerImp extends MyFavoriteController {
   }
 
   @override
-  void onInit() {
+  void onInit() async {
     userId = _myServices.sharedPreferences.getString('id')!;
-    getUserFavorite(userId);
+    await getUserFavorite(userId);
     super.onInit();
   }
 }

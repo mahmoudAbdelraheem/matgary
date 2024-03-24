@@ -25,28 +25,6 @@ class OffersCardWidget extends StatelessWidget {
       child: Stack(
         children: [
           const BuildBackgroundCircularWidget(),
-          // Positioned(
-          //   top: 55,
-          //   //? rigth circular
-          //   right: -40,
-          //   // left: controller.lang == 'ar' ? -80 : null,
-          //   child: Container(
-          //     height: 80,
-          //     width: 80,
-          //     decoration: BoxDecoration(
-          //       color: AppColors.myWhite,
-          //       borderRadius: BorderRadius.circular(160),
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: AppColors.myBlack.withOpacity(0.2),
-          //           blurRadius: 8,
-          //           spreadRadius: 2,
-          //           offset: const Offset(-10, 10),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           ListTile(
             title: Text(
               title,

@@ -34,6 +34,7 @@ class HomeScreenControllerImp extends HomeScreenController {
   List categories = [];
   List items = [];
   List<TopSellingModel> topSelling = [];
+  List cardOffers = [];
   //StatuseRequest statuseRequest = StatuseRequest.defualt;
   final HomeData _homeData = HomeData(crudImp: Get.find());
 
@@ -53,11 +54,20 @@ class HomeScreenControllerImp extends HomeScreenController {
     statuseRequest = handlingData(response);
     if (statuseRequest == StatuseRequest.success) {
       if (response['status'] == 'success') {
-        categories.addAll(response['categories']['data']);
-        items.addAll(response['items']['data']);
-        List topSellingData = response['topselling']['data'];
-        topSelling
-            .addAll(topSellingData.map((e) => TopSellingModel.fromJson(e)));
+        if (response['categories']['status'] == 'success') {
+          categories.addAll(response['categories']['data']);
+        }
+        if (response['items']['status'] == 'success') {
+          items.addAll(response['items']['data']);
+        }
+        if (response['cardoffer']['status'] == 'success') {
+          cardOffers.addAll(response['cardoffer']['data']);
+        }
+        if (response['topselling']['status'] == 'success') {
+          List topSellingData = response['topselling']['data'];
+          topSelling
+              .addAll(topSellingData.map((e) => TopSellingModel.fromJson(e)));
+        }
       }
     }
     update();
