@@ -13,6 +13,13 @@ abstract class SettingController extends GetxController {
   logout();
   //? conacte US
   contactUS();
+
+  //? disable notify
+  //? to disable notification by do nu
+  //!FirebaseMessaging.instance.unSubscribeToTopic('users');
+  //!FirebaseMessaging.instance.unSubscribeToTopic('users$userId');
+  //?
+  disableNotify();
 }
 
 class SettingControllerImp extends SettingController {
@@ -69,5 +76,14 @@ class SettingControllerImp extends SettingController {
   @override
   contactUS() async {
     await launchUrl(Uri.parse("tel:+201017495718"));
+  }
+
+  @override
+  disableNotify() {
+    //? disable notify
+    //? to disable notification by do nu
+    //!FirebaseMessaging.instance.unSubscribeToTopic('users');
+    //!FirebaseMessaging.instance.unSubscribeToTopic('users$userId');
+    //?
   }
 }

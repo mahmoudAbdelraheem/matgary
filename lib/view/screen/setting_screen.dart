@@ -27,6 +27,10 @@ class SettingScreen extends StatelessWidget {
                   switch (index) {
                     case 0:
                       //? disable notify
+                      //? to disable notification by do nu
+                      //!FirebaseMessaging.instance.unSubscribeToTopic('users');
+                      //!FirebaseMessaging.instance.unSubscribeToTopic('users$userId');
+                      //?
                       print('case number 0');
                       break;
                     case 1:

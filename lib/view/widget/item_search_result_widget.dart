@@ -52,28 +52,75 @@ class ItemsSearchResultWidget extends GetView<HomeScreenControllerImp> {
                       ),
                     ),
                   ),
-                  //? item name and category Name
+
                   Expanded(
                     flex: 2,
-                    child: ListTile(
-                      title: Text(
-                        result[index].itemName!,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.myWhite,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      subtitle: Text(
-                        result[index].cateName!,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.myWhite,
-                          height: 3,
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          //? item name and category Name
+                          Text(
+                            result[index].itemName!,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.myWhite,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                result[index].cateName!,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.myWhite,
+                                  height: 1,
+                                ),
+                              ),
+
+                              //? item price and discount price
+
+                              Column(
+                                children: [
+                                  Text(
+                                    "${result[index].itemPrice}\$",
+                                    style: TextStyle(
+                                      fontSize:
+                                          result[index].itemDiscount == '0'
+                                              ? 18
+                                              : 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: result[index].itemDiscount == '0'
+                                          ? AppColors.myRed
+                                          : AppColors.myGrey,
+                                      decoration:
+                                          result[index].itemDiscount == '0'
+                                              ? null
+                                              : TextDecoration.lineThrough,
+                                      decorationThickness: 3,
+                                    ),
+                                  ),
+                                  if (result[index].itemDiscount != '0')
+                                    Text(
+                                      "${result[index].itemDiscountPrice}\$",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.myRed,
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
