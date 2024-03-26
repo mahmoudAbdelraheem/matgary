@@ -20,16 +20,18 @@ class PendingScreen extends StatelessWidget {
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               itemCount: controller.orders.length,
-              itemBuilder: (_, index) => CustomOrderCardWidget(
-                order: controller.orders[index],
-                onCancle: () {
-                  controller.cancleOrder(controller.orders[index].orderId!);
-                },
-                //? go to details screen
-                onDetails: () {
-                  controller.goToOrderDetails(controller.orders[index]);
-                },
-              ),
+              itemBuilder: (_, index) {
+                return CustomOrderCardWidget(
+                  order: controller.orders[index],
+                  onCancle: () {
+                    controller.cancleOrder(controller.orders[index].orderId!);
+                  },
+                  //? go to details screen
+                  onDetails: () {
+                    controller.goToOrderDetails(controller.orders[index]);
+                  },
+                );
+              },
             ),
           ),
         ),

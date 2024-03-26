@@ -108,9 +108,8 @@ class AddControllerImp extends AddController {
       statuseRequest = handlingData(response);
       if (statuseRequest == StatuseRequest.success) {
         if (response['status'] == 'success') {
-          //? go back to view address screen
-          //? address addedd successfuly
           Get.offAllNamed(AppRoutes.homeScreen);
+          Get.snackbar('Success', 'Now You Can Order To this address.');
         } else {
           statuseRequest = StatuseRequest.failuer;
           //? make user to try add data again

@@ -9,6 +9,8 @@ import 'package:matgary/view/widget/ckeckout/coustom_delivery_type.dart';
 import 'package:matgary/view/widget/ckeckout/coustom_payment_method.dart';
 import 'package:matgary/view/widget/ckeckout/coustom_shipping_address.dart';
 
+import '../widget/ckeckout/add_address_widget.dart';
+
 class CheckOutScreen extends StatelessWidget {
   const CheckOutScreen({super.key});
 
@@ -92,64 +94,34 @@ class CheckOutScreen extends StatelessWidget {
 
                 //? address section
                 if (controller.deliveryType == '0')
-                  Column(
-                    children: [
-                      const CoustomCheckOutText(title: 'Shipping Address.'),
-                      ...List.generate(
-                        controller.userAddress.length,
-                        (index) => CustomShippingAddress(
-                          addressName:
-                              "${controller.userAddress[index].addressName}",
-                          addressCity:
-                              "${controller.userAddress[index].addressCity} - ${controller.userAddress[index].addressStreet}",
-                          isSelected: controller.userAddress[index].addressId ==
-                                  controller.addressId
-                              ? true
-                              : false,
-                          onTap: () {
-                            controller.chooseAddressId(
-                                controller.userAddress[index].addressId!);
-                          },
+                  controller.userAddress.isEmpty
+                      ? AddAdressWidget(onTap: () {
+                          controller.goToAddAddress();
+                        })
+                      : Column(
+                          children: [
+                            const CoustomCheckOutText(
+                                title: 'Shipping Address.'),
+                            ...List.generate(
+                              controller.userAddress.length,
+                              (index) => CustomShippingAddress(
+                                addressName:
+                                    "${controller.userAddress[index].addressName}",
+                                addressCity:
+                                    "${controller.userAddress[index].addressCity} - ${controller.userAddress[index].addressStreet}",
+                                isSelected:
+                                    controller.userAddress[index].addressId ==
+                                            controller.addressId
+                                        ? true
+                                        : false,
+                                onTap: () {
+                                  controller.chooseAddressId(
+                                      controller.userAddress[index].addressId!);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  )
-                // todo if user dont have any address
-                // else if (controller.deliveryType == 'Delivery' &&
-                //     controller.userAddress.isEmpty)
-                //   Center(
-                //     child: Column(
-                //       mainAxisSize: MainAxisSize.min,
-                //       children: [
-                //         Text(
-                //           'You Don\'t Have Any Address\nLet\'s Add One',
-                //           style: TextStyle(
-                //             fontSize: 22,
-                //             fontWeight: FontWeight.bold,
-                //             color: AppColors.myBlack,
-                //             height: 2,
-                //           ),
-                //           textAlign: TextAlign.center,
-                //         ),
-                //         const SizedBox(height: 10),
-                //         MaterialButton(
-                //           onPressed: () {},
-                //           shape: RoundedRectangleBorder(
-                //             borderRadius: BorderRadius.circular(20),
-                //           ),
-                //           color: AppColors.myBlue,
-                //           textColor: AppColors.myWhite,
-                //           child: const Text(
-                //             'Add Address',
-                //             style: TextStyle(
-                //               fontSize: 20,
-                //               fontWeight: FontWeight.bold,
-                //             ),
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
               ],
             ),
           ),

@@ -17,13 +17,15 @@ abstract class CheckOutController extends GetxController {
   intialzeData();
   //? add order to database
   orderCheckOut();
+  //? if user dont have an address
+  goToAddAddress();
 }
 
 class CheckOutControllerImp extends CheckOutController {
   StatuseRequest statuseRequest = StatuseRequest.defualt;
   String? paymentMethod;
   String? deliveryType;
-  String addressId = '0';
+  String? addressId;
   String couponDiscount = '0';
 
   List<AddressModel> userAddress = [];
@@ -37,13 +39,14 @@ class CheckOutControllerImp extends CheckOutController {
   @override
   chooseAddressId(String val) {
     addressId = val;
+    print("address = $addressId");
     update();
   }
 
   @override
   chooseDeliveryType(String val) {
     deliveryType = val;
-    addressId = '0';
+    print("deliveryType = $deliveryType ");
     update();
   }
 
@@ -66,6 +69,7 @@ class CheckOutControllerImp extends CheckOutController {
       if (response['status'] == 'success') {
         List responseData = response['data'];
         userAddress.addAll(responseData.map((e) => AddressModel.fromJson(e)));
+        addressId = userAddress[0].addressId!;
       } else {
         // statuseRequest = StatuseRequest.failuer;
         // todo snak bar to try again
@@ -78,7 +82,7 @@ class CheckOutControllerImp extends CheckOutController {
   @override
   orderCheckOut() async {
     //?
-    if (paymentMethod == null || deliveryType == null) {
+    if (paymentMethod == null || deliveryType == null || userAddress.isEmpty) {
       return Get.snackbar('warning',
           'You Need To Select Payment Method And Delivery Type First');
     } else {
@@ -86,7 +90,7 @@ class CheckOutControllerImp extends CheckOutController {
       update();
       var response = await _orderData.addOrderDate(
         userId: _myServices.sharedPreferences.getString('id')!,
-        userAddress: addressId,
+        userAddress: addressId!,
         orderType: deliveryType!,
         paymentMethod: paymentMethod!,
         shippingPrice: '10', //todo add siphhing price
@@ -109,6 +113,11 @@ class CheckOutControllerImp extends CheckOutController {
       }
       update();
     }
+  }
+
+  @override
+  goToAddAddress() {
+    Get.toNamed(AppRoutes.addAddressScreen);
   }
 
   @override
