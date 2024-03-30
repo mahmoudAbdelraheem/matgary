@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 class CustomTitleTextWidget extends StatelessWidget {
   final String title;

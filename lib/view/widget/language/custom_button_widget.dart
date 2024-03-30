@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/localization/change_local.dart';
+import '../../../core/constant/routes.dart';
+import '../../../core/localization/change_local.dart';
 
 import '../../../core/constant/app_colors.dart';
 

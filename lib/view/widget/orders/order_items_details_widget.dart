@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/data/models/orders/orders_details_model.dart';
+import '../../../data/models/orders/orders_details_model.dart';
 
 import '../../../core/constant/app_colors.dart';
 

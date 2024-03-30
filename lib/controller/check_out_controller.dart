@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/address_data.dart';
-import 'package:matgary/data/datasource/remote/order_data.dart';
-import 'package:matgary/data/models/address_model.dart';
+import '../core/class/statuse_request.dart';
+import '../core/constant/routes.dart';
+import '../core/functions/handling_data.dart';
+import '../core/services/my_services.dart';
+import '../data/datasource/remote/address_data.dart';
+import '../data/datasource/remote/order_data.dart';
+import '../data/models/address_model.dart';
 
 abstract class CheckOutController extends GetxController {
   choosePaymentMethod(String val);

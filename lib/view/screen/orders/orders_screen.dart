@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/orders/order_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/shared/custom_app_appbar.dart';
-import 'package:matgary/view/widget/orders/custom_order_btn.dart';
+import '../../../controller/orders/order_controller.dart';
+import '../../../core/class/handling_data_view.dart';
+import '../../../core/shared/custom_app_appbar.dart';
+import '../../widget/orders/custom_order_btn.dart';
 
 class OrdersSceen extends StatelessWidget {
   const OrdersSceen({super.key});

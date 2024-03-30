@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 class CustomOrderBtnWidget extends StatelessWidget {
   final void Function()? onTap;

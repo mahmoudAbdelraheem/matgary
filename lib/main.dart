@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/app_routes.dart';
-import 'package:matgary/core/localization/change_local.dart';
-import 'package:matgary/core/localization/translation.dart';
-import 'package:matgary/my_binding.dart';
+import 'app_routes.dart';
+import 'core/localization/change_local.dart';
+import 'core/localization/translation.dart';
+import 'my_binding.dart';
 // import 'package:matgary/package_test.dart';
 // import 'package:matgary/test_view.dart';
 import 'core/services/my_services.dart';

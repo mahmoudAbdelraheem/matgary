@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/order_data.dart';
-import 'package:matgary/data/models/orders/order_model.dart';
+import '../../core/class/statuse_request.dart';
+import '../../core/constant/app_colors.dart';
+import '../../core/constant/routes.dart';
+import '../../core/functions/handling_data.dart';
+import '../../core/services/my_services.dart';
+import '../../data/datasource/remote/order_data.dart';
+import '../../data/models/orders/order_model.dart';
 
 abstract class PendingController extends GetxController {
   //? get all user pending orders

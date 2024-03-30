@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/home_screen_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/view/widget/home/categories_list_widget.dart';
-import 'package:matgary/view/widget/home/discount_items_widget.dart';
-import 'package:matgary/view/widget/home/head_line_text_widget.dart';
-import 'package:matgary/view/widget/custom_search_app_bar.dart';
-import 'package:matgary/view/widget/home/offers_card_widget.dart';
-import 'package:matgary/view/widget/home/top_selling_card_widget.dart';
-import 'package:matgary/view/widget/item_search_result_widget.dart';
+import '../../controller/home_screen_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../widget/home/categories_list_widget.dart';
+import '../widget/home/discount_items_widget.dart';
+import '../widget/home/head_line_text_widget.dart';
+import '../widget/custom_search_app_bar.dart';
+import '../widget/home/offers_card_widget.dart';
+import '../widget/home/top_selling_card_widget.dart';
+import '../widget/item_search_result_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

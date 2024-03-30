@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/services/my_services.dart';
+import '../constant/routes.dart';
+import '../services/my_services.dart';
 
 class MyMiddleWare extends GetMiddleware {
   @override

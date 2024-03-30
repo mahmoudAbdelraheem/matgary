@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/functions/defualt_alert_dialog.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/data/datasource/remote/auth/forgetpassword/vrefiy_code_data.dart';
+import '../../../core/class/statuse_request.dart';
+import '../../../core/constant/routes.dart';
+import '../../../core/functions/defualt_alert_dialog.dart';
+import '../../../core/functions/handling_data.dart';
+import '../../../data/datasource/remote/auth/forgetpassword/vrefiy_code_data.dart';
 
 abstract class VrefiyCodeController extends GetxController {
   //? login and go to the home screen

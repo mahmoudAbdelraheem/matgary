@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
+import '../../../core/constant/localizaion_keys.dart';
 
 import '../../../core/constant/app_colors.dart';
 

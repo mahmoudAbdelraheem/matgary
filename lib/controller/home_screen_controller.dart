@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:matgary/controller/search_controller.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/home_date.dart';
-import 'package:matgary/data/models/items_view_model.dart';
-import 'package:matgary/data/models/top_selling_model.dart';
+import 'search_controller.dart';
+import '../core/class/statuse_request.dart';
+import '../core/constant/routes.dart';
+import '../core/functions/handling_data.dart';
+import '../core/services/my_services.dart';
+import '../data/datasource/remote/home_date.dart';
+import '../data/models/items_view_model.dart';
+import '../data/models/top_selling_model.dart';
 
 abstract class HomeScreenController extends SearchControllerImp {
   getUserDate();

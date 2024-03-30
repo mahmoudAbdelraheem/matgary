@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/routes.dart';
+import '../../core/class/statuse_request.dart';
+import '../../core/constant/app_colors.dart';
+import '../../core/constant/routes.dart';
 
 abstract class OrderController extends GetxController {
   goToPendingOrders();

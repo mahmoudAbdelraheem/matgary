@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/check_out_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/app_image_assets.dart';
-import 'package:matgary/view/widget/ckeckout/coustom_chek_out_text.dart';
-import 'package:matgary/view/widget/ckeckout/coustom_delivery_type.dart';
-import 'package:matgary/view/widget/ckeckout/coustom_payment_method.dart';
-import 'package:matgary/view/widget/ckeckout/coustom_shipping_address.dart';
+import '../../controller/check_out_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../../core/constant/app_colors.dart';
+import '../../core/constant/app_image_assets.dart';
+import '../widget/ckeckout/coustom_chek_out_text.dart';
+import '../widget/ckeckout/coustom_delivery_type.dart';
+import '../widget/ckeckout/coustom_payment_method.dart';
+import '../widget/ckeckout/coustom_shipping_address.dart';
 
 import '../widget/ckeckout/add_address_widget.dart';
 

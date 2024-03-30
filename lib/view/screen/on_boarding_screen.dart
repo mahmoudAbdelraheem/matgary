@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/on_boarding_controller.dart';
+import '../../controller/on_boarding_controller.dart';
 
-import 'package:matgary/view/widget/on_boarding/controller_widget.dart';
-import 'package:matgary/view/widget/on_boarding/custom_button_widget.dart';
+import '../widget/on_boarding/controller_widget.dart';
+import '../widget/on_boarding/custom_button_widget.dart';
 
-import 'package:matgary/view/widget/on_boarding/model_widget.dart';
+import '../widget/on_boarding/model_widget.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

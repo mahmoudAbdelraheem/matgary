@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:matgary/controller/auth/forget_password/forget_password_controller.dart';
-import 'package:matgary/controller/auth/forget_password/reset_password_controller.dart';
-import 'package:matgary/controller/auth/login_controller.dart';
-import 'package:matgary/controller/auth/sign_up_controller.dart';
-import 'package:matgary/core/class/crud.dart';
+import 'controller/auth/forget_password/forget_password_controller.dart';
+import 'controller/auth/forget_password/reset_password_controller.dart';
+import 'controller/auth/login_controller.dart';
+import 'controller/auth/sign_up_controller.dart';
+import 'core/class/crud.dart';
 
 class MyBindings extends Bindings {
   @override

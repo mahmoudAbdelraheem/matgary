@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
+import '../../core/constant/localizaion_keys.dart';
 
-import 'package:matgary/view/widget/language/custom_button_widget.dart';
+import '../widget/language/custom_button_widget.dart';
 
 class ChooseLanguageScreen extends StatelessWidget {
   const ChooseLanguageScreen({super.key});

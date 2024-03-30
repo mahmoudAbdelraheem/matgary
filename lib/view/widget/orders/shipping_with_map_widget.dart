@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/orders/order_model.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/orders/order_model.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 

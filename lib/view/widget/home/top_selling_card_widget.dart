@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/home_screen_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/items_view_model.dart';
-import 'package:matgary/data/models/top_selling_model.dart';
+import '../../../controller/home_screen_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/items_view_model.dart';
+import '../../../data/models/top_selling_model.dart';
 
 import '../../../apis_link.dart';
 

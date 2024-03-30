@@ -3,8 +3,8 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:matgary/core/class/statuse_request.dart';
 import 'package:http/http.dart' as http;
+import 'package:matgary/core/class/statuse_request.dart';
 import 'package:matgary/core/functions/check_internet_connection.dart';
 
 abstract class Crud {

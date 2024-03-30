@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/cart_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/view/widget/cart/cart_floation_action_btn.dart';
-import 'package:matgary/view/widget/cart/cart_item_count_text.dart';
-import 'package:matgary/view/widget/cart/cart_item_widget.dart';
+import '../../controller/cart_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../../core/constant/app_colors.dart';
+import '../widget/cart/cart_floation_action_btn.dart';
+import '../widget/cart/cart_item_count_text.dart';
+import '../widget/cart/cart_item_widget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

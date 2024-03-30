@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/auth/forget_password/success_reset_pass_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
-import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/core/shared/custom_app_botton.dart';
+import '../../../../controller/auth/forget_password/success_reset_pass_controller.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/localizaion_keys.dart';
+import '../../../widget/auth/custom_app_bar_widget.dart';
+import '../../../../core/shared/custom_app_botton.dart';
 
 class SuccessResetPasswordScreen extends StatelessWidget {
   const SuccessResetPasswordScreen({super.key});

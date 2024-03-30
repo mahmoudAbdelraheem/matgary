@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/on_boarding_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/on_boarding_model.dart';
+import '../../../controller/on_boarding_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/on_boarding_model.dart';
 
 import '../../../data/datasource/static/static.dart';
 

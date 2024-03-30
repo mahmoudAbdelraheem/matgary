@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/shared/custom_app_text_form.dart';
+import '../constant/app_colors.dart';
+import '../shared/custom_app_text_form.dart';
 
 couponTextForm(TextEditingController controller, void Function()? confirm) {
   return Get.defaultDialog(

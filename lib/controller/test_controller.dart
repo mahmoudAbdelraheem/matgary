@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/data/datasource/remote/test_data.dart';
+import '../core/class/statuse_request.dart';
+import '../core/functions/handling_data.dart';
+import '../data/datasource/remote/test_data.dart';
 
 class TestController extends GetxController {
   TestData testData = TestData(crudImp: Get.find());

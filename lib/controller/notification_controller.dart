@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/notification_data.dart';
-import 'package:matgary/data/models/notification_model.dart';
+import '../core/class/statuse_request.dart';
+import '../core/functions/handling_data.dart';
+import '../core/services/my_services.dart';
+import '../data/datasource/remote/notification_data.dart';
+import '../data/models/notification_model.dart';
 
 abstract class NotificationController extends GetxController {
   getNotification();

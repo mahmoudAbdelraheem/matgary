@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/view/screen/home_screen.dart';
-import 'package:matgary/view/screen/my_favorite_screen.dart';
-import 'package:matgary/view/screen/orders/orders_screen.dart';
-import 'package:matgary/view/screen/setting_screen.dart';
+import '../core/constant/routes.dart';
+import '../view/screen/home_screen.dart';
+import '../view/screen/my_favorite_screen.dart';
+import '../view/screen/orders/orders_screen.dart';
+import '../view/screen/setting_screen.dart';
 
 abstract class HomeController extends GetxController {
   changePage(int index);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../constant/app_colors.dart';
 
 class CustomAppAppBar extends StatelessWidget {
   final String title;

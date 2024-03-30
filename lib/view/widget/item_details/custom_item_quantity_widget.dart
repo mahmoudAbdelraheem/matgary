@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/item_details_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/view/widget/item_details/custom_item_price_icon.dart';
-import 'package:matgary/view/widget/item_details/item_price_and_discount.dart';
+import '../../../controller/item_details_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import 'custom_item_price_icon.dart';
+import 'item_price_and_discount.dart';
 
 class CustomItemQuantityWidget extends GetView<ItemDetailsControllerImp> {
   const CustomItemQuantityWidget({

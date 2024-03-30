@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/cart_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/functions/coupon_text_form.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/functions/coupon_text_form.dart';
 
 class TotalPriceTextWidget extends GetView<CartControllerImp> {
   const TotalPriceTextWidget({

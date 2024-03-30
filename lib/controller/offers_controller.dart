@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/data/datasource/remote/offers_data.dart';
-import 'package:matgary/data/models/items_view_model.dart';
+import '../core/class/statuse_request.dart';
+import '../core/functions/handling_data.dart';
+import '../data/datasource/remote/offers_data.dart';
+import '../data/models/items_view_model.dart';
 
 import '../core/constant/routes.dart';
 

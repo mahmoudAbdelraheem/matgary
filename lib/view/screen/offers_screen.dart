@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/favorite/favorite_controller.dart';
-import 'package:matgary/controller/offers_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
+import '../../controller/favorite/favorite_controller.dart';
+import '../../controller/offers_controller.dart';
+import '../../core/class/handling_data_view.dart';
 import '../widget/custom_offers_card_widget.dart';
 
 class OffersScreen extends StatelessWidget {

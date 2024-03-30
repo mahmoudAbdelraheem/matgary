@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/favorite/my_favorite_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/shared/custom_app_appbar.dart';
-import 'package:matgary/view/widget/my_favorite_item_widget.dart';
+import '../../controller/favorite/my_favorite_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../../core/shared/custom_app_appbar.dart';
+import '../widget/my_favorite_item_widget.dart';
 
 class MyFavoriteScreen extends StatelessWidget {
   const MyFavoriteScreen({super.key});

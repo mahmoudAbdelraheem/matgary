@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/orders/archive_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/view/widget/orders/custom_order_card_widget.dart';
-import 'package:matgary/view/widget/orders/order_rating_dialog.dart';
+import '../../../controller/orders/archive_controller.dart';
+import '../../../core/class/handling_data_view.dart';
+import '../../widget/orders/custom_order_card_widget.dart';
+import '../../widget/orders/order_rating_dialog.dart';
 
 class ArchiveScreen extends StatelessWidget {
   const ArchiveScreen({super.key});

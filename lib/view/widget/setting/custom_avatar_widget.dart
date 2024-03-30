@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/app_image_assets.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_image_assets.dart';
 
 class CustomAvatarWidget extends StatelessWidget {
   const CustomAvatarWidget({

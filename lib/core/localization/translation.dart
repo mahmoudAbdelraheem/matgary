@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
+import '../constant/localizaion_keys.dart';
 
 class MyTranslation extends Translations {
   @override

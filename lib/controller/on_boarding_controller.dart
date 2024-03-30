@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/static/static.dart';
+import '../core/constant/routes.dart';
+import '../core/services/my_services.dart';
+import '../data/datasource/static/static.dart';
 
 abstract class OnBoardingController extends GetxController {
   void nextPage();

@@ -1,4 +1,4 @@
-import 'package:matgary/core/class/statuse_request.dart';
+import '../class/statuse_request.dart';
 
 handlingData(response) {
   if (response is StatuseRequest) {

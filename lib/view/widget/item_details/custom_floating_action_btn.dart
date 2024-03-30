@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 class CustomFloatingActionBtn extends StatelessWidget {
   final void Function()? onTap;

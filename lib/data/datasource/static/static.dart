@@ -1,6 +1,6 @@
-import 'package:matgary/core/constant/app_image_assets.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
-import 'package:matgary/data/models/on_boarding_model.dart';
+import '../../../core/constant/app_image_assets.dart';
+import '../../../core/constant/localizaion_keys.dart';
+import '../../models/on_boarding_model.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(

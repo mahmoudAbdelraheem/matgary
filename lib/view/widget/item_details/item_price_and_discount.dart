@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/items_view_model.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/items_view_model.dart';
 
 class ItemPriceAndDiscount extends StatelessWidget {
   final ItemsViewModel item;

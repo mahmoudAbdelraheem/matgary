@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:matgary/controller/notification_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../controller/notification_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../../core/constant/app_colors.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});

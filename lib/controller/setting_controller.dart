@@ -1,8 +1,8 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/services/my_services.dart';
+import '../core/constant/routes.dart';
+import '../core/services/my_services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class SettingController extends GetxController {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/address_model.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/address_model.dart';
 
 class CustomAddressViewCard extends StatelessWidget {
   final AddressModel model;

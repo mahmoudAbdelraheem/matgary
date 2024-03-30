@@ -1,5 +1,5 @@
-import 'package:matgary/apis_link.dart';
-import 'package:matgary/core/class/crud.dart';
+import '../../../../../apis_link.dart';
+import '../../../../../core/class/crud.dart';
 
 class VrefiyPassCodeData {
   final CrudImp crudImp;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/favorite/favorite_controller.dart';
-import 'package:matgary/controller/items_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/view/widget/custom_search_app_bar.dart';
-import 'package:matgary/view/widget/item_search_result_widget.dart';
-import 'package:matgary/view/widget/items/categories_items_list.dart';
-import 'package:matgary/view/widget/items/item_view_model_widget.dart';
+import '../../controller/favorite/favorite_controller.dart';
+import '../../controller/items_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../widget/custom_search_app_bar.dart';
+import '../widget/item_search_result_widget.dart';
+import '../widget/items/categories_items_list.dart';
+import '../widget/items/item_view_model_widget.dart';
 
 class ItemsScreen extends StatelessWidget {
   const ItemsScreen({super.key});

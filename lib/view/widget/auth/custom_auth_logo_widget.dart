@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
-import 'package:matgary/core/constant/app_image_assets.dart';
+import '../../../core/constant/app_image_assets.dart';
 
 class CustomAuthLogoWidget extends StatelessWidget {
   const CustomAuthLogoWidget({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/address/view_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/class/statuse_request.dart';
+import '../../../controller/address/view_controller.dart';
+import '../../../core/class/handling_data_view.dart';
+import '../../../core/class/statuse_request.dart';
 import '../../widget/address/custom_address_view_card.dart';
 
 class ViewAddressScreen extends StatelessWidget {

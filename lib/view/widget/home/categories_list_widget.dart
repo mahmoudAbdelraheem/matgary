@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:matgary/apis_link.dart';
-import 'package:matgary/controller/home_screen_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/functions/translate_database.dart';
-import 'package:matgary/data/models/categories_model.dart';
+import '../../../apis_link.dart';
+import '../../../controller/home_screen_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/functions/translate_database.dart';
+import '../../../data/models/categories_model.dart';
 
 class CategoriesListWidget extends GetView<HomeScreenControllerImp> {
   const CategoriesListWidget({

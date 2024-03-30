@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/cart_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/view/widget/cart/cart_order_btn.dart';
-import 'package:matgary/view/widget/cart/cart_total_price.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import 'cart_order_btn.dart';
+import 'cart_total_price.dart';
 
 class CartFloatingActionBtnWidget extends StatelessWidget {
   const CartFloatingActionBtnWidget({

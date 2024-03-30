@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/localizaion_keys.dart';
-import 'package:matgary/core/functions/form_valid_input.dart';
-import 'package:matgary/view/widget/auth/custom_app_bar_widget.dart';
-import 'package:matgary/core/shared/custom_app_botton.dart';
-import 'package:matgary/view/widget/auth/custom_auth_logo_widget.dart';
-import 'package:matgary/view/widget/auth/custom_body_text_widget.dart';
-import 'package:matgary/core/shared/custom_app_text_form.dart';
+import '../../../../core/class/handling_data_view.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/localizaion_keys.dart';
+import '../../../../core/functions/form_valid_input.dart';
+import '../../../widget/auth/custom_app_bar_widget.dart';
+import '../../../../core/shared/custom_app_botton.dart';
+import '../../../widget/auth/custom_auth_logo_widget.dart';
+import '../../../widget/auth/custom_body_text_widget.dart';
+import '../../../../core/shared/custom_app_text_form.dart';
 
 import '../../../../controller/auth/forget_password/forget_password_controller.dart';
 

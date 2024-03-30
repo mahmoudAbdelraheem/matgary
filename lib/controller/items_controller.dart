@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:matgary/controller/search_controller.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/constant/routes.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/cart_data.dart';
-import 'package:matgary/data/datasource/remote/items_view_data.dart';
-import 'package:matgary/data/models/items_view_model.dart';
+import 'search_controller.dart';
+import '../core/class/statuse_request.dart';
+import '../core/constant/routes.dart';
+import '../core/functions/handling_data.dart';
+import '../core/services/my_services.dart';
+import '../data/datasource/remote/cart_data.dart';
+import '../data/datasource/remote/items_view_data.dart';
+import '../data/models/items_view_model.dart';
 
 abstract class ItemsController extends SearchControllerImp {
   //? to initialize selected & list of Categories comming from home page

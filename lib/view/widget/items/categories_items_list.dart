@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/items_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/functions/translate_database.dart';
-import 'package:matgary/data/models/categories_model.dart';
+import '../../../controller/items_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/functions/translate_database.dart';
+import '../../../data/models/categories_model.dart';
 
 class CategoriesItemsListWidget extends GetView<ItemsControllerImp> {
   const CategoriesItemsListWidget({

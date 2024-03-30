@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/class/orders.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/data/models/orders/order_model.dart';
+import '../../../core/class/orders.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../data/models/orders/order_model.dart';
 import 'package:jiffy/jiffy.dart';
 
 class CustomOrderCardWidget extends StatelessWidget {

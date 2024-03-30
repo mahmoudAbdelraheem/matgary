@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/class/statuse_request.dart';
-import 'package:matgary/core/functions/handling_data.dart';
-import 'package:matgary/core/services/my_services.dart';
-import 'package:matgary/data/datasource/remote/favorite/delete_from_favorite_data.dart';
-import 'package:matgary/data/models/my_favorite_model.dart';
+import '../../core/class/statuse_request.dart';
+import '../../core/functions/handling_data.dart';
+import '../../core/services/my_services.dart';
+import '../../data/datasource/remote/favorite/delete_from_favorite_data.dart';
+import '../../data/models/my_favorite_model.dart';
 
 abstract class MyFavoriteController extends GetxController {
   //? get user

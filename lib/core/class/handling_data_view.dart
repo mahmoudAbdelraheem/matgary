@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/class/statuse_request.dart';
+import 'statuse_request.dart';
 import 'package:lottie/lottie.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/constant/app_image_assets.dart';
+import '../constant/app_colors.dart';
+import '../constant/app_image_assets.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatuseRequest statuseRequest;

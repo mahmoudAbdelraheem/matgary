@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:matgary/controller/address/add_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/view/screen/address/user_address_details.dart';
+import '../../../controller/address/add_controller.dart';
+import '../../../core/class/handling_data_view.dart';
+import '../../../core/constant/app_colors.dart';
+import 'user_address_details.dart';
 import '../../widget/address/custom_map_widget.dart';
 import '../../../core/shared/custom_app_botton.dart';
 

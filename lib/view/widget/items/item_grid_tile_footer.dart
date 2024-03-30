@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/functions/translate_database.dart';
-import 'package:matgary/data/models/items_view_model.dart';
-import 'package:matgary/view/widget/items/item_price_discount_widget.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/functions/translate_database.dart';
+import '../../../data/models/items_view_model.dart';
+import 'item_price_discount_widget.dart';
 
 class ItemGridTileFooter extends StatelessWidget {
   final ItemsViewModel item;

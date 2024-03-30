@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/apis_link.dart';
-import 'package:matgary/controller/item_details_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../apis_link.dart';
+import '../../../controller/item_details_controller.dart';
+import '../../../core/constant/app_colors.dart';
 
 class ItemImageWidget extends GetView<ItemDetailsControllerImp> {
   const ItemImageWidget({

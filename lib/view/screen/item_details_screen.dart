@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/item_details_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/core/functions/translate_database.dart';
-import 'package:matgary/view/widget/item_details/custom_floating_action_btn.dart';
-import 'package:matgary/view/widget/item_details/custom_item_quantity_widget.dart';
-import 'package:matgary/view/widget/item_details/item_image_widget.dart';
+import '../../controller/item_details_controller.dart';
+import '../../core/class/handling_data_view.dart';
+import '../../core/functions/translate_database.dart';
+import '../widget/item_details/custom_floating_action_btn.dart';
+import '../widget/item_details/custom_item_quantity_widget.dart';
+import '../widget/item_details/item_image_widget.dart';
 
 class ItemDetailsScreen extends StatelessWidget {
   const ItemDetailsScreen({super.key});

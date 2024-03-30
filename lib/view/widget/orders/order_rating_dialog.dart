@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/orders/archive_controller.dart';
-import 'package:matgary/core/constant/app_image_assets.dart';
+import '../../../controller/orders/archive_controller.dart';
+import '../../../core/constant/app_image_assets.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 late String orderId;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/setting_controller.dart';
-import 'package:matgary/view/widget/setting/custom_avatar_widget.dart';
-import 'package:matgary/view/widget/setting/custom_card_widget.dart';
+import '../../controller/setting_controller.dart';
+import '../widget/setting/custom_avatar_widget.dart';
+import '../widget/setting/custom_card_widget.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});

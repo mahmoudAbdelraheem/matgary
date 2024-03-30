@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/home_screen_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
+import '../../../controller/home_screen_controller.dart';
+import '../../../core/constant/app_colors.dart';
 
 class OffersCardWidget extends StatelessWidget {
   final String title;

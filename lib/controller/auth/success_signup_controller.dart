@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:matgary/core/constant/routes.dart';
+import '../../core/constant/routes.dart';
 
 abstract class SuccessSignUpController extends GetxController {
   goToLoginScreen();

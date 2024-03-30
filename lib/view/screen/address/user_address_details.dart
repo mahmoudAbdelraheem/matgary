@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/address/add_controller.dart';
-import 'package:matgary/core/constant/app_colors.dart';
-import 'package:matgary/core/functions/form_valid_input.dart';
-import 'package:matgary/core/shared/custom_app_botton.dart';
-import 'package:matgary/core/shared/custom_app_text_form.dart';
+import '../../../controller/address/add_controller.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/functions/form_valid_input.dart';
+import '../../../core/shared/custom_app_botton.dart';
+import '../../../core/shared/custom_app_text_form.dart';
 
 class UserAddressDetails extends GetView<AddControllerImp> {
   const UserAddressDetails({

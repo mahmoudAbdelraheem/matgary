@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:matgary/controller/orders/cancled_controller.dart';
-import 'package:matgary/core/class/handling_data_view.dart';
-import 'package:matgary/view/widget/orders/custom_order_card_widget.dart';
+import '../../../controller/orders/cancled_controller.dart';
+import '../../../core/class/handling_data_view.dart';
+import '../../widget/orders/custom_order_card_widget.dart';
 
 class CanceldScreen extends StatelessWidget {
   const CanceldScreen({super.key});
